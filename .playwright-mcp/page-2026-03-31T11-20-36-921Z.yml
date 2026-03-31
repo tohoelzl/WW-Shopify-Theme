@@ -1,0 +1,417 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Zum Hauptinhalt springen" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - link "Westwing" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img [ref=e10]
+          - navigation "Menu" [ref=e12]:
+            - list [ref=e13]:
+              - listitem [ref=e14]:
+                - button "Produkte" [ref=e15] [cursor=pointer]
+              - listitem [ref=e16]:
+                - link "INSPIRATION" [ref=e17] [cursor=pointer]:
+                  - /url: https://www.westwing.de/campaign/
+              - listitem [ref=e18]:
+                - link "NEU" [ref=e19] [cursor=pointer]:
+                  - /url: https://www.westwing.de/new-products/
+              - listitem [ref=e20]:
+                - link "OUTDOOR" [ref=e21] [cursor=pointer]:
+                  - /url: https://www.westwing.de/garten/
+              - listitem [ref=e22]:
+                - link "DEALS" [ref=e23] [cursor=pointer]:
+                  - /url: https://www.westwing.de/n/deals/
+              - listitem [ref=e24]:
+                - link "DESIGN SERVICE" [ref=e25] [cursor=pointer]:
+                  - /url: https://www.westwing.de/p/designservice/
+        - generic [ref=e27]:
+          - generic [ref=e32]:
+            - textbox [ref=e33]:
+              - /placeholder: Produktsuche
+            - button "Produktsuche" [ref=e34] [cursor=pointer]:
+              - img [ref=e35]
+          - link "Stores" [ref=e37] [cursor=pointer]:
+            - /url: /p/stores/
+            - img [ref=e39]
+          - link "Mein Konto" [ref=e42] [cursor=pointer]:
+            - /url: /customer/account/
+            - img [ref=e44]
+          - link "Wunschzettel (0 Artikel)" [ref=e46] [cursor=pointer]:
+            - /url: /customer/account/wishlist/
+            - img [ref=e50]
+          - link "Warenkorb (0 Artikel)" [ref=e52] [cursor=pointer]:
+            - /url: /cart/
+            - img [ref=e54]
+    - main [ref=e56]:
+      - generic [ref=e534]:
+        - button "Barrierefreiheits-Widget öffnen" [ref=e535] [cursor=pointer]:
+          - img [ref=e536]
+        - button "Barrierefreiheits-Widget schließen" [ref=e540] [cursor=pointer]:
+          - img [ref=e541]
+      - generic [ref=e58]:
+        - link "DESIGN-IKONEN DES LICHTS Artemide im SALE Jetzt entdecken" [ref=e61] [cursor=pointer]:
+          - /url: https://www.westwing.de/c/artemide-137016/
+          - generic [ref=e66]:
+            - generic [ref=e67]: DESIGN-IKONEN DES LICHTS
+            - paragraph [ref=e69]: Artemide im SALE
+            - button "Jetzt entdecken" [ref=e71]:
+              - generic [ref=e73]: Jetzt entdecken
+        - generic [ref=e78]:
+          - generic [ref=e80]: Entdecke unsere Kategorien
+          - generic [ref=e82]:
+            - link "Neu Neu" [ref=e84] [cursor=pointer]:
+              - /url: https://www.westwing.de/new-products/
+              - generic [ref=e85]:
+                - img "Neu" [ref=e88]
+                - generic [ref=e89]: Neu
+            - link "Möbel Möbel" [ref=e91] [cursor=pointer]:
+              - /url: https://www.westwing.de/moebel/
+              - generic [ref=e92]:
+                - img "Möbel" [ref=e95]
+                - generic [ref=e96]: Möbel
+            - link "Outdoor Outdoor" [ref=e98] [cursor=pointer]:
+              - /url: https://www.westwing.de/garten/
+              - generic [ref=e99]:
+                - img "Outdoor" [ref=e102]
+                - generic [ref=e103]: Outdoor
+            - link "Accessoires Accessoires" [ref=e105] [cursor=pointer]:
+              - /url: https://www.westwing.de/wohnaccessoires/
+              - generic [ref=e106]:
+                - img "Accessoires" [ref=e109]
+                - generic [ref=e110]: Accessoires
+            - link "Ostern Ostern" [ref=e112] [cursor=pointer]:
+              - /url: https://www.westwing.de/ostern/
+              - generic [ref=e113]:
+                - img "Ostern" [ref=e116]
+                - generic [ref=e117]: Ostern
+            - link "LEUCHTEN LEUCHTEN" [ref=e119] [cursor=pointer]:
+              - /url: https://www.westwing.de/leuchten/
+              - generic [ref=e120]:
+                - img "LEUCHTEN" [ref=e123]
+                - generic [ref=e124]: LEUCHTEN
+            - link "TEPPICHE TEPPICHE" [ref=e126] [cursor=pointer]:
+              - /url: https://www.westwing.de/teppiche/
+              - generic [ref=e127]:
+                - img "TEPPICHE" [ref=e130]
+                - generic [ref=e131]: TEPPICHE
+            - link "TEXTILIEN TEXTILIEN" [ref=e133] [cursor=pointer]:
+              - /url: https://www.westwing.de/heimtextilien/
+              - generic [ref=e134]:
+                - img "TEXTILIEN" [ref=e137]
+                - generic [ref=e138]: TEXTILIEN
+            - link "Geschirr & Servieren Geschirr & Servieren" [ref=e140] [cursor=pointer]:
+              - /url: https://www.westwing.de/tischaccessoires/
+              - generic [ref=e141]:
+                - img "Geschirr & Servieren" [ref=e144]
+                - generic [ref=e145]: Geschirr & Servieren
+            - link "Küche & Kochen Küche & Kochen" [ref=e147] [cursor=pointer]:
+              - /url: https://www.westwing.de/kueche-gedeckter-tisch/
+              - generic [ref=e148]:
+                - img "Küche & Kochen" [ref=e151]
+                - generic [ref=e152]: Küche & Kochen
+            - link "Kinder Kinder" [ref=e154] [cursor=pointer]:
+              - /url: https://www.westwing.de/kinder/
+              - generic [ref=e155]:
+                - img "Kinder" [ref=e158]
+                - generic [ref=e159]: Kinder
+            - link "GESCHENKE GESCHENKE" [ref=e161] [cursor=pointer]:
+              - /url: https://www.westwing.de/geschenk-ideen/
+              - generic [ref=e162]:
+                - img "GESCHENKE" [ref=e165]
+                - generic [ref=e166]: GESCHENKE
+            - link "Gutscheine Gutscheine" [ref=e168] [cursor=pointer]:
+              - /url: https://www.westwing.de/geschenkgutschein-zum-ausdrucken-verschiedene-werte-verfugbar.html?simple=DEQ25WET41848-818528
+              - generic [ref=e169]:
+                - img "Gutscheine" [ref=e172]
+                - generic [ref=e173]: Gutscheine
+            - link "Deals Deals" [ref=e175] [cursor=pointer]:
+              - /url: https://www.westwing.de/n/deals/
+              - generic [ref=e176]:
+                - img "Deals" [ref=e179]
+                - generic [ref=e180]: Deals
+        - generic [ref=e183]:
+          - link "Traumhaft schöne Betten Jetzt shoppen" [ref=e185] [cursor=pointer]:
+            - /url: https://www.westwing.de/betten/
+            - generic [ref=e188]:
+              - generic [ref=e189]: Traumhaft schöne Betten
+              - button "Jetzt shoppen" [ref=e191]:
+                - generic [ref=e193]: Jetzt shoppen
+          - link "Dress Your Bed Jetzt shoppen" [ref=e195] [cursor=pointer]:
+            - /url: https://www.westwing.de/schlafzimmertextilien/
+            - generic [ref=e198]:
+              - generic [ref=e199]: Dress Your Bed
+              - button "Jetzt shoppen" [ref=e201]:
+                - generic [ref=e203]: Jetzt shoppen
+        - link "Wenn die Tage länger werden... Genieße Deine Terrasse mit großzügigen Möbeln & Co. Jetzt shoppen" [ref=e206] [cursor=pointer]:
+          - /url: https://www.westwing.de/n/big-terrace/
+          - generic [ref=e209]:
+            - generic [ref=e210]: Wenn die Tage länger werden...
+            - generic [ref=e211]: Genieße Deine Terrasse mit großzügigen Möbeln & Co.
+            - button "Jetzt shoppen" [ref=e213]:
+              - generic [ref=e215]: Jetzt shoppen
+        - generic [ref=e221]:
+          - paragraph [ref=e222]: Sofa Wolke
+          - link "Jetzt entdecken" [ref=e226] [cursor=pointer]:
+            - /url: https://www.westwing.de/p/wolke-sofa-collection/
+            - button "Jetzt entdecken" [ref=e227]:
+              - generic [ref=e229]: Jetzt entdecken
+          - generic [ref=e230]:
+            - link [ref=e231] [cursor=pointer]:
+              - /url: https://www.westwing.de/p/wolke-sofa-collection/
+            - generic [ref=e233]:
+              - generic [ref=e235]:
+                - generic [ref=e237]:
+                  - link "Modulares Bouclé-Sofa Wolke (3-Sitzer)" [ref=e238] [cursor=pointer]:
+                    - /url: /modulares-sofa-wolke-3-sitzer-aus-boucle-159800.html
+                    - img "Modulares Bouclé-Sofa Wolke (3-Sitzer)" [ref=e242]
+                  - button "Produkt zur Wunschliste hinzufügen" [ref=e246] [cursor=pointer]:
+                    - img [ref=e249]
+                - generic [ref=e251]:
+                  - link "Modulares Bouclé-Sofa Wolke (3-Sitzer)" [ref=e252] [cursor=pointer]:
+                    - /url: /modulares-sofa-wolke-3-sitzer-aus-boucle-159800.html
+                    - generic [ref=e254]: Modulares Bouclé-Sofa Wolke (3-Sitzer)
+                  - link "Aktueller Preis 2.099 €" [ref=e256] [cursor=pointer]:
+                    - /url: /modulares-sofa-wolke-3-sitzer-aus-boucle-159800.html
+                    - generic [ref=e258]:
+                      - generic [ref=e259]: Aktueller Preis
+                      - generic [ref=e260]: 2.099 €
+              - generic [ref=e262]:
+                - generic [ref=e264]:
+                  - link "Modulares Sofa Wolke (4-Sitzer) aus Teddy-Bouclé" [ref=e265] [cursor=pointer]:
+                    - /url: /modulares-sofa-wolke-4-sitzer-aus-teddy-boucle-159847.html
+                    - img "Modulares Sofa Wolke (4-Sitzer) aus Teddy-Bouclé" [ref=e269]
+                  - button "Produkt zur Wunschliste hinzufügen" [ref=e273] [cursor=pointer]:
+                    - img [ref=e276]
+                - generic [ref=e278]:
+                  - link "Modulares Sofa Wolke (4-Sitzer) aus Teddy-Bouclé" [ref=e279] [cursor=pointer]:
+                    - /url: /modulares-sofa-wolke-4-sitzer-aus-teddy-boucle-159847.html
+                    - generic [ref=e281]: Modulares Sofa Wolke (4-Sitzer) aus Teddy-Bouclé
+                  - link "Aktueller Preis 2.499 €" [ref=e283] [cursor=pointer]:
+                    - /url: /modulares-sofa-wolke-4-sitzer-aus-teddy-boucle-159847.html
+                    - generic [ref=e285]:
+                      - generic [ref=e286]: Aktueller Preis
+                      - generic [ref=e287]: 2.499 €
+              - generic [ref=e289]:
+                - generic [ref=e291]:
+                  - link "Modulares XL-Ecksofa Wolke (4-Sitzer) aus Teddy-Bouclé mit Chaiselongue-Enden" [ref=e292] [cursor=pointer]:
+                    - /url: /wolke_corner-sofa-with-2-open-end-modules_euphoria_9_ockergelb-en-25wes75125.html
+                    - img "Modulares XL-Ecksofa Wolke (4-Sitzer) aus Teddy-Bouclé mit Chaiselongue-Enden" [ref=e296]
+                  - button "Produkt zur Wunschliste hinzufügen" [ref=e300] [cursor=pointer]:
+                    - img [ref=e303]
+                - generic [ref=e305]:
+                  - link "Modulares XL-Ecksofa Wolke (4-Sitzer) aus Teddy-Bouclé mit Chaiselongue-Enden" [ref=e306] [cursor=pointer]:
+                    - /url: /wolke_corner-sofa-with-2-open-end-modules_euphoria_9_ockergelb-en-25wes75125.html
+                    - generic [ref=e308]: Modulares XL-Ecksofa Wolke (4-Sitzer) aus Teddy-Bouclé mit Chaiselongue-Enden
+                  - link "Aktueller Preis 3.299 €" [ref=e310] [cursor=pointer]:
+                    - /url: /wolke_corner-sofa-with-2-open-end-modules_euphoria_9_ockergelb-en-25wes75125.html
+                    - generic [ref=e312]:
+                      - generic [ref=e313]: Aktueller Preis
+                      - generic [ref=e314]: 3.299 €
+              - generic [ref=e316]:
+                - generic [ref=e318]:
+                  - link "Modulares Ecksofa Wolke (4-Sitzer)" [ref=e319] [cursor=pointer]:
+                    - /url: /fsc-wolke-corner-sofa-corner-left-middle-rounded-corner-corner-right-froca-burberry-beige-4-en-25wes69035.html
+                    - img "Modulares Ecksofa Wolke (4-Sitzer)" [ref=e323]
+                  - button "Produkt zur Wunschliste hinzufügen" [ref=e327] [cursor=pointer]:
+                    - img [ref=e330]
+                - generic [ref=e332]:
+                  - link "Modulares Ecksofa Wolke (4-Sitzer)" [ref=e333] [cursor=pointer]:
+                    - /url: /fsc-wolke-corner-sofa-corner-left-middle-rounded-corner-corner-right-froca-burberry-beige-4-en-25wes69035.html
+                    - generic [ref=e335]: Modulares Ecksofa Wolke (4-Sitzer)
+                  - link "Aktueller Preis 3.799 €" [ref=e337] [cursor=pointer]:
+                    - /url: /fsc-wolke-corner-sofa-corner-left-middle-rounded-corner-corner-right-froca-burberry-beige-4-en-25wes69035.html
+                    - generic [ref=e339]:
+                      - generic [ref=e340]: Aktueller Preis
+                      - generic [ref=e341]: 3.799 €
+        - link "INSPIRATION Entdecke täglich neue Specials & exklusive Sales Jetzt shoppen" [ref=e344] [cursor=pointer]:
+          - /url: https://www.westwing.de/campaign/
+          - generic [ref=e346]:
+            - generic [ref=e347]: INSPIRATION
+            - generic [ref=e348]: Entdecke täglich neue Specials & exklusive Sales
+            - generic [ref=e349]: Jetzt shoppen
+        - generic [ref=e352]:
+          - slider "Verwenden Sie die Pfeiltasten, um im Bild zu navigieren" [ref=e544] [cursor=pointer]:
+            - generic [ref=e364]:
+              - img [ref=e366]
+              - img [ref=e369]
+          - generic [ref=e372]:
+            - generic [ref=e373]: EINRICHTUNGSBERATUNG FÜR DICH
+            - heading "Raumkonzepte unseres Design Services" [level=2] [ref=e374]
+            - generic [ref=e375]: Starte Dein Projekt mit unserem Interior Design Team und erhalte ein Raumkonzept für Dein Zuhause.
+            - link "Jetzt buchen" [ref=e377] [cursor=pointer]:
+              - /url: https://www.westwing.de/p/designservice/?utm_source=ids_club&utm_medium=referral-design-service&utm_campaign=ids_hba_service_25
+              - generic [ref=e379]: Jetzt buchen
+        - link "UNSER GESCHÄFTSKUNDEN-SERVICE Individuelle Lösungen für Dein Unternehmen Jetzt entdecken" [ref=e382] [cursor=pointer]:
+          - /url: https://www.westwing.de/b2b/?utm_source=B2BInternalFooter&utm_medium=Footer&utm_campaign=Footer&utm_id=B2B
+          - generic [ref=e384]:
+            - generic [ref=e385]: UNSER GESCHÄFTSKUNDEN-SERVICE
+            - generic [ref=e386]: Individuelle Lösungen für Dein Unternehmen
+            - generic [ref=e387]: Jetzt entdecken
+        - generic [ref=e390]:
+          - generic [ref=e392]: Entdecke mehr
+          - generic [ref=e394]:
+            - link "Neuheiten von Eva Solo" [ref=e396] [cursor=pointer]:
+              - /url: https://www.westwing.de/brands/eva-solo/
+              - generic [ref=e400]: Neuheiten von Eva Solo
+            - link "Entdecke unsere Homestories" [ref=e402] [cursor=pointer]:
+              - /url: https://www.westwing.de/homestories/
+              - generic [ref=e406]: Entdecke unsere Homestories
+            - link "Interior-Highlights im SALE" [ref=e408] [cursor=pointer]:
+              - /url: https://www.westwing.de/n/deals/
+              - generic [ref=e412]: Interior-Highlights im SALE
+    - generic [ref=e413]:
+      - generic [ref=e546]:
+        - generic [ref=e547]:
+          - generic [ref=e548]:
+            - text: Jetzt zum
+            - strong [ref=e550]: Newsletter
+            - text: anmelden und erhalte 10 % Rabatt auf Deinen ersten Einkauf*
+          - generic [ref=e551]: Erhalte exklusiven Zugang zu den neuesten Interior-Trends, kuratierten Angeboten und Design-Tipps von unseren Experten
+        - generic [ref=e557]:
+          - textbox "E-Mail-Adresse" [ref=e558]
+          - generic: E-Mail-Adresse
+      - contentinfo [ref=e414]:
+        - generic [ref=e416]:
+          - generic [ref=e418]:
+            - generic [ref=e420]: Sichere Bezahlung
+            - generic [ref=e421]:
+              - generic:
+                - generic:
+                  - img "PayPal Logo"
+                - generic:
+                  - img "Mastercard Logo"
+                - generic:
+                  - img "Visa Logo"
+                - generic:
+                  - img "Amex Logo"
+                - generic:
+                  - img "Klarna Logo"
+                - generic:
+                  - img "Vorkasse"
+                - generic:
+                  - img "ApplePay Logo"
+                - generic:
+                  - img "GooglePay Logo"
+          - generic [ref=e423]:
+            - generic [ref=e425]: Sicherer Versand
+            - generic [ref=e426]:
+              - generic:
+                - generic:
+                  - img "Dhl Logo"
+                - generic:
+                  - img "Hermes Logo"
+                - generic:
+                  - img "Rhenus Logo"
+                - generic:
+                  - img "WestwingDeliveryService Logo"
+          - generic [ref=e428]:
+            - generic [ref=e430]: Hilfe & Kontakt
+            - generic [ref=e432]:
+              - link "Bestellübersicht (Öffnet in neuem Fenster)" [ref=e434] [cursor=pointer]:
+                - /url: https://support.westwing.com/hc/de-de/articles/18919599768082-Wo-finde-ich-eine-%C3%9Cbersicht-%C3%BCber-meine-Bestellungen
+                - text: Bestellübersicht
+              - link "Sendung verfolgen (Öffnet in neuem Fenster)" [ref=e436] [cursor=pointer]:
+                - /url: https://support.westwing.com/hc/de-de/articles/18919918499858-Wie-finde-ich-die-Sendungsverfolgung
+                - text: Sendung verfolgen
+              - link "Bestellung retournieren (Öffnet in neuem Fenster)" [ref=e438] [cursor=pointer]:
+                - /url: https://support.westwing.com/hc/de-de/articles/18716977126546-Wie-kann-ich-eine-Retoure-anmelden
+                - text: Bestellung retournieren
+              - link "Lieferzeiten (Öffnet in neuem Fenster)" [ref=e440] [cursor=pointer]:
+                - /url: https://support.westwing.com/hc/de-de/articles/18926550261138-Was-sind-die-Lieferzeiten-bei-Westwing
+                - text: Lieferzeiten
+              - link "Alle Hilfethemen (Öffnet in neuem Fenster)" [ref=e442] [cursor=pointer]:
+                - /url: https://support.westwing.com/hc/de-de
+                - text: Alle Hilfethemen
+              - link "Kontakt (Öffnet in neuem Fenster)" [ref=e444] [cursor=pointer]:
+                - /url: https://support.westwing.com/hc/de-de/requests/new
+                - text: Kontakt
+              - generic:
+                - generic: +49 (89) 41207272
+              - generic:
+                - generic: "Mo-Sa: 07:00 - 19:00 Uhr"
+              - generic:
+                - generic: "E-mail: service@westwing.de"
+          - generic [ref=e446]:
+            - generic [ref=e448]: Über Westwing
+            - generic [ref=e450]:
+              - link "Karriere" [ref=e452] [cursor=pointer]:
+                - /url: https://www.westwing.com/careers/
+              - link "Corporate Website" [ref=e454] [cursor=pointer]:
+                - /url: https://www.westwing.com/home/
+              - link "Presse" [ref=e456] [cursor=pointer]:
+                - /url: "https://www.westwing.com/newsroom/ "
+              - link "Affiliate Programm" [ref=e458] [cursor=pointer]:
+                - /url: https://www.westwing.de/i/affiliate-program/
+              - link "10 Jahre Garantie" [ref=e460] [cursor=pointer]:
+                - /url: https://www.westwing.de/p/warranty/
+              - link "Produkt Pflegehinweise" [ref=e462] [cursor=pointer]:
+                - /url: https://www.westwing.de/p/produktpflege-guide/
+          - generic [ref=e464]:
+            - generic [ref=e466]: Nützliche Informationen
+            - generic [ref=e468]:
+              - link "Westwing Design Service" [ref=e470] [cursor=pointer]:
+                - /url: https://www.westwing.de/p/designservice/
+              - link "Westwing Business - B2B" [ref=e472] [cursor=pointer]:
+                - /url: https://www.westwing.de/b2b/?utm_source=B2BInternalFooter&utm_medium=Footer&utm_campaign=Footer&utm_id=B2B
+              - link "Stores" [ref=e474] [cursor=pointer]:
+                - /url: https://www.westwing.de/p/stores/
+              - link "Wohninspiration" [ref=e476] [cursor=pointer]:
+                - /url: https://www.westwing.de/inspiration/
+              - link "Umwelt & Entsorgung" [ref=e478] [cursor=pointer]:
+                - /url: https://www.westwing.de/i/umwelt_und_entsorgung/
+              - link "Gutscheine" [ref=e480] [cursor=pointer]:
+                - /url: https://www.westwing.de/geschenkgutschein-zum-ausdrucken-verschiedene-werte-verfugbar.html?simple=DEQ25WET41848-818528
+              - link "Newsletter" [ref=e482] [cursor=pointer]:
+                - /url: https://www.westwing.de/p/newsletter/?utm_source=footer&utm_medium=internal
+          - generic [ref=e484]:
+            - generic [ref=e486]: Nachhaltigkeit
+            - generic [ref=e488]:
+              - link "Unser Nachhaltigkeitsversprechen" [ref=e490] [cursor=pointer]:
+                - /url: https://www.westwing.com/sustainability/
+              - link "Insights & Stories" [ref=e492] [cursor=pointer]:
+                - /url: https://www.westwing.com/sustainability/insights/
+          - generic [ref=e494]:
+            - paragraph [ref=e495]: Westwing Apps
+            - generic:
+              - link "android" [ref=e496] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=de.westwing.android&hl=de
+                - img "JETZT BEI Google Play" [ref=e497]
+              - link "ios" [ref=e498] [cursor=pointer]:
+                - /url: https://apps.apple.com/de/app/westwing-live-beautiful/id637660112
+                - img "Laden im App Store" [ref=e499]
+          - generic [ref=e501]:
+            - paragraph [ref=e502]: Follow us
+            - generic:
+              - link "instagram" [ref=e503] [cursor=pointer]:
+                - /url: https://www.instagram.com/westwingcom/
+                - img [ref=e504]
+              - link "pinterest" [ref=e506] [cursor=pointer]:
+                - /url: https://www.pinterest.com/westwingcom
+                - img [ref=e507]
+              - link "tiktok" [ref=e509] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@westwing
+                - img [ref=e510]
+              - link "youtube" [ref=e512] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/WestwingDeutschland
+                - img [ref=e513]
+        - generic [ref=e516]:
+          - generic [ref=e517]:
+            - generic [ref=e518]: © 2011 – 2026 Westwing
+            - generic [ref=e519]:
+              - link "Impressum" [ref=e520] [cursor=pointer]:
+                - /url: https://www.westwing.de/i/imprint/
+              - link "AGB" [ref=e522] [cursor=pointer]:
+                - /url: https://www.westwing.de/i/terms_and_conditions/
+              - link "AGB B2B" [ref=e524] [cursor=pointer]:
+                - /url: https://www.westwing.de/i/terms_and_conditions_b2b/
+              - link "Datenschutz" [ref=e526] [cursor=pointer]:
+                - /url: https://www.westwing.de/i/privacy_policy/
+          - button "Germany Deutschland | Deutsch" [ref=e527] [cursor=pointer]:
+            - generic [ref=e528]:
+              - img "Germany" [ref=e530]
+              - generic [ref=e531]: Deutschland | Deutsch
+              - img [ref=e532]
+  - complementary

@@ -1,0 +1,340 @@
+- generic [ref=e3]:
+  - link "Skip to main content" [ref=e4] [cursor=pointer]:
+    - /url: "#maincontent"
+  - complementary [ref=e5]:
+    - generic [ref=e6]:
+      - button "Switch region" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+        - img [ref=e20]
+      - paragraph [ref=e22]:
+        - strong [ref=e23]: Trade professional?
+        - link "Sign up" [ref=e24] [cursor=pointer]:
+          - /url: /hem-pro
+        - text: to Hem Pro.
+      - button "Need assistance? Chat with an expert." [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - img [ref=e29]
+            - img [ref=e30]
+          - generic [ref=e31]:
+            - img [ref=e33]
+            - img [ref=e34]
+          - generic [ref=e35]:
+            - img [ref=e37]
+            - img [ref=e38]
+        - generic [ref=e39]: Chat with an expert
+  - navigation [ref=e40]:
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - button "Menu" [ref=e43] [cursor=pointer]:
+          - img [ref=e44]
+        - link "Hem" [ref=e46] [cursor=pointer]:
+          - /url: /en-eu
+          - generic [ref=e47]: Hem
+          - img [ref=e48]
+      - button "Shop furniture, lighting, rugs, and accessories ⌘ K" [ref=e50] [cursor=pointer]:
+        - generic [ref=e51]:
+          - img [ref=e52]
+          - paragraph [ref=e55]: Shop furniture, lighting, rugs, and accessories
+        - generic [ref=e56]:
+          - generic [ref=e57]: ⌘
+          - generic [ref=e58]: K
+      - generic [ref=e59]:
+        - link "Log in" [ref=e60] [cursor=pointer]:
+          - /url: /en-eu/hem-pro
+          - img [ref=e61]
+          - generic [ref=e64]: Log in
+        - button "Shopping bag" [ref=e65] [cursor=pointer]:
+          - img [ref=e66]
+          - generic [ref=e69]: Shopping bag
+  - main [ref=e70]:
+    - list [ref=e71]:
+      - listitem [ref=e72]:
+        - link "Home" [ref=e73] [cursor=pointer]:
+          - /url: /en-eu
+      - listitem [ref=e74]:
+        - img [ref=e75]
+        - link "Furniture" [ref=e77] [cursor=pointer]:
+          - /url: /en-eu/furniture
+      - listitem [ref=e78]:
+        - img [ref=e79]
+        - text: Chairs and stools
+    - generic [ref=e81]:
+      - heading "Chairs and stools" [level=1] [ref=e82]
+      - paragraph [ref=e83]: We’ve engineered a collection of seats for every situation and interior, from the ultimate easy chair to the perfect bistro chair. You are always seated in comfort and style.
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - button "Filter by category" [ref=e87] [cursor=pointer]:
+            - generic [ref=e88]: Categories
+            - img [ref=e89]
+          - button "Filter by designer" [ref=e91] [cursor=pointer]:
+            - generic [ref=e92]: Design by
+            - img [ref=e93]
+          - button "Filter by material" [ref=e95] [cursor=pointer]:
+            - generic [ref=e96]: Material
+            - img [ref=e97]
+          - button "Filter by color" [ref=e99] [cursor=pointer]:
+            - generic [ref=e100]: Color
+            - img [ref=e101]
+          - button "Filter by ships within" [ref=e103] [cursor=pointer]:
+            - generic [ref=e104]: Ships within
+            - img [ref=e105]
+          - button "Sort by" [ref=e108] [cursor=pointer]:
+            - img [ref=e109]
+            - generic [ref=e112]: Sort by
+        - paragraph [ref=e113]
+        - list
+      - list [ref=e120]:
+        - list [ref=e126]:
+          - listitem [ref=e127]
+          - listitem [ref=e129]
+        - list [ref=e137]:
+          - listitem [ref=e138]
+          - listitem [ref=e140]
+        - list [ref=e148]:
+          - listitem [ref=e149]
+          - listitem [ref=e151]
+        - list [ref=e159]:
+          - listitem [ref=e160]
+          - listitem [ref=e162]
+        - list [ref=e170]:
+          - listitem [ref=e171]
+          - listitem [ref=e173]
+        - list [ref=e181]:
+          - listitem [ref=e182]
+          - listitem [ref=e184]
+        - list [ref=e192]:
+          - listitem [ref=e193]
+          - listitem [ref=e195]
+        - list [ref=e203]:
+          - listitem [ref=e204]
+          - listitem [ref=e206]
+        - list [ref=e214]:
+          - listitem [ref=e215]
+          - listitem [ref=e217]
+        - list [ref=e225]:
+          - listitem [ref=e226]
+          - listitem [ref=e228]
+        - list [ref=e236]:
+          - listitem [ref=e237]
+          - listitem [ref=e239]
+        - list [ref=e247]:
+          - listitem [ref=e248]
+          - listitem [ref=e250]
+        - list [ref=e258]:
+          - listitem [ref=e259]
+          - listitem [ref=e261]
+        - list [ref=e269]:
+          - listitem [ref=e270]
+          - listitem [ref=e272]
+        - list [ref=e280]:
+          - listitem [ref=e281]
+          - listitem [ref=e283]
+        - list [ref=e291]:
+          - listitem [ref=e292]
+          - listitem [ref=e294]
+        - list [ref=e302]:
+          - listitem [ref=e303]
+          - listitem [ref=e305]
+        - list [ref=e313]:
+          - listitem [ref=e314]
+          - listitem [ref=e316]
+        - list [ref=e324]:
+          - listitem [ref=e325]
+          - listitem [ref=e327]
+        - list [ref=e335]:
+          - listitem [ref=e336]
+          - listitem [ref=e338]
+        - list [ref=e346]:
+          - listitem [ref=e347]
+          - listitem [ref=e349]
+        - list [ref=e357]:
+          - listitem [ref=e358]
+          - listitem [ref=e360]
+        - list [ref=e368]:
+          - listitem [ref=e369]
+          - listitem [ref=e371]
+        - list [ref=e379]:
+          - listitem [ref=e380]
+          - listitem [ref=e382]
+        - list [ref=e390]:
+          - listitem [ref=e391]
+          - listitem [ref=e393]
+        - list [ref=e401]:
+          - listitem [ref=e402]
+          - listitem [ref=e404]
+        - list [ref=e412]:
+          - listitem [ref=e413]
+          - listitem [ref=e415]
+        - list [ref=e423]:
+          - listitem [ref=e424]
+          - listitem [ref=e426]
+        - list [ref=e434]:
+          - listitem [ref=e435]
+          - listitem [ref=e437]
+        - list [ref=e445]:
+          - listitem [ref=e446]
+          - listitem [ref=e448]
+        - list [ref=e456]:
+          - listitem [ref=e457]
+          - listitem [ref=e459]
+        - list [ref=e467]:
+          - listitem [ref=e468]
+          - listitem [ref=e470]
+        - list [ref=e478]:
+          - listitem [ref=e479]
+          - listitem [ref=e481]
+        - list [ref=e489]:
+          - listitem [ref=e490]
+          - listitem [ref=e492]
+        - list [ref=e500]:
+          - listitem [ref=e501]
+          - listitem [ref=e503]
+        - list [ref=e511]:
+          - listitem [ref=e512]
+          - listitem [ref=e514]
+        - list [ref=e522]:
+          - listitem [ref=e523]
+          - listitem [ref=e525]
+        - list [ref=e533]:
+          - listitem [ref=e534]
+          - listitem [ref=e536]
+        - list [ref=e544]:
+          - listitem [ref=e545]
+          - listitem [ref=e547]
+        - list [ref=e555]:
+          - listitem [ref=e556]
+          - listitem [ref=e558]
+        - list [ref=e566]:
+          - listitem [ref=e567]
+          - listitem [ref=e569]
+        - list [ref=e577]:
+          - listitem [ref=e578]
+          - listitem [ref=e580]
+        - list [ref=e588]:
+          - listitem [ref=e589]
+          - listitem [ref=e591]
+        - list [ref=e599]:
+          - listitem [ref=e600]
+          - listitem [ref=e602]
+        - list [ref=e610]:
+          - listitem [ref=e611]
+          - listitem [ref=e613]
+        - list [ref=e621]:
+          - listitem [ref=e622]
+          - listitem [ref=e624]
+        - list [ref=e632]:
+          - listitem [ref=e633]
+          - listitem [ref=e635]
+        - list [ref=e643]:
+          - listitem [ref=e644]
+          - listitem [ref=e646]
+    - paragraph [ref=e649]
+    - generic [ref=e655]:
+      - paragraph [ref=e656]: Imaginative designs of obsessive quality
+      - paragraph [ref=e657]: By rethinking what it means to be a premium furniture brand, we hope to drive our industry forward and inspire creative discourse. We want Hem to be a platform for creativity and a resource for designers everywhere. To us, Hem represents a concept— an idea. We believe in the power great design, and we want to share it with the world.
+  - contentinfo [ref=e658]:
+    - generic [ref=e659]:
+      - generic [ref=e660]:
+        - img [ref=e663]
+        - generic [ref=e667]:
+          - generic [ref=e668]:
+            - paragraph [ref=e669]: Design professional? Join Hem Pro
+            - paragraph [ref=e670]: Hem Pro is our dedicated trade program for design professionals, giving you instant access to exclusive trade discounts, complimentary material samples, and real-time stock levels.
+          - link "Learn more about Hem Pro" [ref=e672] [cursor=pointer]:
+            - /url: /en-eu/hem-pro
+            - text: Learn more
+      - navigation [ref=e673]:
+        - list [ref=e674]:
+          - listitem [ref=e675]:
+            - paragraph [ref=e676]: About
+          - listitem [ref=e677]:
+            - link "About us" [ref=e678] [cursor=pointer]:
+              - /url: /en-eu/about-us
+          - listitem [ref=e679]:
+            - link "Sustainability" [ref=e680] [cursor=pointer]:
+              - /url: /en-eu/sustainability-commitment
+          - listitem [ref=e681]:
+            - link "International resellers" [ref=e682] [cursor=pointer]:
+              - /url: /en-eu/international-retailers
+          - listitem [ref=e683]:
+            - link "Careers at Hem" [ref=e684] [cursor=pointer]:
+              - /url: https://careers.hem.com/
+          - listitem [ref=e685]:
+            - link "Follow us @hem" [ref=e686] [cursor=pointer]:
+              - /url: https://www.instagram.com/hem/
+        - list [ref=e687]:
+          - listitem [ref=e688]:
+            - paragraph [ref=e689]: Support
+          - listitem [ref=e690]:
+            - link "Contact us" [ref=e691] [cursor=pointer]:
+              - /url: /en-eu/contact-us
+          - listitem [ref=e692]:
+            - link "Frequently asked questions" [ref=e693] [cursor=pointer]:
+              - /url: https://help.hem.com
+          - listitem [ref=e694]:
+            - link "Care instructions" [ref=e695] [cursor=pointer]:
+              - /url: /en-eu/care-instructions
+          - listitem [ref=e696]:
+            - link "Submit a claim" [ref=e697] [cursor=pointer]:
+              - /url: /en-eu/claims
+        - list [ref=e698]:
+          - listitem [ref=e699]:
+            - paragraph [ref=e700]: Partners and trade
+          - listitem [ref=e701]:
+            - link "Hem Pro" [ref=e702] [cursor=pointer]:
+              - /url: /en-eu/hem-pro
+          - listitem [ref=e703]:
+            - link "Press downloads" [ref=e704] [cursor=pointer]:
+              - /url: https://drive.google.com/drive/folders/1adPetfOl-lpCTw4ii_o5mwjlhtLkw-c3?usp=share_link
+          - listitem [ref=e705]:
+            - link "Our designers" [ref=e706] [cursor=pointer]:
+              - /url: /en-eu/designers
+          - listitem [ref=e707]:
+            - link "Certifications" [ref=e708] [cursor=pointer]:
+              - /url: /en-eu/certifications
+          - listitem [ref=e709]:
+            - link "Get samples" [ref=e710] [cursor=pointer]:
+              - /url: /en-eu/samples
+      - generic [ref=e711]:
+        - generic [ref=e712]:
+          - paragraph [ref=e713]: Weekly inbox inspiration
+          - paragraph [ref=e714]: Sign up to the newsletter!
+          - paragraph [ref=e715]: Get a 10% discount on your first order, updates on sales and campaigns, exclusive pre-access to product launches, and weekly inspiration.
+        - generic [ref=e716]:
+          - generic [ref=e717]:
+            - generic [ref=e718]:
+              - generic [ref=e719]:
+                - generic [ref=e720]: Your first name
+                - generic [ref=e721]: Optional
+              - textbox "Your first name Optional" [ref=e722]:
+                - /placeholder: ""
+            - generic [ref=e723]:
+              - generic [ref=e725]: Your email address
+              - textbox "Your email address" [ref=e726]:
+                - /placeholder: ""
+            - button "Sign up" [ref=e727] [cursor=pointer]:
+              - generic [ref=e728]: Sign up
+          - paragraph [ref=e729]:
+            - text: By signing up to our newsletter you agree to our
+            - link "Privacy policy" [ref=e730] [cursor=pointer]:
+              - /url: /en-eu/privacy-policy
+      - navigation [ref=e731]:
+        - generic [ref=e732]: © 2026 Hem, All rights reserved
+        - generic [ref=e733]:
+          - img "Visa" [ref=e734]
+          - img "Mastercard" [ref=e740]
+          - img "American Express" [ref=e746]
+          - img "PayPal" [ref=e750]
+        - list [ref=e757]:
+          - listitem [ref=e758]:
+            - link "Terms and conditions" [ref=e759] [cursor=pointer]:
+              - /url: /en-eu/terms-and-conditions
+          - listitem [ref=e760]:
+            - link "Privacy policy" [ref=e761] [cursor=pointer]:
+              - /url: /en-eu/privacy-policy
+          - listitem [ref=e762]:
+            - link "Shipping & return policy" [ref=e763] [cursor=pointer]:
+              - /url: /en-eu/shipping-and-return-policy
+    - img [ref=e765]

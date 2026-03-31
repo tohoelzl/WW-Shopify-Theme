@@ -1,0 +1,676 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - list [ref=e6]:
+        - listitem [ref=e7]: Gratis Paketversand ab 79 €
+        - listitem [ref=e8]: 24.000 Produkte lagernd
+        - listitem [ref=e9]: 60 Tage Rückgaberecht
+      - generic [ref=e10]:
+        - generic:
+          - link "Direkt zum Seiteninhalt springen" [ref=e11] [cursor=pointer]:
+            - /url: "#PageContent"
+          - button "Direkt zum Suchfeld springen" [ref=e12] [cursor=pointer]
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - heading "Connox Wohndesign | Möbel & Wohnaccessoires" [level=1]
+          - generic [ref=e15]:
+            - link "Kundenservice" [ref=e17] [cursor=pointer]:
+              - /url: https://www.connox.de/kundenservice.html
+            - generic [ref=e18]:
+              - link "Kundenkonto" [ref=e19] [cursor=pointer]:
+                - /url: https://www.connox.de/benutzerkonto.html
+                - generic [ref=e20]: Kundenkonto
+              - link "Wunschliste" [ref=e21] [cursor=pointer]:
+                - /url: https://www.connox.de/kundenkonto/wunschlisten.html
+                - generic [ref=e22]: Wunschliste
+              - button "Warenkorb" [ref=e24] [cursor=pointer]:
+                - generic [ref=e25]: Shopping cart
+        - navigation "Hauptmenü" [ref=e26]:
+          - menu [ref=e27]:
+            - listitem [ref=e28]:
+              - menuitem "Produkte Seite aufrufen" [ref=e29] [cursor=pointer]: Produkte
+              - button "Produkte Untermenü auf- oder zuklappen" [ref=e30]
+            - listitem [ref=e36]:
+              - menuitem "Räume Seite aufrufen" [ref=e37] [cursor=pointer]: Räume
+              - button "Räume Untermenü auf- oder zuklappen" [ref=e38]
+            - listitem [ref=e44]:
+              - menuitem "Outdoor Seite aufrufen" [ref=e45] [cursor=pointer]: Outdoor
+              - button "Outdoor Untermenü auf- oder zuklappen" [ref=e46]
+            - listitem [ref=e52]:
+              - menuitem "Looks Seite aufrufen" [ref=e53] [cursor=pointer]: Looks
+            - listitem [ref=e54]:
+              - menuitem "Marken Seite aufrufen" [ref=e55] [cursor=pointer]: Marken
+            - listitem [ref=e56]:
+              - menuitem "Neu Seite aufrufen" [ref=e57] [cursor=pointer]: Neu
+            - listitem [ref=e58]:
+              - menuitem "Inspiration Seite aufrufen" [ref=e59] [cursor=pointer]: Inspiration
+              - button "Inspiration Untermenü auf- oder zuklappen" [ref=e60]
+            - listitem [ref=e64]
+            - listitem [ref=e65]:
+              - menuitem "SALE Seite aufrufen" [ref=e66] [cursor=pointer]: SALE
+            - listitem [ref=e67]:
+              - button "Suchfeld öffnen" [ref=e68] [cursor=pointer]
+    - generic [ref=e73]:
+      - img "Angebote und mehr" [ref=e75]
+      - generic [ref=e77]:
+        - heading "Ostern bei Connox" [level=2] [ref=e78]
+        - paragraph [ref=e79]: Angebote und mehr
+        - link "Jetzt entdecken" [ref=e80] [cursor=pointer]:
+          - /url: /ostern-bei-connox.html
+    - generic [ref=e82]:
+      - heading "Unsere Top Kategorien" [level=2] [ref=e84]
+      - generic [ref=e92]:
+        - generic:
+          - link "Stühle Stühle" [ref=e95] [cursor=pointer]:
+            - /url: /kategorien/moebel/sitzmoebel/stuehle.html
+            - img "Stühle" [ref=e96]
+            - heading "Stühle" [level=2] [ref=e97]
+          - link "Regale Regale" [ref=e100] [cursor=pointer]:
+            - /url: /kategorien/moebel/regale.html
+            - img "Regale" [ref=e101]
+            - heading "Regale" [level=2] [ref=e102]
+          - link "Pendelleuchten Pendelleuchten" [ref=e105] [cursor=pointer]:
+            - /url: /kategorien/leuchten/pendelleuchten.html
+            - img "Pendelleuchten" [ref=e106]
+            - heading "Pendelleuchten" [level=2] [ref=e107]
+          - link "Tischleuchten Tischleuchten" [ref=e110] [cursor=pointer]:
+            - /url: /kategorien/leuchten/tischleuchten.html
+            - img "Tischleuchten" [ref=e111]
+            - heading "Tischleuchten" [level=2] [ref=e112]
+          - link "Couchtische Couchtische" [ref=e115] [cursor=pointer]:
+            - /url: /kategorien/moebel/tische/couch-sofatische.html
+            - img "Couchtische" [ref=e116]
+            - heading "Couchtische" [level=2] [ref=e117]
+          - link "Kerzenständer Kerzenständer" [ref=e120] [cursor=pointer]:
+            - /url: /kategorien/dekoration/kerzenstaender.html
+            - img "Kerzenständer" [ref=e121]
+            - heading "Kerzenständer" [level=2] [ref=e122]
+          - link "Geschirr Geschirr" [ref=e125] [cursor=pointer]:
+            - /url: /kategorien/kochen/geschirr.html
+            - img "Geschirr" [ref=e126]
+            - heading "Geschirr" [level=2] [ref=e127]
+          - link "Teppiche Teppiche" [ref=e130] [cursor=pointer]:
+            - /url: /kategorien/accessoires/wohntextilien/teppiche.html
+            - img "Teppiche" [ref=e131]
+            - heading "Teppiche" [level=2] [ref=e132]
+          - link "Vasen Vasen" [ref=e135] [cursor=pointer]:
+            - /url: /kategorien/accessoires/dekoration/vasen-dekoration.html
+            - img "Vasen" [ref=e136]
+            - heading "Vasen" [level=2] [ref=e137]
+          - link "Stehleuchten Stehleuchten" [ref=e140] [cursor=pointer]:
+            - /url: /kategorien/leuchten/stehleuchten.html
+            - img "Stehleuchten" [ref=e141]
+            - heading "Stehleuchten" [level=2] [ref=e142]
+          - link "Sofas Sofas" [ref=e145] [cursor=pointer]:
+            - /url: /kategorien/moebel/sitzmoebel/design-sofa.html
+            - img "Sofas" [ref=e146]
+            - heading "Sofas" [level=2] [ref=e148]
+    - generic [ref=e150]:
+      - heading "Highlights und Aktionen" [level=2] [ref=e152]
+      - generic [ref=e153]:
+        - generic:
+          - button "Previous slide" [ref=e154] [cursor=pointer]
+          - button "Next slide" [ref=e156] [cursor=pointer]
+        - generic [ref=e160]:
+          - generic:
+            - group "1 / 11" [ref=e161]:
+              - link "&Tradition Neuheiten entdecken &Tradition Jetzt entdecken" [ref=e163] [cursor=pointer]:
+                - /url: /tradition.html
+                - generic [ref=e165]:
+                  - img [ref=e167]
+                  - img "&Tradition" [ref=e168]
+                - generic [ref=e169]:
+                  - generic [ref=e170]:
+                    - text: Neuheiten entdecken
+                    - heading "&Tradition" [level=3] [ref=e171]
+                  - generic [ref=e173]: Jetzt entdecken
+            - group "2 / 11" [ref=e175]:
+              - link "HAY Organize yourself HAY Jetzt entdecken" [ref=e177] [cursor=pointer]:
+                - /url: /hay.html
+                - generic [ref=e179]:
+                  - img [ref=e181]
+                  - img "HAY" [ref=e182]
+                - generic [ref=e183]:
+                  - generic [ref=e184]:
+                    - text: Organize yourself
+                    - heading "HAY" [level=3] [ref=e185]
+                  - generic [ref=e187]: Jetzt entdecken
+            - group "3 / 11" [ref=e189]:
+              - link "Zuiver Bereit für warme Tage Zuiver Jetzt entdecken" [ref=e191] [cursor=pointer]:
+                - /url: /zuiver.html
+                - generic [ref=e193]:
+                  - img [ref=e195]
+                  - img "Zuiver" [ref=e196]
+                - generic [ref=e197]:
+                  - generic [ref=e198]:
+                    - text: Bereit für warme Tage
+                    - heading "Zuiver" [level=3] [ref=e199]
+                  - generic [ref=e201]: Jetzt entdecken
+            - group "4 / 11" [ref=e203]:
+              - link "Iittala Jetzt Bestseller im Sale entdecken Iittala Jetzt entdecken" [ref=e205] [cursor=pointer]:
+                - /url: /iittala-bestseller-sale.html
+                - generic [ref=e207]:
+                  - img [ref=e209]
+                  - img "Iittala" [ref=e210]
+                - generic [ref=e211]:
+                  - generic [ref=e212]:
+                    - text: Jetzt Bestseller im Sale entdecken
+                    - heading "Iittala" [level=3] [ref=e213]
+                  - generic [ref=e215]: Jetzt entdecken
+            - group "5 / 11" [ref=e217]:
+              - link "Ferm Living Jetzt Bestseller im Sale entdecken Ferm Living Jetzt entdecken" [ref=e219] [cursor=pointer]:
+                - /url: /ferm-living-bestseller-sale.html
+                - generic [ref=e221]:
+                  - img [ref=e223]
+                  - img "Ferm Living" [ref=e224]
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - text: Jetzt Bestseller im Sale entdecken
+                    - heading "Ferm Living" [level=3] [ref=e227]
+                  - generic [ref=e229]: Jetzt entdecken
+            - group "6 / 11" [ref=e231]:
+              - link "Alessi Jetzt Bestseller im Sale entdecken Alessi Jetzt entdecken" [ref=e233] [cursor=pointer]:
+                - /url: /alessi-bestseller-sale.html
+                - generic [ref=e235]:
+                  - img [ref=e237]
+                  - img "Alessi" [ref=e238]
+                - generic [ref=e239]:
+                  - generic [ref=e240]:
+                    - text: Jetzt Bestseller im Sale entdecken
+                    - heading "Alessi" [level=3] [ref=e241]
+                  - generic [ref=e243]: Jetzt entdecken
+            - group "7 / 11" [ref=e245]:
+              - link "Frühlingsgefühle mit Vitra Jetzt Frühlingsfavoriten entdecken Frühlingsgefühle mit Vitra Jetzt entdecken" [ref=e247] [cursor=pointer]:
+                - /url: /vitra.html
+                - generic [ref=e249]:
+                  - img [ref=e251]
+                  - img "Frühlingsgefühle mit Vitra" [ref=e252]
+                - generic [ref=e253]:
+                  - generic [ref=e254]:
+                    - text: Jetzt Frühlingsfavoriten entdecken
+                    - heading "Frühlingsgefühle mit Vitra" [level=3] [ref=e255]
+                  - generic [ref=e257]: Jetzt entdecken
+            - group "8 / 11" [ref=e259]:
+              - link "Der Connox Trendkompass 2026 Entdecke die Wohntrends fürs nächste Jahr Der Connox Trendkompass 2026 Jetzt entdecken" [ref=e261] [cursor=pointer]:
+                - /url: /der-connox-trendkompass.html
+                - generic:
+                  - img "Der Connox Trendkompass 2026"
+                - generic [ref=e263]:
+                  - generic [ref=e264]:
+                    - text: Entdecke die Wohntrends fürs nächste Jahr
+                    - heading "Der Connox Trendkompass 2026" [level=3] [ref=e265]
+                  - generic [ref=e267]: Jetzt entdecken
+            - group "9 / 11" [ref=e269]:
+              - link "Jetzt alle Sondereditionen entdecken Limited Editions Jetzt alle Sondereditionen entdecken Jetzt entdecken" [ref=e271] [cursor=pointer]:
+                - /url: /limited-editions.html
+                - generic:
+                  - img "Jetzt alle Sondereditionen entdecken"
+                - generic [ref=e273]:
+                  - generic [ref=e274]:
+                    - text: Limited Editions
+                    - heading "Jetzt alle Sondereditionen entdecken" [level=3] [ref=e275]
+                  - generic [ref=e277]: Jetzt entdecken
+            - group "10 / 11" [ref=e279]:
+              - link "Stoff Nagel Schönes für die Osterzeit Stoff Nagel Jetzt entdecken" [ref=e281] [cursor=pointer]:
+                - /url: /stoff-nagel.html
+                - generic:
+                  - img "Stoff Nagel"
+                - generic [ref=e283]:
+                  - generic [ref=e284]:
+                    - text: Schönes für die Osterzeit
+                    - heading "Stoff Nagel" [level=3] [ref=e285]
+                  - generic [ref=e287]: Jetzt entdecken
+            - group "11 / 11" [ref=e289]:
+              - link "Ostern bei Connox Erwecke Frühlingsgefühle Ostern bei Connox Jetzt entdecken" [ref=e291] [cursor=pointer]:
+                - /url: /ostern-bei-connox.html
+                - generic:
+                  - img "Ostern bei Connox"
+                - generic [ref=e293]:
+                  - generic [ref=e294]:
+                    - text: Erwecke Frühlingsgefühle
+                    - heading "Ostern bei Connox" [level=3] [ref=e295]
+                  - generic [ref=e297]: Jetzt entdecken
+    - generic [ref=e301]:
+      - generic [ref=e302]:
+        - heading "Neu bei Connox" [level=2] [ref=e303]
+        - link "Alle Neuheiten" [ref=e304] [cursor=pointer]:
+          - /url: https://www.connox.de/design-neuheiten.html
+          - text: Alle Neuheiten
+      - generic [ref=e308]:
+        - generic:
+          - group "1 / 8" [ref=e309]:
+            - link "Louis Poulsen - PH 1/1 Kronleuchter Centenary Edition, aged brass / dusty terracotta (9-Armig) NEU Louis Poulsen PH 1/1 Kronleuchter Centenary Edition, aged brass / dusty terracotta (9-Armig) 8.740,00 €* Zur Wunschliste hinzufügen" [ref=e310] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/leuchten/pendelleuchten/louis-poulsen-ph-1-1-kronleuchter-centenary-edition.html?itm=459912
+              - img "Louis Poulsen - PH 1/1 Kronleuchter Centenary Edition, aged brass / dusty terracotta (9-Armig)" [ref=e312]
+              - generic [ref=e313]: NEU
+              - generic [ref=e314]:
+                - generic [ref=e315]: Louis Poulsen
+                - generic [ref=e316]: PH 1/1 Kronleuchter Centenary Edition, aged brass / dusty terracotta (9-Armig)
+              - generic [ref=e320]:
+                - text: 8.740,00 €
+                - superscript [ref=e321]: "*"
+              - button "Zur Wunschliste hinzufügen" [ref=e322]
+          - group "2 / 8" [ref=e324]:
+            - link "Lind DNA - Glasuntersetzer Curve, Corduroy clay braun Lind DNA Glasuntersetzer Curve, Corduroy clay braun 5,00 €* (62) Zur Wunschliste hinzufügen" [ref=e325] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/kochen/kuechentextilien/untersetzer/linddna-glass-mat-curve.html?itm=417141
+              - img "Lind DNA - Glasuntersetzer Curve, Corduroy clay braun" [ref=e327]
+              - generic [ref=e328]:
+                - generic [ref=e329]: Lind DNA
+                - generic [ref=e330]: Glasuntersetzer Curve, Corduroy clay braun
+              - generic [ref=e331]:
+                - generic [ref=e334]:
+                  - text: 5,00 €
+                  - superscript [ref=e335]: "*"
+                - generic [ref=e336]:
+                  - generic "4,84 von 5 Sternen" [ref=e337]
+                  - generic [ref=e348]: (62)
+              - button "Zur Wunschliste hinzufügen" [ref=e349]
+          - group "3 / 8" [ref=e351]:
+            - link "Lind DNA - Silhouette Kerzenhalter, Ø 4.2 x H 12 cm + Ø 4.2 x H 14.5 cm, silber (2er-Set) Lind DNA Silhouette Kerzenhalter, Ø 4.2 x H 12 cm + Ø 4.2 x H 14.5 cm, silber (2er-Set) 179,95 €* Zur Wunschliste hinzufügen" [ref=e352] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/accessoires/dekoration/kerzenstaender/linddna-silhouette-kerzenhalter.html?itm=291042
+              - img "Lind DNA - Silhouette Kerzenhalter, Ø 4.2 x H 12 cm + Ø 4.2 x H 14.5 cm, silber (2er-Set)" [ref=e354]
+              - generic [ref=e355]:
+                - generic [ref=e356]: Lind DNA
+                - generic [ref=e357]: Silhouette Kerzenhalter, Ø 4.2 x H 12 cm + Ø 4.2 x H 14.5 cm, silber (2er-Set)
+              - generic [ref=e361]:
+                - text: 179,95 €
+                - superscript [ref=e362]: "*"
+              - button "Zur Wunschliste hinzufügen" [ref=e363]
+          - group "4 / 8" [ref=e365]:
+            - link "Lind DNA - Airy Teak Tablett Square L, Teak / Nupo natur Lind DNA Airy Teak Tablett Square L, Teak / Nupo natur 99,95 €* Zur Wunschliste hinzufügen" [ref=e366] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/accessoires/dekoration/tabletts/linddna-airy-teak-tablett-square.html?itm=354618
+              - img "Lind DNA - Airy Teak Tablett Square L, Teak / Nupo natur" [ref=e368]
+              - generic [ref=e369]:
+                - generic [ref=e370]: Lind DNA
+                - generic [ref=e371]: Airy Teak Tablett Square L, Teak / Nupo natur
+              - generic [ref=e375]:
+                - text: 99,95 €
+                - superscript [ref=e376]: "*"
+              - button "Zur Wunschliste hinzufügen" [ref=e377]
+          - group "5 / 8" [ref=e379]:
+            - link "Lind DNA - Tischset Curve M, 31 x 35 cm, Nupo soft sky Lind DNA Tischset Curve M, 31 x 35 cm, Nupo soft sky 15,95 €* Zur Wunschliste hinzufügen" [ref=e380] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/kochen/kuechentextilien/tischsets/linddna-tischset-curve-m.html?itm=354594
+              - img "Lind DNA - Tischset Curve M, 31 x 35 cm, Nupo soft sky" [ref=e382]
+              - generic [ref=e383]:
+                - generic [ref=e384]: Lind DNA
+                - generic [ref=e385]: Tischset Curve M, 31 x 35 cm, Nupo soft sky
+              - generic [ref=e389]:
+                - text: 15,95 €
+                - superscript [ref=e390]: "*"
+              - button "Zur Wunschliste hinzufügen" [ref=e391]
+          - group "6 / 8" [ref=e393]:
+            - link "Frandsen - Ball Stehleuchte Glas, sand grey NEU Frandsen Ball Stehleuchte Glas, sand grey 265,00 €* Zur Wunschliste hinzufügen" [ref=e394] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/leuchten/stehleuchten/frandsen-ball-stehleuchte-glas.html?itm=453696
+              - img "Frandsen - Ball Stehleuchte Glas, sand grey" [ref=e396]
+              - generic [ref=e397]: NEU
+              - generic [ref=e398]:
+                - generic [ref=e399]: Frandsen
+                - generic [ref=e400]: Ball Stehleuchte Glas, sand grey
+              - generic [ref=e404]:
+                - text: 265,00 €
+                - superscript [ref=e405]: "*"
+              - button "Zur Wunschliste hinzufügen" [ref=e406]
+          - group "7 / 8" [ref=e408]:
+            - link "Frandsen - Ball Tischleuchte Glas, sand grey NEU Frandsen Ball Tischleuchte Glas, sand grey 199,00 €* Zur Wunschliste hinzufügen" [ref=e409] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/leuchten/tischleuchten/frandsen-ball-tischleuchte-glas.html?itm=453703
+              - img "Frandsen - Ball Tischleuchte Glas, sand grey" [ref=e411]
+              - generic [ref=e412]: NEU
+              - generic [ref=e413]:
+                - generic [ref=e414]: Frandsen
+                - generic [ref=e415]: Ball Tischleuchte Glas, sand grey
+              - generic [ref=e419]:
+                - text: 199,00 €
+                - superscript [ref=e420]: "*"
+              - button "Zur Wunschliste hinzufügen" [ref=e421]
+          - group "8 / 8" [ref=e423]:
+            - link "Mette Ditmer - Travertine Pedestal Tablett, linen NEU Mette Ditmer Travertine Pedestal Tablett, linen 184,99 €* Zur Wunschliste hinzufügen" [ref=e424] [cursor=pointer]:
+              - /url: https://www.connox.de/kategorien/accessoires/dekoration/tabletts/mette-ditmer-travertine-pedestal-tablett.html?itm=457395
+              - img "Mette Ditmer - Travertine Pedestal Tablett, linen" [ref=e426]
+              - generic [ref=e427]: NEU
+              - generic [ref=e428]:
+                - generic [ref=e429]: Mette Ditmer
+                - generic [ref=e430]: Travertine Pedestal Tablett, linen
+              - generic [ref=e434]:
+                - text: 184,99 €
+                - superscript [ref=e435]: "*"
+              - button "Zur Wunschliste hinzufügen" [ref=e436]
+      - button "Previous slide" [disabled] [ref=e438] [cursor=pointer]
+      - button "Next slide" [ref=e440] [cursor=pointer]
+    - generic [ref=e443]:
+      - generic [ref=e444]:
+        - heading "Aus unserem Blog" [level=2] [ref=e445]
+        - link "Alle Blogartikel" [ref=e446] [cursor=pointer]:
+          - /url: https://www.connox.de/blog.html
+          - text: Alle Blogartikel
+      - generic [ref=e451]:
+        - generic:
+          - group "1 / 3" [ref=e452]:
+            - link "Deko-Trends 2026 News & Trends Deko-Trends 2026 Mehr Tiefe, mehr Textur und kuratierte Kontraste definieren die Deko Trends 2026. Mehr erfahren! Hanna Jetzt lesen" [ref=e454] [cursor=pointer]:
+              - /url: /design-news/deko-trends-2026.html
+              - img "Deko-Trends 2026" [ref=e456]
+              - generic [ref=e457]:
+                - generic [ref=e458]:
+                  - generic [ref=e459]: News & Trends
+                  - heading "Deko-Trends 2026" [level=3] [ref=e460]
+                  - paragraph [ref=e461]: Mehr Tiefe, mehr Textur und kuratierte Kontraste definieren die Deko Trends 2026. Mehr erfahren!
+                - generic [ref=e462]:
+                  - generic [ref=e464]: Hanna
+                  - generic [ref=e465]: Jetzt lesen
+          - group "2 / 3" [ref=e467]:
+            - link "Camping an der Tankstelle News & Trends Camping an der Tankstelle Design, Sommerfeeling und neue HAY Outdoor Highlights – über einen besonderen Abend im Garten des Berliner Zeit‑Cafés. Mehr erfahren! Jetzt lesen" [ref=e469] [cursor=pointer]:
+              - /url: /design-news/camping-an-der-tankstelle.html
+              - img "Camping an der Tankstelle" [ref=e471]
+              - generic [ref=e472]:
+                - generic [ref=e473]:
+                  - generic [ref=e474]: News & Trends
+                  - heading "Camping an der Tankstelle" [level=3] [ref=e475]
+                  - paragraph [ref=e476]: Design, Sommerfeeling und neue HAY Outdoor Highlights – über einen besonderen Abend im Garten des Berliner Zeit‑Cafés. Mehr erfahren!
+                - generic [ref=e478]: Jetzt lesen
+          - group "3 / 3" [ref=e480]:
+            - link "100 Jahre Verner Panton Behind the Scenes 100 Jahre Verner Panton Verner Panton ist die leuchtende, kurvige und herrlich unangepasste Ausnahme skandinavischen Designs. Warum wir seinen Mut heute mehr brauchen als je zuvor! Anja Jetzt lesen" [ref=e482] [cursor=pointer]:
+              - /url: /behind-the-scenes/100-jahre-verner-panton.html
+              - img "100 Jahre Verner Panton" [ref=e484]
+              - generic [ref=e485]:
+                - generic [ref=e486]:
+                  - generic [ref=e487]: Behind the Scenes
+                  - heading "100 Jahre Verner Panton" [level=3] [ref=e488]
+                  - paragraph [ref=e489]: Verner Panton ist die leuchtende, kurvige und herrlich unangepasste Ausnahme skandinavischen Designs. Warum wir seinen Mut heute mehr brauchen als je zuvor!
+                - generic [ref=e490]:
+                  - generic [ref=e492]: Anja
+                  - generic [ref=e493]: Jetzt lesen
+    - generic [ref=e497]:
+      - heading "Connox – Wohndesign und Inspiration für dein Zuhause" [level=2] [ref=e498]
+      - paragraph [ref=e499]: "Schön, dass du den Weg zu uns gefunden hast. Mache dein Zuhause gemeinsam mit uns zu etwas Einzigartigem! Bei Connox findest du alles, was du hierfür brauchst: charakterstarke Möbel und Wohnaccessoires, hilfreiche Antworten auf deine Einrichtungsfragen und inspirierende Wohnideen."
+      - paragraph [ref=e500]:
+        - strong [ref=e501]: "Wohndesign:"
+        - text: Jeden Tag entwerfen
+        - link "Designer" [ref=e502] [cursor=pointer]:
+          - /url: https://www.connox.de/designer.html
+        - text: aus der ganzen Welt außergewöhnliche Produkte. Die weltweit besten Designs spüren wir für dich auf. Mit mehr als 34.000
+        - link "Design-Möbeln" [ref=e503] [cursor=pointer]:
+          - /url: https://www.connox.de/kategorien/moebel.html
+        - text: ","
+        - link "Wohnaccessoires" [ref=e504] [cursor=pointer]:
+          - /url: https://www.connox.de/kategorien/accessoires.html
+        - text: und
+        - link "Leuchten" [ref=e505] [cursor=pointer]:
+          - /url: https://www.connox.de/kategorien/leuchten.html
+        - text: bieten wir dir alles, was du für deine Inneneinrichtung brauchst – vom Stuhl bis zur Vase. Entdecke bei uns deinen ganz persönlichen Designliebling – wir liefern ihn dir direkt nach Hause.
+      - paragraph [ref=e506]:
+        - strong [ref=e507]: "Inspiration:"
+        - text: In unserem
+        - link "Connox Magazine" [ref=e508] [cursor=pointer]:
+          - /url: https://www.connox.de/blog.html
+        - text: findest du zahlreiche bebilderte Inspirationen und Tipps rund ums Wohnen und Einrichten. Sie helfen dir deinen Stil und das eine oder andere Lieblingsstück zu finden. Auch der beliebte Connox Katalog versorgt dich mit frischen Ideen. Und unsere
+        - link "Räume" [ref=e509] [cursor=pointer]:
+          - /url: https://www.connox.de/raeume.html
+        - text: ","
+        - link "Wohnstile" [ref=e510] [cursor=pointer]:
+          - /url: https://www.connox.de/designwissen.html
+        - text: und
+        - link "Themen" [ref=e511] [cursor=pointer]:
+          - /url: https://www.connox.de/wohndesign-themen.html
+        - text: helfen dir, genau das zu finden, was dich zu Hause glücklich macht.
+      - paragraph [ref=e512]:
+        - text: Wie du stöberst, entdeckst und einkaufst, entscheidest du. Klassisch am PC, über unsere mobile Website. Rund um die Uhr und an jedem erdenklichen Ort hast du Zugriff auf unser gesamtes Sortiment. Erfahre
+        - link "hier" [ref=e513] [cursor=pointer]:
+          - /url: https://www.connox.de/unternehmen.html
+        - text: mehr über unseren Wohndesign-Shop und das Connox Team. Oder lass dich mit unserem Newsletter über Produktneuheiten, Wohnideen und Aktionen von uns auf dem Laufenden halten.
+    - generic [ref=e517]:
+      - img "Keine Rabattaktion mehr verpassen" [ref=e520]
+      - generic [ref=e521]:
+        - heading "Der Connox Newsletter" [level=3] [ref=e522]
+        - heading "Jetzt anmelden und 11 %-Rabatt sichern1." [level=2] [ref=e523]:
+          - text: Jetzt anmelden und
+          - text: 11 %-Rabatt sichern
+          - superscript [ref=e524]: "1"
+          - text: .
+        - generic [ref=e526]:
+          - textbox "E-Mail-Adresse" [ref=e527]
+          - button "Jetzt abonnieren" [ref=e528] [cursor=pointer]
+    - contentinfo [ref=e529]:
+      - generic [ref=e530]:
+        - generic [ref=e533]:
+          - paragraph [ref=e534]:
+            - superscript [ref=e535]: "*"
+            - generic [ref=e536]:
+              - text: Alle Preisangaben verstehen sich inklusive MwSt. und zzgl.
+              - link "Versandkosten" [ref=e537] [cursor=pointer]:
+                - /url: https://www.connox.de/kundenservice/versand.html
+              - text: .
+          - paragraph [ref=e538]:
+            - generic [ref=e539]:
+              - superscript [ref=e540]: "1"
+              - generic [ref=e541]:
+                - text: "Bitte beachten Sie: Der Gutschein ist bis einschließlich 14 Tage nach Erhalt und ab einem Mindesteinkaufswert von 99 € gültig. Es gelten"
+                - link "Gutscheinbedingungen" [ref=e542] [cursor=pointer]:
+                  - /url: /kundenservice/gutscheine-aktionen.html#gutscheine
+                - text: .
+        - generic [ref=e543]:
+          - generic [ref=e544]:
+            - generic [ref=e545]: Beliebte Dekorationen
+            - list [ref=e547]:
+              - listitem [ref=e548]:
+                - link "Obstschalen" [ref=e549] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/obstschalen.html
+              - listitem [ref=e550]:
+                - link "Iittala Gläser" [ref=e551] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/iittala-glaeser.html
+              - listitem [ref=e552]:
+                - link "Tabletttisch" [ref=e553] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/tabletttisch.html
+              - listitem [ref=e554]:
+                - link "Kaffeebecher" [ref=e555] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/kaffeebecher.html
+              - listitem [ref=e556]:
+                - link "Tagesdecken" [ref=e557] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/tagesdecke.html
+          - generic [ref=e558]:
+            - generic [ref=e559]: Beliebte Möbel
+            - list [ref=e561]:
+              - listitem [ref=e562]:
+                - link "Skandinavische Möbel" [ref=e563] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/skandinavische-moebel.html
+              - listitem [ref=e564]:
+                - link "Gartenmöbel" [ref=e565] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/gartenmoebel-im-shop.html
+              - listitem [ref=e566]:
+                - link "Büromöbel" [ref=e567] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/bueromoebel-design.html
+              - listitem [ref=e568]:
+                - link "Design-Schlafsofa" [ref=e569] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/schlafsofa.html
+              - listitem [ref=e570]:
+                - link "Wandregale" [ref=e571] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/wandregal.html
+              - listitem [ref=e572]:
+                - link "HAY Stuhl" [ref=e573] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/hay-stuhl.html
+          - generic [ref=e574]:
+            - generic [ref=e575]: Beliebte Leuchten
+            - list [ref=e577]:
+              - listitem [ref=e578]:
+                - link "Pendellampe für Außen" [ref=e579] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/pendellampe-fuer-aussen.html
+              - listitem [ref=e580]:
+                - link "Muuto Lampen" [ref=e581] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/muuto-lampen.html
+              - listitem [ref=e582]:
+                - link "Kabellose Tischleuchten" [ref=e583] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/kabellose-tischleuchten.html
+              - listitem [ref=e584]:
+                - link "Dänische Lampen" [ref=e585] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/daenisches-leuchtendesign.html
+              - listitem [ref=e586]:
+                - link "LED Pendelleuchte" [ref=e587] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen/led-pendelleuchte.html
+          - generic [ref=e588]:
+            - generic [ref=e589]: Bestseller
+            - list [ref=e591]:
+              - listitem [ref=e592]:
+                - link "Montana Panton Wire" [ref=e593] [cursor=pointer]:
+                  - /url: https://www.connox.de/kategorien/moebel/wandablagen-kleinregale/montana-panton-wire.html
+              - listitem [ref=e594]:
+                - link "Stoff Nagel Kerzenhalter" [ref=e595] [cursor=pointer]:
+                  - /url: https://www.connox.de/kategorien/accessoires/dekoration/kerzenstaender/stoff-nagel-kerzenhalter.html
+              - listitem [ref=e596]:
+                - link "Nova Treteimer" [ref=e597] [cursor=pointer]:
+                  - /url: https://www.connox.de/kategorien/haushalt/abfalleimer-papierkoerbe/zone-denmark-nova-treteimer-5-l.html
+              - listitem [ref=e598]:
+                - link "Flowerpot Akku Tischleuchte" [ref=e599] [cursor=pointer]:
+                  - /url: https://www.connox.de/kategorien/leuchten/tischleuchten/tradition-flowerpot-akku-tischleuchte-vp9.html
+              - listitem [ref=e600]:
+                - link "Joseph Joseph Wäschekorb" [ref=e601] [cursor=pointer]:
+                  - /url: https://www.connox.de/kategorien/accessoires/haushalt/waeschekoerbe/joseph-joseph-tota-trio-waschekorb.html
+      - generic [ref=e605]:
+        - link "Connox Geburtstag" [ref=e607] [cursor=pointer]:
+          - /url: https://www.connox.de/connox-geburtstag.html
+          - text: Connox Geburtstag
+        - link "Markenliebling" [ref=e610] [cursor=pointer]:
+          - /url: https://www.connox.de/marke-des-monats.html
+          - text: Markenliebling
+      - generic [ref=e612]:
+        - generic [ref=e613]:
+          - link "Kundenservice" [ref=e616] [cursor=pointer]:
+            - /url: https://www.connox.de/kundenservice.html
+          - link "Kontaktformular" [ref=e619] [cursor=pointer]:
+            - /url: https://www.connox.de/kundenservice.html#contactform
+          - generic [ref=e621]:
+            - link "AGB" [ref=e622] [cursor=pointer]:
+              - /url: https://www.connox.de/agb.html
+            - text: ","
+            - link "Impressum" [ref=e623] [cursor=pointer]:
+              - /url: https://www.connox.de/impressum.html
+            - text: ","
+            - link "Datenschutz" [ref=e624] [cursor=pointer]:
+              - /url: https://www.connox.de/kundenservice/sicherheit-und-datenschutz.html
+            - text: ","
+            - link "Cookie-Einstellungen" [ref=e625] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e626]:
+          - generic [ref=e627]:
+            - generic [ref=e628]: Rund um Ihre Bestellung
+            - list [ref=e630]:
+              - listitem [ref=e631]:
+                - link "Versandinformationen" [ref=e632] [cursor=pointer]:
+                  - /url: https://www.connox.de/kundenservice/versand.html
+              - listitem [ref=e633]:
+                - link "Kauf auf Rechnung" [ref=e634] [cursor=pointer]:
+                  - /url: https://www.connox.de/kundenservice/bezahlung.html#rechnung
+              - listitem [ref=e635]:
+                - link "Weitere Zahlungsarten" [ref=e636] [cursor=pointer]:
+                  - /url: https://www.connox.de/kundenservice/bezahlung.html
+              - listitem [ref=e637]:
+                - link "60 Tage Rückgaberecht" [ref=e638] [cursor=pointer]:
+                  - /url: https://www.connox.de/kundenservice/ruecksendung-umtausch.html
+              - listitem [ref=e639]:
+                - link "Rücksendeunterlagen" [ref=e640] [cursor=pointer]:
+                  - /url: https://www.connox.de/kundenservice/ruecksendeunterlagen.html
+              - listitem [ref=e641]:
+                - link "Entsorgung" [ref=e642] [cursor=pointer]:
+                  - /url: https://www.connox.de/kundenservice/versand.html#entsorgung
+          - generic [ref=e643]:
+            - link "Über uns" [ref=e645] [cursor=pointer]:
+              - /url: https://www.connox.de/unternehmen.html
+            - list [ref=e647]:
+              - listitem [ref=e648]:
+                - link "Wohnlexikon" [ref=e649] [cursor=pointer]:
+                  - /url: https://www.connox.de/wohnen.html
+              - listitem [ref=e650]:
+                - link "Jobs" [ref=e651] [cursor=pointer]:
+                  - /url: https://www.connox.de/ueber-uns/jobs-hannover.html
+              - listitem [ref=e652]:
+                - link "Presse" [ref=e653] [cursor=pointer]:
+                  - /url: https://www.connox.de/ueber-uns/medien/pressebereich.html
+              - listitem [ref=e654]:
+                - link "Newsletter" [ref=e655] [cursor=pointer]:
+                  - /url: https://www.connox.de/newsletter-registrierung.html
+              - listitem [ref=e656]:
+                - link "Geschenkgutscheine" [ref=e657] [cursor=pointer]:
+                  - /url: https://www.connox.de/kategorien/geschenk-gutschein.html
+              - listitem [ref=e658]:
+                - link "Connox Gutschein" [ref=e659] [cursor=pointer]:
+                  - /url: https://www.connox.de/gutschein.html
+              - listitem [ref=e660]:
+                - link "Partnerprogramm" [ref=e661] [cursor=pointer]:
+                  - /url: https://www.connox.de/ueber-uns/medien/partnerprogramm.html
+              - listitem [ref=e662]:
+                - link "Connox Blog" [ref=e663] [cursor=pointer]:
+                  - /url: https://www.connox.de/blog.html
+              - listitem [ref=e664]:
+                - link "Sitemap" [ref=e665] [cursor=pointer]:
+                  - /url: https://www.connox.de/sitemap.html
+          - generic [ref=e666]:
+            - generic [ref=e667]: International
+            - list [ref=e669]:
+              - listitem [ref=e670]:
+                - link "connox.com, English" [ref=e671] [cursor=pointer]:
+                  - /url: https://www.connox.com/
+              - listitem [ref=e672]:
+                - link "connox.de" [ref=e673] [cursor=pointer]:
+                  - /url: https://www.connox.de/
+              - listitem [ref=e674]:
+                - link "connox.at" [ref=e675] [cursor=pointer]:
+                  - /url: https://www.connox.at/
+              - listitem [ref=e676]:
+                - link "connox.ch" [ref=e677] [cursor=pointer]:
+                  - /url: https://www.connox.ch/
+              - listitem [ref=e678]:
+                - link "connox.fr, Français" [ref=e679] [cursor=pointer]:
+                  - /url: https://www.connox.fr/
+              - listitem [ref=e680]:
+                - link "fr.connox.ch, Français" [ref=e681] [cursor=pointer]:
+                  - /url: https://fr.connox.ch/
+              - listitem [ref=e682]:
+                - link "connox.nl, Nederlands" [ref=e683] [cursor=pointer]:
+                  - /url: https://www.connox.nl/
+          - generic [ref=e684]:
+            - link "Geprüfte Leistung" [ref=e686] [cursor=pointer]:
+              - /url: https://www.connox.de/kundenservice/sicherheit-und-datenschutz.html
+            - link "Webshop Trustmark and customer reviews" [ref=e688] [cursor=pointer]:
+              - /url: https://cert.ehi-siegel.de/webshop/connox-de_4034064?lang=deu
+              - img "Webshop Trustmark and customer reviews" [ref=e689]
+          - generic [ref=e690]:
+            - link "Vielfältige Zahlungsmöglichkeiten" [ref=e692] [cursor=pointer]:
+              - /url: https://www.connox.de/kundenservice/bezahlung.html
+            - link "Kreditkarte Vorkasse Rechnung" [ref=e694] [cursor=pointer]:
+              - /url: https://www.connox.de/kundenservice/bezahlung.html
+              - generic [ref=e699]: Kreditkarte
+              - generic [ref=e701]: Vorkasse
+              - generic [ref=e703]: Rechnung
+        - generic [ref=e705]:
+          - generic [ref=e706]: Folgen Sie uns
+          - generic [ref=e708]:
+            - button "Instagram" [ref=e709] [cursor=pointer]
+            - button "Facebook" [ref=e710] [cursor=pointer]
+            - button "LinkedIn" [ref=e711] [cursor=pointer]
+            - button "Pinterest" [ref=e712] [cursor=pointer]
+            - button "TikTok" [ref=e713] [cursor=pointer]
+            - button "Xing" [ref=e714] [cursor=pointer]
+            - button "YouTube" [ref=e715] [cursor=pointer]
+        - paragraph [ref=e719]: © Connox - be unique.
+  - generic [active]:
+    - generic:
+      - generic:
+        - button "Öffnen Privatsphäre-Einstellungen" [ref=e720] [cursor=pointer]:
+          - img [ref=e722]
+        - dialog "Ihr Einkaufs-Erlebnis" [ref=e727]:
+          - generic [ref=e733]:
+            - heading "Ihr Einkaufs-Erlebnis" [level=1] [ref=e736]
+            - generic [ref=e739]:
+              - text: Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unsere Website zu analysieren. Außerdem geben wir Informationen zu Ihrer Verwendung unserer Website an unsere Partner für soziale Medien, Werbung und Analysen weiter. Unsere Partner führen diese Informationen möglicherweise mit weiteren Daten zusammen, die Sie ihnen bereitgestellt haben oder die sie im Rahmen Ihrer Nutzung der Dienste gesammelt haben. Sie geben Einwilligung zu unseren Cookies, wenn Sie unsere Webseite weiterhin nutzen.
+              - generic [ref=e741]:
+                - text: Wenn Sie die Nutzung von Cookies, mit Ausnahme technisch notwendiger Cookies, ablehnen, dann klicken Sie bitte
+                - link "hier" [ref=e742] [cursor=pointer]:
+                  - /url: javascript:UC_UI.denyAllConsents().then(UC_UI.closeCMP);
+                - text: .
+            - generic [ref=e743]:
+              - generic [ref=e744]:
+                - link "Datenschutzerklärung" [ref=e745] [cursor=pointer]:
+                  - /url: https://www.connox.de/kundenservice/sicherheit-und-datenschutz.html
+                - link "Impressum" [ref=e746] [cursor=pointer]:
+                  - /url: https://www.connox.de/impressum.html
+              - button "Details zeigen" [ref=e748] [cursor=pointer]:
+                - generic [ref=e749]: Details zeigen
+          - button "Alle Cookies zulassen" [ref=e754] [cursor=pointer]
+  - generic [ref=e755]: "0"

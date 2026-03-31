@@ -1,7 +1,5 @@
-import Alpine from 'alpinejs';
-
 document.addEventListener('alpine:init', () => {
-  Alpine.store('productForm', {
+  window.Alpine.store('productForm', {
     productData: null,
     currentVariant: null,
     selectedOptions: {},
@@ -75,14 +73,14 @@ document.addEventListener('alpine:init', () => {
 
     async addToCart() {
       if (!this.currentVariant || !this.currentVariant.available) return;
-      await Alpine.store('cart').addItem(this.currentVariant.id, this.quantity);
+      await window.Alpine.store('cart').addItem(this.currentVariant.id, this.quantity);
     },
   });
 });
 
 // Listen for option changes dispatched by variant swatches
 document.addEventListener('option:change', (e) => {
-  const store = Alpine.store('productForm');
+  const store = window.Alpine.store('productForm');
   if (store) {
     store.selectOption(e.detail.name, e.detail.value);
   }
