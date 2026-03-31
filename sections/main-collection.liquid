@@ -1,0 +1,200 @@
+{%- paginate collection.products by section.settings.products_per_page -%}
+
+<section class="py-8 lg:py-12">
+  <div class="container">
+
+    {%- comment -%} Collection Header {%- endcomment -%}
+    <div class="mb-8">
+      <h1 class="text-2xl lg:text-4xl font-heading font-bold mb-2">{{ collection.title }}</h1>
+      {%- if collection.description != blank -%}
+        <div class="prose prose-sm max-w-none text-gray-600">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Toolbar: Filter toggle + Sort {%- endcomment -%}
+    <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-100" x-data="{ filtersOpen: false }">
+      <div class="flex items-center gap-4">
+        <button
+          class="flex items-center gap-2 text-sm font-medium lg:hidden"
+          @click="filtersOpen = !filtersOpen"
+        >
+          {% render 'icon', name: 'menu', size: 18 %}
+          Filter
+        </button>
+        <p class="text-sm text-gray-500">
+          {{ collection.products_count }} {{ collection.products_count | pluralize: 'Produkt', 'Produkte' }}
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <label for="sort-by" class="text-sm text-gray-500 hidden sm:block">Sortieren:</label>
+        <select
+          id="sort-by"
+          class="text-sm border border-gray-200 rounded px-3 py-2 bg-white focus:border-accent focus:ring-1 focus:ring-accent outline-none"
+          onchange="window.location.href = this.value"
+        >
+          {%- for option in collection.sort_options -%}
+            <option value="{{ option.url }}" {% if option.value == collection.sort_by %}selected{% endif %}>
+              {{ option.name }}
+            </option>
+          {%- endfor -%}
+        </select>
+      </div>
+    </div>
+
+    <div class="lg:grid lg:grid-cols-[240px_1fr] lg:gap-8">
+
+      {%- comment -%} Filters Sidebar {%- endcomment -%}
+      {%- if collection.filters.size > 0 -%}
+        <aside class="hidden lg:block" aria-label="Filter">
+          <form id="collection-filters">
+            {%- for filter in collection.filters -%}
+              <div class="mb-6" x-data="{ open: true }">
+                <button
+                  type="button"
+                  class="flex items-center justify-between w-full text-sm font-medium mb-3"
+                  @click="open = !open"
+                  :aria-expanded="open"
+                >
+                  {{ filter.label }}
+                  <span :class="open && 'rotate-180'" class="transition-transform">
+                    {% render 'icon', name: 'chevron-down', size: 14 %}
+                  </span>
+                </button>
+
+                <div x-show="open" x-collapse>
+                  {%- case filter.type -%}
+                    {%- when 'list' -%}
+                      <ul class="space-y-2">
+                        {%- for value in filter.values -%}
+                          <li>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer">
+                              <input
+                                type="checkbox"
+                                name="{{ value.param_name }}"
+                                value="{{ value.value }}"
+                                {% if value.active %}checked{% endif %}
+                                class="rounded border-gray-300 text-accent focus:ring-accent"
+                                onchange="this.form.submit()"
+                              >
+                              <span class="{% if value.active %}font-medium{% else %}text-gray-600{% endif %}">
+                                {{ value.label }} ({{ value.count }})
+                              </span>
+                            </label>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+
+                    {%- when 'price_range' -%}
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="number"
+                          name="{{ filter.min_value.param_name }}"
+                          value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                          placeholder="Von"
+                          min="0"
+                          class="w-full px-3 py-2 text-sm border border-gray-200 rounded focus:border-accent outline-none"
+                          onchange="this.form.submit()"
+                        >
+                        <span class="text-gray-400">–</span>
+                        <input
+                          type="number"
+                          name="{{ filter.max_value.param_name }}"
+                          value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                          placeholder="Bis"
+                          class="w-full px-3 py-2 text-sm border border-gray-200 rounded focus:border-accent outline-none"
+                          onchange="this.form.submit()"
+                        >
+                      </div>
+                  {%- endcase -%}
+                </div>
+              </div>
+            {%- endfor -%}
+
+            {%- if collection.filters | map: 'active_values' | join: '' != '' -%}
+              <a href="{{ collection.url }}" class="text-sm text-accent hover:underline">
+                Alle Filter zurücksetzen
+              </a>
+            {%- endif -%}
+          </form>
+        </aside>
+      {%- endif -%}
+
+      {%- comment -%} Product Grid {%- endcomment -%}
+      <div>
+        {%- if collection.products.size > 0 -%}
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-6">
+            {%- for product in collection.products -%}
+              {% render 'product-card', product: product %}
+            {%- endfor -%}
+          </div>
+
+          {%- comment -%} Pagination {%- endcomment -%}
+          {%- if paginate.pages > 1 -%}
+            <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+              {%- if paginate.previous -%}
+                <a href="{{ paginate.previous.url }}" class="px-4 py-2 text-sm border border-gray-200 rounded hover:border-primary transition-colors">
+                  &larr; Zurück
+                </a>
+              {%- endif -%}
+
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}
+                  <a href="{{ part.url }}" class="w-10 h-10 flex items-center justify-center text-sm border border-gray-200 rounded hover:border-primary transition-colors">
+                    {{ part.title }}
+                  </a>
+                {%- else -%}
+                  {%- if part.title == paginate.current_page -%}
+                    <span class="w-10 h-10 flex items-center justify-center text-sm bg-primary text-white rounded font-medium">
+                      {{ part.title }}
+                    </span>
+                  {%- else -%}
+                    <span class="w-10 h-10 flex items-center justify-center text-sm text-gray-400">
+                      {{ part.title }}
+                    </span>
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+
+              {%- if paginate.next -%}
+                <a href="{{ paginate.next.url }}" class="px-4 py-2 text-sm border border-gray-200 rounded hover:border-primary transition-colors">
+                  Weiter &rarr;
+                </a>
+              {%- endif -%}
+            </nav>
+          {%- endif -%}
+
+        {%- else -%}
+          <div class="text-center py-16">
+            <p class="text-gray-500 mb-4">Keine Produkte in dieser Kollektion gefunden.</p>
+            <a href="/" class="btn-secondary">Zurück zum Shop</a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Collection Page",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Produkte pro Seite",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Page"
+    }
+  ]
+}
+{% endschema %}
