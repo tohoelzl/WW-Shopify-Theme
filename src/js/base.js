@@ -34,11 +34,16 @@ Alpine.store('cart', {
   async addItem(variantId, quantity = 1) {
     this.isLoading = true;
     try {
-      await fetch('/cart/add.js', {
+      const addRes = await fetch('/cart/add.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: [{ id: variantId, quantity }] }),
       });
+      if (!addRes.ok) {
+        const err = await addRes.json();
+        console.error('Failed to add item:', err.description);
+        return;
+      }
       const cart = await fetch('/cart.js').then(r => r.json());
       this.syncCart(cart);
       this.open();
@@ -52,11 +57,16 @@ Alpine.store('cart', {
   async updateItem(key, quantity) {
     this.isLoading = true;
     try {
-      await fetch('/cart/change.js', {
+      const changeRes = await fetch('/cart/change.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: key, quantity }),
       });
+      if (!changeRes.ok) {
+        const err = await changeRes.json();
+        console.error('Failed to update item:', err.description);
+        return;
+      }
       const cart = await fetch('/cart.js').then(r => r.json());
       this.syncCart(cart);
     } catch (e) {
