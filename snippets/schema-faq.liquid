@@ -1,0 +1,25 @@
+{%- comment -%}
+  Schema.org FAQPage markup.
+  Usage: {% render 'schema-faq', faq_set: faq_set %}
+{%- endcomment -%}
+
+{%- if faq_set and faq_set.entries.value.size > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for entry in faq_set.entries.value -%}
+    {
+      "@type": "Question",
+      "name": {{ entry.question.value | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ entry.answer.value | strip_html | json }}
+      }
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}

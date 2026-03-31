@@ -1,0 +1,63 @@
+{%- liquid
+  assign faq_set = nil
+
+  if product.metafields.custom.faq_set.value
+    assign faq_set = product.metafields.custom.faq_set.value
+  elsif collection.metafields.custom.faq_set.value
+    assign faq_set = collection.metafields.custom.faq_set.value
+  elsif page.metafields.custom.faq_set.value
+    assign faq_set = page.metafields.custom.faq_set.value
+  endif
+-%}
+
+{%- if faq_set and faq_set.entries.value.size > 0 -%}
+  {% render 'schema-faq', faq_set: faq_set %}
+
+  <section class="py-12 lg:py-16">
+    <div class="container max-w-3xl">
+      <h2 class="text-2xl lg:text-3xl font-heading font-bold mb-8 text-center">
+        {{ section.settings.heading | default: faq_set.title.value | default: 'sections.faq.title' | t }}
+      </h2>
+
+      <div class="space-y-0 border-t border-gray-100">
+        {%- for entry in faq_set.entries.value -%}
+          <div x-data="{ open: false }" class="border-b border-gray-100">
+            <button
+              class="flex items-center justify-between w-full py-4 text-left font-medium"
+              @click="open = !open"
+              :aria-expanded="open"
+            >
+              <span class="pr-4">{{ entry.question.value }}</span>
+              <span :class="open && 'rotate-180'" class="flex-shrink-0 transition-transform">
+                {% render 'icon', name: 'chevron-down', size: 18 %}
+              </span>
+            </button>
+            <div x-show="open" x-collapse>
+              <div class="pb-4 prose prose-sm max-w-none text-gray-600">
+                {{ entry.answer.value }}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift (überschreibt FAQ-Set Titel)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}
