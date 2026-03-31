@@ -1,0 +1,171 @@
+{%- comment -%}
+  Ajax Cart Drawer.
+  Loaded on every page via layout/theme.liquid: {% section 'cart-drawer' %}
+  Driven by Alpine.js $store.cart from base.js.
+{%- endcomment -%}
+
+<div
+  x-show="$store.cart.isOpen"
+  x-cloak
+  class="fixed inset-0 z-50"
+  @keydown.escape.window="$store.cart.close()"
+>
+  {%- comment -%} Backdrop {%- endcomment -%}
+  <div
+    class="absolute inset-0 bg-black/40 transition-opacity"
+    x-show="$store.cart.isOpen"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @click="$store.cart.close()"
+  ></div>
+
+  {%- comment -%} Drawer Panel {%- endcomment -%}
+  <div
+    class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-xl flex flex-col"
+    x-show="$store.cart.isOpen"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full"
+    @click.stop
+  >
+    {%- comment -%} Header {%- endcomment -%}
+    <div class="flex items-center justify-between px-4 py-4 border-b border-gray-100">
+      <h2 class="text-lg font-heading font-bold">
+        {{ 'cart.title' | t }}
+        <span class="text-sm font-normal text-gray-500" x-show="$store.cart.itemCount > 0">
+          (<span x-text="$store.cart.itemCount"></span>)
+        </span>
+      </h2>
+      <button
+        @click="$store.cart.close()"
+        class="p-2 hover:bg-gray-50 rounded transition-colors"
+        aria-label="{{ 'accessibility.close_cart' | t }}"
+      >
+        {% render 'icon', name: 'close', size: 20 %}
+      </button>
+    </div>
+
+    {%- comment -%} Free Shipping Bar {%- endcomment -%}
+    {% render 'free-shipping-bar' %}
+
+    {%- comment -%} Cart Items {%- endcomment -%}
+    <div class="flex-1 overflow-y-auto">
+      {%- comment -%} Empty state {%- endcomment -%}
+      <div x-show="$store.cart.itemCount === 0" class="flex flex-col items-center justify-center h-full text-center px-4">
+        {% render 'icon', name: 'cart', size: 48, class: 'text-gray-300 mb-4' %}
+        <p class="text-gray-500 mb-4">{{ 'cart.empty' | t }}</p>
+        <a href="/" class="btn-secondary text-sm" @click="$store.cart.close()">
+          {{ 'cart.continue_shopping' | t }}
+        </a>
+      </div>
+
+      {%- comment -%} Line Items {%- endcomment -%}
+      <div x-show="$store.cart.itemCount > 0" class="divide-y divide-gray-100">
+        <template x-for="item in $store.cart.items" :key="item.key">
+          <div class="flex gap-4 px-4 py-4">
+            <a :href="item.url" class="flex-shrink-0 w-20 h-20 rounded bg-gray-50 overflow-hidden">
+              <img
+                :src="item.featured_image.url ? item.featured_image.url.replace('.jpg', '_160x.jpg').replace('.png', '_160x.png') : ''"
+                :alt="item.title"
+                class="w-full h-full object-cover"
+                width="80"
+                height="80"
+                loading="lazy"
+              >
+            </a>
+
+            <div class="flex-1 min-w-0">
+              <a :href="item.url" class="text-sm font-medium hover:text-accent line-clamp-1" x-text="item.product_title"></a>
+
+              <template x-if="item.variant_title">
+                <p class="text-xs text-gray-500 mt-0.5" x-text="item.variant_title"></p>
+              </template>
+
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex items-center border border-gray-200 rounded">
+                  <button
+                    class="p-1.5 hover:bg-gray-50 transition-colors"
+                    @click="item.quantity > 1 ? $store.cart.updateItem(item.key, item.quantity - 1) : $store.cart.removeItem(item.key)"
+                    aria-label="{{ 'accessibility.decrease_quantity' | t }}"
+                  >
+                    {% render 'icon', name: 'minus', size: 14 %}
+                  </button>
+                  <span class="w-8 text-center text-xs" x-text="item.quantity"></span>
+                  <button
+                    class="p-1.5 hover:bg-gray-50 transition-colors"
+                    @click="$store.cart.updateItem(item.key, item.quantity + 1)"
+                    aria-label="{{ 'accessibility.increase_quantity' | t }}"
+                  >
+                    {% render 'icon', name: 'plus', size: 14 %}
+                  </button>
+                </div>
+
+                <div class="text-right">
+                  <p class="text-sm font-medium" x-text="(item.final_line_price / 100).toFixed(2).replace('.', ',') + ' €'"></p>
+                  <button
+                    class="text-xs text-gray-400 hover:text-red-500 transition-colors"
+                    @click="$store.cart.removeItem(item.key)"
+                  >
+                    {{ 'cart.remove' | t }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      {%- comment -%} Upsells {%- endcomment -%}
+      {% render 'upsell-products' %}
+    </div>
+
+    {%- comment -%} Footer {%- endcomment -%}
+    <div x-show="$store.cart.itemCount > 0" class="border-t border-gray-100 px-4 py-4 space-y-3">
+      <div class="flex items-center justify-between">
+        <span class="font-medium">{{ 'cart.subtotal' | t }}</span>
+        <span class="text-lg font-bold" x-text="$store.cart.total.toFixed(2).replace('.', ',') + ' €'"></span>
+      </div>
+
+      <a
+        href="/checkout"
+        class="btn-primary w-full justify-center text-center"
+      >
+        {{ 'cart.checkout' | t }}
+      </a>
+
+      <div class="flex items-center justify-center gap-1 text-xs text-gray-400">
+        {% render 'icon', name: 'lock', size: 14 %}
+        <span>Sichere Zahlung</span>
+      </div>
+
+      <div class="flex items-center justify-center gap-2">
+        {%- for type in shop.enabled_payment_types -%}
+          {{ type | payment_type_svg_tag: class: 'h-5' }}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- comment -%} Loading overlay {%- endcomment -%}
+    <div
+      x-show="$store.cart.isLoading"
+      class="absolute inset-0 bg-white/60 flex items-center justify-center"
+      x-cloak
+    >
+      <div class="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "settings": []
+}
+{% endschema %}
