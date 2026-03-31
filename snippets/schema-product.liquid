@@ -1,0 +1,31 @@
+{%- comment -%}
+  Schema.org Product markup.
+  Usage: {% render 'schema-product', product: product %}
+{%- endcomment -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | truncate: 5000 | json }},
+  "url": {{ request.origin | append: product.url | json }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ product.vendor | json }}
+  },
+  {%- if product.featured_image -%}
+  "image": {{ product.featured_image | image_url: width: 1200 | json }},
+  {%- endif -%}
+  "offers": {
+    "@type": "Offer",
+    "price": {{ product.price | money_without_currency | json }},
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+    "url": {{ request.origin | append: product.url | json }}
+    {%- if product.variants.first.sku != blank -%}
+    ,"sku": {{ product.variants.first.sku | json }}
+    {%- endif -%}
+  }
+}
+</script>

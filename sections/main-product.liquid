@@ -1,0 +1,319 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{%- comment -%} Schema.org markup {%- endcomment -%}
+{% render 'schema-product', product: product %}
+{% render 'schema-breadcrumb', product: product %}
+
+{%- comment -%} Product JSON for Alpine.js {%- endcomment -%}
+<script type="application/json" data-product-json>
+  {{ product | json }}
+</script>
+
+<script>
+  window.themeStrings = {
+    addToCart: {{ 'products.add_to_cart' | t | json }},
+    soldOut: {{ 'products.sold_out' | t | json }},
+    unavailable: {{ 'products.unavailable' | t | json }}
+  };
+</script>
+
+<section class="py-8 lg:py-12" x-data x-init="$store.productForm.init()">
+  <div class="container">
+
+    {%- comment -%} Breadcrumbs {%- endcomment -%}
+    <nav class="mb-6 text-sm text-gray-500" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2">
+        <li><a href="/" class="hover:text-accent">Home</a></li>
+        {%- if product.collections.size > 0 -%}
+          <li class="flex items-center gap-2">
+            {% render 'icon', name: 'chevron-right', size: 14 %}
+            <a href="{{ product.collections.first.url }}" class="hover:text-accent">{{ product.collections.first.title }}</a>
+          </li>
+        {%- endif -%}
+        <li class="flex items-center gap-2">
+          {% render 'icon', name: 'chevron-right', size: 14 %}
+          <span class="text-primary">{{ product.title }}</span>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+
+      {%- comment -%} ===== LEFT: Product Gallery ===== {%- endcomment -%}
+      <div>
+        {%- if product.images.size > 1 -%}
+          <div class="product-gallery-main splide" aria-label="Product images">
+            <div class="splide__track">
+              <div class="splide__list">
+                {%- for image in product.images -%}
+                  <div class="splide__slide" data-image-id="{{ image.id }}">
+                    <div class="aspect-square overflow-hidden rounded bg-gray-50">
+                      {% render 'image',
+                        image: image,
+                        alt: image.alt | default: product.title,
+                        class: 'w-full h-full object-cover cursor-zoom-in',
+                        sizes: '(min-width: 1024px) 50vw, 100vw',
+                        priority: forloop.first
+                      %}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+
+          <div class="product-gallery-thumbs splide mt-3" aria-label="Product thumbnails">
+            <div class="splide__track">
+              <div class="splide__list">
+                {%- for image in product.images -%}
+                  <div class="splide__slide">
+                    <div class="aspect-square overflow-hidden rounded bg-gray-50 cursor-pointer">
+                      {% render 'image',
+                        image: image,
+                        alt: image.alt | default: product.title,
+                        class: 'w-full h-full object-cover',
+                        sizes: '80px',
+                        width: 80
+                      %}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+
+          {{ 'splide-core.min.css' | asset_url | stylesheet_tag }}
+          <script src="{{ 'product-gallery.js' | asset_url }}" type="module" defer></script>
+        {%- elsif product.featured_image -%}
+          <div class="aspect-square overflow-hidden rounded bg-gray-50">
+            {% render 'image',
+              image: product.featured_image,
+              alt: product.title,
+              class: 'w-full h-full object-cover',
+              sizes: '(min-width: 1024px) 50vw, 100vw',
+              priority: true
+            %}
+          </div>
+        {%- else -%}
+          <div class="aspect-square bg-secondary rounded"></div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} ===== RIGHT: Product Info ===== {%- endcomment -%}
+      <div>
+        {%- comment -%} Vendor {%- endcomment -%}
+        {%- if product.vendor != blank -%}
+          <a href="{{ product.vendor | url_for_vendor }}" class="text-sm text-gray-500 hover:text-accent mb-1 inline-block">
+            {{ product.vendor }}
+          </a>
+        {%- endif -%}
+
+        {%- comment -%} Title {%- endcomment -%}
+        <h1 class="text-2xl lg:text-3xl font-heading font-bold mb-3">{{ product.title }}</h1>
+
+        {%- comment -%} Price {%- endcomment -%}
+        <div class="flex items-center gap-3 mb-6" id="product-price">
+          <span class="text-xl font-bold" :class="$store.productForm.compareAtPrice && 'text-red-600'" x-text="$store.productForm.price">
+            {{ current_variant.price | money }}
+          </span>
+          <template x-if="$store.productForm.compareAtPrice">
+            <span class="text-gray-400 line-through" x-text="$store.productForm.compareAtPrice"></span>
+          </template>
+        </div>
+
+        {%- comment -%} Variant Swatches {%- endcomment -%}
+        {%- if product.has_only_default_variant == false -%}
+          {% render 'variant-swatches', product: product %}
+        {%- endif -%}
+
+        {%- comment -%} Add to Cart {%- endcomment -%}
+        <div class="flex items-center gap-3 mb-6" id="product-add-to-cart">
+          {%- comment -%} Quantity selector {%- endcomment -%}
+          <div class="flex items-center border border-gray-200 rounded">
+            <button
+              class="p-3 hover:bg-gray-50 transition-colors"
+              @click="$store.productForm.quantity = Math.max(1, $store.productForm.quantity - 1)"
+              aria-label="{{ 'accessibility.decrease_quantity' | t }}"
+            >
+              {% render 'icon', name: 'minus', size: 16 %}
+            </button>
+            <input
+              type="number"
+              min="1"
+              class="w-12 text-center text-sm border-x border-gray-200 py-3 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              x-model.number="$store.productForm.quantity"
+              aria-label="{{ 'products.quantity' | t }}"
+            >
+            <button
+              class="p-3 hover:bg-gray-50 transition-colors"
+              @click="$store.productForm.quantity++"
+              aria-label="{{ 'accessibility.increase_quantity' | t }}"
+            >
+              {% render 'icon', name: 'plus', size: 16 %}
+            </button>
+          </div>
+
+          {%- comment -%} Add to Cart button {%- endcomment -%}
+          <button
+            class="btn-primary flex-1"
+            @click="$store.productForm.addToCart()"
+            :disabled="!$store.productForm.isAvailable || $store.cart.isLoading"
+            :class="{ 'opacity-50 cursor-not-allowed': !$store.productForm.isAvailable }"
+            x-text="$store.cart.isLoading ? '{{ 'general.loading' | t }}' : $store.productForm.buttonText"
+          >
+            {{ 'products.add_to_cart' | t }}
+          </button>
+        </div>
+
+        {%- comment -%} Trust Badges {%- endcomment -%}
+        <div class="flex items-center gap-4 py-4 border-t border-b border-gray-100 mb-6 text-sm text-gray-500">
+          {%- for i in (1..3) -%}
+            {%- assign badge_text = 'trust_badge_' | append: i -%}
+            {%- if settings[badge_text] != blank -%}
+              <span class="flex items-center gap-1.5">
+                {%- case i -%}
+                  {%- when 1 -%}{% render 'icon', name: 'shield', size: 16 %}
+                  {%- when 2 -%}{% render 'icon', name: 'truck', size: 16 %}
+                  {%- when 3 -%}{% render 'icon', name: 'lock', size: 16 %}
+                {%- endcase -%}
+                {{ settings[badge_text] }}
+              </span>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {%- comment -%} Accordion {%- endcomment -%}
+        <div class="space-y-0 border-t border-gray-100">
+          {%- comment -%} Description {%- endcomment -%}
+          {%- if product.description != blank -%}
+            <div x-data="{ open: true }" class="border-b border-gray-100">
+              <button
+                class="flex items-center justify-between w-full py-4 text-sm font-medium text-left"
+                @click="open = !open"
+                :aria-expanded="open"
+              >
+                {{ 'products.description' | t }}
+                <span :class="open && 'rotate-180'" class="transition-transform">
+                  {% render 'icon', name: 'chevron-down', size: 16 %}
+                </span>
+              </button>
+              <div x-show="open" x-collapse>
+                <div class="pb-4 prose prose-sm max-w-none">
+                  {{ product.description }}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Dimensions (from metafield) {%- endcomment -%}
+          {%- if product.metafields.custom.dimensions != blank -%}
+            <div x-data="{ open: false }" class="border-b border-gray-100">
+              <button
+                class="flex items-center justify-between w-full py-4 text-sm font-medium text-left"
+                @click="open = !open"
+                :aria-expanded="open"
+              >
+                {{ 'products.dimensions' | t }}
+                <span :class="open && 'rotate-180'" class="transition-transform">
+                  {% render 'icon', name: 'chevron-down', size: 16 %}
+                </span>
+              </button>
+              <div x-show="open" x-collapse>
+                <div class="pb-4 prose prose-sm max-w-none">
+                  {{ product.metafields.custom.dimensions | metafield_tag }}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Material & Sustainability (from metafield) {%- endcomment -%}
+          {%- if product.metafields.custom.materials != blank -%}
+            <div x-data="{ open: false }" class="border-b border-gray-100">
+              <button
+                class="flex items-center justify-between w-full py-4 text-sm font-medium text-left"
+                @click="open = !open"
+                :aria-expanded="open"
+              >
+                {{ 'products.materials' | t }}
+                <span :class="open && 'rotate-180'" class="transition-transform">
+                  {% render 'icon', name: 'chevron-down', size: 16 %}
+                </span>
+              </button>
+              <div x-show="open" x-collapse>
+                <div class="pb-4 prose prose-sm max-w-none">
+                  {{ product.metafields.custom.materials | metafield_tag }}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Shipping & Returns {%- endcomment -%}
+          <div x-data="{ open: false }" class="border-b border-gray-100">
+            <button
+              class="flex items-center justify-between w-full py-4 text-sm font-medium text-left"
+              @click="open = !open"
+              :aria-expanded="open"
+            >
+              {{ 'products.shipping' | t }}
+              <span :class="open && 'rotate-180'" class="transition-transform">
+                {% render 'icon', name: 'chevron-down', size: 16 %}
+              </span>
+            </button>
+            <div x-show="open" x-collapse>
+              <div class="pb-4 prose prose-sm max-w-none">
+                {{ pages['versand-und-ruckgabe'].content | default: '<p>Informationen zu Versand und Rückgabe folgen.</p>' }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} Sticky Add-to-Cart Bar {%- endcomment -%}
+<div
+  class="fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 shadow-lg transform translate-y-full transition-transform duration-300"
+  x-data="{ visible: false }"
+  x-init="
+    const target = document.getElementById('product-add-to-cart');
+    if (target) {
+      const observer = new IntersectionObserver(([entry]) => {
+        visible = !entry.isIntersecting;
+      }, { threshold: 0 });
+      observer.observe(target);
+    }
+  "
+  :class="visible && 'translate-y-0'"
+  x-cloak
+>
+  <div class="container py-3 flex items-center justify-between gap-4">
+    <div class="flex-1 min-w-0">
+      <p class="text-sm font-medium truncate">{{ product.title }}</p>
+      <p class="text-sm font-bold" x-text="$store.productForm.price">{{ current_variant.price | money }}</p>
+    </div>
+    <button
+      class="btn-primary whitespace-nowrap"
+      @click="$store.productForm.addToCart()"
+      :disabled="!$store.productForm.isAvailable || $store.cart.isLoading"
+      :class="{ 'opacity-50 cursor-not-allowed': !$store.productForm.isAvailable }"
+      x-text="$store.cart.isLoading ? '{{ 'general.loading' | t }}' : $store.productForm.buttonText"
+    >
+      {{ 'products.add_to_cart' | t }}
+    </button>
+  </div>
+</div>
+
+<script src="{{ 'product-form.js' | asset_url }}" type="module" defer></script>
+
+{% schema %}
+{
+  "name": "Product Page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Page"
+    }
+  ]
+}
+{% endschema %}
