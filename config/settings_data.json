@@ -1,0 +1,24 @@
+{
+  "current": {
+    "color_primary": "#1a1a2e",
+    "color_secondary": "#e2e8f0",
+    "color_accent": "#16a34a",
+    "color_background": "#ffffff",
+    "color_text": "#1a1a2e",
+    "border_radius": 8,
+    "free_shipping_threshold": 150,
+    "cart_upsell_enabled": true,
+    "trust_badge_1": "Made in Italy",
+    "trust_badge_2": "Kostenloser Versand",
+    "trust_badge_3": "30 Tage Rückgabe",
+    "sections": {},
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {
+      "color_primary": "#1a1a2e",
+      "color_secondary": "#e2e8f0",
+      "color_accent": "#16a34a"
+    }
+  }
+}

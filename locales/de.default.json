@@ -1,0 +1,70 @@
+{
+  "general": {
+    "skip_to_content": "Zum Inhalt springen",
+    "search": "Suchen",
+    "close": "Schließen",
+    "menu": "Menü",
+    "loading": "Wird geladen..."
+  },
+  "products": {
+    "add_to_cart": "In den Warenkorb",
+    "sold_out": "Ausverkauft",
+    "unavailable": "Nicht verfügbar",
+    "price": "Preis",
+    "sale_price": "Angebotspreis",
+    "compare_at_price": "Statt",
+    "quantity": "Menge",
+    "description": "Beschreibung",
+    "dimensions": "Abmessungen",
+    "materials": "Material & Nachhaltigkeit",
+    "shipping": "Versand & Rückgabe",
+    "reviews": "Bewertungen",
+    "you_may_also_like": "Das könnte dir auch gefallen",
+    "recently_viewed": "Zuletzt angesehen",
+    "select_color": "Farbe wählen",
+    "select_material": "Material wählen",
+    "select_size": "Größe wählen"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Dein Warenkorb ist leer",
+    "continue_shopping": "Weiter einkaufen",
+    "checkout": "Zur Kasse",
+    "subtotal": "Zwischensumme",
+    "shipping_free": "Kostenloser Versand",
+    "shipping_remaining": "Noch {{ amount }} bis zum kostenlosen Versand",
+    "remove": "Entfernen",
+    "recommended": "Empfohlen für dich",
+    "item_count": {
+      "one": "{{ count }} Artikel",
+      "other": "{{ count }} Artikel"
+    }
+  },
+  "sections": {
+    "hero": {
+      "shop_now": "Jetzt entdecken"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Melde dich an und erhalte 10% Rabatt auf deine erste Bestellung",
+      "email_placeholder": "Deine E-Mail-Adresse",
+      "submit": "Anmelden"
+    },
+    "trust": {
+      "title": "Unsere Versprechen"
+    },
+    "faq": {
+      "title": "Häufige Fragen"
+    }
+  },
+  "accessibility": {
+    "close_cart": "Warenkorb schließen",
+    "open_cart": "Warenkorb öffnen",
+    "previous_slide": "Vorheriges Bild",
+    "next_slide": "Nächstes Bild",
+    "open_menu": "Menü öffnen",
+    "close_menu": "Menü schließen",
+    "increase_quantity": "Menge erhöhen",
+    "decrease_quantity": "Menge verringern"
+  }
+}

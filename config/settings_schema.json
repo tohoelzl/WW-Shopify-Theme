@@ -1,0 +1,166 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "WW Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "WW",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo-Breite",
+        "min": 50,
+        "max": 300,
+        "step": 10,
+        "default": 120,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primärfarbe",
+        "default": "#1a1a2e"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Sekundärfarbe",
+        "default": "#e2e8f0"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Akzentfarbe",
+        "default": "#16a34a"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Hintergrundfarbe",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Textfarbe",
+        "default": "#1a1a2e"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Überschrift-Schriftart",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Text-Schriftart",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "border_radius",
+        "label": "Ecken-Rundung",
+        "min": 0,
+        "max": 16,
+        "step": 2,
+        "default": 8,
+        "unit": "px"
+      }
+    ]
+  },
+  {
+    "name": "Warenkorb",
+    "settings": [
+      {
+        "type": "range",
+        "id": "free_shipping_threshold",
+        "label": "Gratis-Versand ab",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "default": 150,
+        "unit": "€"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_upsell_enabled",
+        "label": "Upselling im Warenkorb anzeigen",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Trust & Social Proof",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "trust_icon_1",
+        "label": "Trust Icon 1"
+      },
+      {
+        "type": "text",
+        "id": "trust_badge_1",
+        "label": "Trust Badge 1",
+        "default": "Made in Italy"
+      },
+      {
+        "type": "image_picker",
+        "id": "trust_icon_2",
+        "label": "Trust Icon 2"
+      },
+      {
+        "type": "text",
+        "id": "trust_badge_2",
+        "label": "Trust Badge 2",
+        "default": "Kostenloser Versand"
+      },
+      {
+        "type": "image_picker",
+        "id": "trust_icon_3",
+        "label": "Trust Icon 3"
+      },
+      {
+        "type": "text",
+        "id": "trust_badge_3",
+        "label": "Trust Badge 3",
+        "default": "30 Tage Rückgabe"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest",
+        "label": "Pinterest URL"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube URL"
+      }
+    ]
+  }
+]

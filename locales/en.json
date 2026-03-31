@@ -1,0 +1,70 @@
+{
+  "general": {
+    "skip_to_content": "Skip to content",
+    "search": "Search",
+    "close": "Close",
+    "menu": "Menu",
+    "loading": "Loading..."
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "unavailable": "Unavailable",
+    "price": "Price",
+    "sale_price": "Sale price",
+    "compare_at_price": "Was",
+    "quantity": "Quantity",
+    "description": "Description",
+    "dimensions": "Dimensions",
+    "materials": "Material & Sustainability",
+    "shipping": "Shipping & Returns",
+    "reviews": "Reviews",
+    "you_may_also_like": "You may also like",
+    "recently_viewed": "Recently viewed",
+    "select_color": "Select color",
+    "select_material": "Select material",
+    "select_size": "Select size"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "continue_shopping": "Continue shopping",
+    "checkout": "Checkout",
+    "subtotal": "Subtotal",
+    "shipping_free": "Free shipping",
+    "shipping_remaining": "{{ amount }} away from free shipping",
+    "remove": "Remove",
+    "recommended": "Recommended for you",
+    "item_count": {
+      "one": "{{ count }} item",
+      "other": "{{ count }} items"
+    }
+  },
+  "sections": {
+    "hero": {
+      "shop_now": "Shop now"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Sign up and get 10% off your first order",
+      "email_placeholder": "Your email address",
+      "submit": "Subscribe"
+    },
+    "trust": {
+      "title": "Our promises"
+    },
+    "faq": {
+      "title": "Frequently asked questions"
+    }
+  },
+  "accessibility": {
+    "close_cart": "Close cart",
+    "open_cart": "Open cart",
+    "previous_slide": "Previous slide",
+    "next_slide": "Next slide",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu",
+    "increase_quantity": "Increase quantity",
+    "decrease_quantity": "Decrease quantity"
+  }
+}
