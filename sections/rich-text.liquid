@@ -1,0 +1,27 @@
+<section class="py-12 lg:py-16">
+  <div class="container max-w-3xl">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="text-2xl lg:text-3xl font-heading font-bold mb-6 {% if section.settings.center %}text-center{% endif %}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.text != blank -%}
+      <div class="prose max-w-none {% if section.settings.center %}text-center{% endif %}">
+        {{ section.settings.text }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rich Text",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Überschrift" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Inhalt hier einfügen.</p>" },
+    { "type": "checkbox", "id": "center", "label": "Zentrieren", "default": false }
+  ],
+  "presets": [{ "name": "Rich Text" }]
+}
+{% endschema %}

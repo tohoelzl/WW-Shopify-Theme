@@ -1,0 +1,29 @@
+<section class="py-12 lg:py-16 bg-secondary">
+  <div class="container max-w-xl text-center">
+    <h2 class="text-2xl font-heading font-bold mb-2">{{ 'sections.newsletter.title' | t }}</h2>
+    <p class="text-gray-600 mb-6">{{ 'sections.newsletter.subtitle' | t }}</p>
+
+    {%- form 'customer', class: 'flex gap-2' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input
+        type="email"
+        name="contact[email]"
+        placeholder="{{ 'sections.newsletter.email_placeholder' | t }}"
+        required
+        autocomplete="email"
+        class="flex-1 px-4 py-3 rounded border border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm"
+      >
+      <button type="submit" class="btn-primary">
+        {{ 'sections.newsletter.submit' | t }}
+      </button>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [],
+  "presets": [{ "name": "Newsletter" }]
+}
+{% endschema %}
