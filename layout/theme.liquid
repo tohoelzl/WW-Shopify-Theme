@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  {% render 'meta-tags' %}
+  {{ 'application.css' | asset_url | stylesheet_tag }}
+
+  {%- unless settings.font_heading.system? -%}
+    <link rel="preload" as="font" href="{{ settings.font_heading | font_url }}" type="font/woff2" crossorigin>
+  {%- endunless -%}
+
+  {{ settings.font_heading | font_face: font_display: 'swap' }}
+  {{ settings.font_body | font_face: font_display: 'swap' }}
+
+  <style>
+    :root {
+      --color-primary: {{ settings.color_primary }};
+      --color-secondary: {{ settings.color_secondary }};
+      --color-accent: {{ settings.color_accent }};
+      --color-background: {{ settings.color_background }};
+      --color-text: {{ settings.color_text }};
+      --border-radius: {{ settings.border_radius }}px;
+      --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
+      --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
+    }
+  </style>
+
+  <script>
+    window.themeSettings = {
+      freeShippingThreshold: {{ settings.free_shipping_threshold | times: 100 }},
+      cartUpsellEnabled: {{ settings.cart_upsell_enabled }},
+      moneyFormat: {{ shop.money_format | json }}
+    };
+  </script>
+
+  {{ content_for_header }}
+</head>
+<body class="font-body text-primary bg-[var(--color-background)]">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-primary">
+    {{ 'general.skip_to_content' | t }}
+  </a>
+
+  {% sections 'header-group' %}
+
+  <main id="main-content" role="main">
+    {{ content_for_layout }}
+  </main>
+
+  {% sections 'footer-group' %}
+  {% section 'cart-drawer' %}
+
+  <script src="{{ 'base.js' | asset_url }}" type="module"></script>
+  <script src="{{ 'splide-core.min.js' | asset_url }}" defer></script>
+</body>
+</html>
