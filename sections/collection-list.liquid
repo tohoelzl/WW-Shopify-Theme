@@ -1,0 +1,75 @@
+<section class="py-12 lg:py-16">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="text-2xl lg:text-3xl font-heading font-bold mb-8 {% if section.settings.center_heading %}text-center{% endif %}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+
+    <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
+      {%- for block in section.blocks -%}
+        {%- assign collection = block.settings.collection -%}
+        <a href="{{ collection.url | default: '#' }}" class="flex-shrink-0 snap-start group" {{ block.shopify_attributes }}>
+          <div class="w-36 lg:w-44">
+            <div class="aspect-square rounded-full overflow-hidden bg-gray-50 mb-3">
+              {%- if block.settings.image != blank -%}
+                {% render 'image',
+                  image: block.settings.image,
+                  alt: collection.title,
+                  class: 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-110',
+                  sizes: '180px'
+                %}
+              {%- elsif collection.image -%}
+                {% render 'image',
+                  image: collection.image,
+                  alt: collection.title,
+                  class: 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-110',
+                  sizes: '180px'
+                %}
+              {%- else -%}
+                <div class="w-full h-full bg-secondary"></div>
+              {%- endif -%}
+            </div>
+            <p class="text-sm font-medium text-center">
+              {{ block.settings.label | default: collection.title | default: 'Kollektion' }}
+            </p>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kategorie-Scroller",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Entdecke unsere Kategorien" },
+    { "type": "checkbox", "id": "center_heading", "label": "Überschrift zentrieren", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Kategorie",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Kollektion" },
+        { "type": "image_picker", "id": "image", "label": "Bild (überschreibt Kollektionsbild)" },
+        { "type": "text", "id": "label", "label": "Label (überschreibt Kollektionsname)" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Kategorie-Scroller",
+      "blocks": [
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" }
+      ]
+    }
+  ]
+}
+{% endschema %}

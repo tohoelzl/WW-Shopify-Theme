@@ -1,0 +1,13 @@
+{%- comment -%}
+  Price display component.
+  Usage: {% render 'price', product: product %}
+{%- endcomment -%}
+
+<div class="flex items-center gap-2">
+  {%- if product.compare_at_price > product.price -%}
+    <span class="text-red-600 font-medium">{{ product.price | money }}</span>
+    <span class="text-gray-400 line-through text-sm">{{ product.compare_at_price | money }}</span>
+  {%- else -%}
+    <span class="font-medium">{{ product.price | money }}</span>
+  {%- endif -%}
+</div>

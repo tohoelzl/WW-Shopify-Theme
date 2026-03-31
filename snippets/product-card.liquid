@@ -1,0 +1,51 @@
+{%- comment -%}
+  Product card component.
+  Usage: {% render 'product-card', product: product %}
+{%- endcomment -%}
+
+{%- liquid
+  assign card_class = class | default: ''
+-%}
+
+<div class="group {{ card_class }}">
+  <a href="{{ product.url }}" class="block">
+    <div class="relative aspect-square overflow-hidden rounded bg-gray-50 mb-3">
+      {%- if product.featured_image -%}
+        {% render 'image',
+          image: product.featured_image,
+          alt: product.title,
+          class: 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105',
+          sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw'
+        %}
+
+        {%- if product.images.size > 1 -%}
+          {% render 'image',
+            image: product.images[1],
+            alt: product.title,
+            class: 'absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500',
+            sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw'
+          %}
+        {%- endif -%}
+      {%- else -%}
+        <div class="w-full h-full bg-secondary"></div>
+      {%- endif -%}
+
+      {%- if product.compare_at_price > product.price -%}
+        {%- assign discount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-medium px-2 py-1 rounded">
+          -{{ discount }}%
+        </span>
+      {%- endif -%}
+    </div>
+
+    <div>
+      {%- if product.vendor -%}
+        <p class="text-xs text-gray-400 mb-1">{{ product.vendor }}</p>
+      {%- endif -%}
+      <h3 class="text-sm font-medium mb-1 group-hover:text-accent transition-colors line-clamp-2">
+        {{ product.title }}
+      </h3>
+      {% render 'price', product: product %}
+    </div>
+  </a>
+</div>
