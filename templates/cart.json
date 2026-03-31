@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "Warenkorb",
+        "text": "<p>JavaScript ist erforderlich für den Warenkorb. Bitte aktiviere JavaScript in deinem Browser.</p>"
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "main-product": { "type": "main-product", "settings": {} },
+    "faq": { "type": "faq-section", "settings": {} },
+    "cross-selling": { "type": "cross-selling", "settings": {} }
+  },
+  "order": ["main-product", "faq", "cross-selling"]
+}
