@@ -1,0 +1,125 @@
+{%- if section.blocks.size > 0 -%}
+<section class="relative">
+  {%- if section.blocks.size == 1 -%}
+    {%- assign block = section.blocks.first -%}
+    <div class="relative aspect-[16/9] lg:aspect-[21/9] overflow-hidden" {{ block.shopify_attributes }}>
+      {%- if block.settings.image != blank -%}
+        {% render 'image',
+          image: block.settings.image,
+          alt: block.settings.heading,
+          class: 'w-full h-full object-cover',
+          sizes: '100vw',
+          priority: true
+        %}
+      {%- else -%}
+        <div class="w-full h-full bg-secondary"></div>
+      {%- endif -%}
+
+      {%- if block.settings.heading != blank or block.settings.text != blank -%}
+        <div class="absolute inset-0 flex items-center bg-black/20">
+          <div class="container">
+            <div class="max-w-xl {% if block.settings.text_alignment == 'center' %}mx-auto text-center{% endif %}">
+              {%- if block.settings.heading != blank -%}
+                <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white mb-4">{{ block.settings.heading }}</h2>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p class="text-lg text-white/90 mb-6">{{ block.settings.text }}</p>
+              {%- endif -%}
+              {%- if block.settings.button_text != blank -%}
+                <a href="{{ block.settings.button_link }}" class="btn-primary bg-white text-primary hover:bg-gray-100">
+                  {{ block.settings.button_text }}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+  {%- else -%}
+    <div class="hero-slider splide" aria-label="Hero Banner">
+      <div class="splide__track">
+        <div class="splide__list">
+          {%- for block in section.blocks -%}
+            <div class="splide__slide" {{ block.shopify_attributes }}>
+              <div class="relative aspect-[16/9] lg:aspect-[21/9] overflow-hidden">
+                {%- if block.settings.image != blank -%}
+                  {% render 'image',
+                    image: block.settings.image,
+                    alt: block.settings.heading,
+                    class: 'w-full h-full object-cover',
+                    sizes: '100vw',
+                    priority: forloop.first
+                  %}
+                {%- else -%}
+                  <div class="w-full h-full bg-secondary"></div>
+                {%- endif -%}
+
+                {%- if block.settings.heading != blank or block.settings.text != blank -%}
+                  <div class="absolute inset-0 flex items-center bg-black/20">
+                    <div class="container">
+                      <div class="max-w-xl {% if block.settings.text_alignment == 'center' %}mx-auto text-center{% endif %}">
+                        {%- if block.settings.heading != blank -%}
+                          <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white mb-4">{{ block.settings.heading }}</h2>
+                        {%- endif -%}
+                        {%- if block.settings.text != blank -%}
+                          <p class="text-lg text-white/90 mb-6">{{ block.settings.text }}</p>
+                        {%- endif -%}
+                        {%- if block.settings.button_text != blank -%}
+                          <a href="{{ block.settings.button_link }}" class="btn-primary bg-white text-primary hover:bg-gray-100">
+                            {{ block.settings.button_text }}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    {{ 'splide-core.min.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'hero-slider.js' | asset_url }}" type="module" defer></script>
+  {%- endif -%}
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Bild" },
+        { "type": "text", "id": "heading", "label": "Überschrift", "default": "Nachhaltige Möbel" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Hochwertige Möbel aus Biokunststoff, Made in Italy." },
+        { "type": "text", "id": "button_text", "label": "Button-Text", "default": "Jetzt entdecken" },
+        { "type": "url", "id": "button_link", "label": "Button-Link" },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text-Ausrichtung",
+          "options": [
+            { "value": "left", "label": "Links" },
+            { "value": "center", "label": "Zentriert" }
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "blocks": [{ "type": "slide" }]
+    }
+  ]
+}
+{% endschema %}
