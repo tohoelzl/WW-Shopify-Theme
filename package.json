@@ -1,0 +1,24 @@
+{
+  "name": "ww-shopify-theme",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:js\"",
+    "dev:css": "npx tailwindcss -i src/css/tailwind.css -o assets/application.css --watch",
+    "dev:js": "npx esbuild src/js/*.js --outdir=assets --bundle --watch --format=esm",
+    "build:css": "npx tailwindcss -i src/css/tailwind.css -o assets/application.css --minify",
+    "build:js": "npx esbuild src/js/*.js --outdir=assets --bundle --minify --format=esm",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "esbuild": "^0.20.0",
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.0",
+    "@splidejs/splide": "^4.1.0"
+  }
+}

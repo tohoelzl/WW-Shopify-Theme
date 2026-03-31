@@ -1,0 +1,8 @@
+/* Splide.js custom overrides */
+.splide__arrow {
+  @apply bg-white shadow-md;
+}
+
+.splide__pagination__page.is-active {
+  background: var(--color-primary);
+}

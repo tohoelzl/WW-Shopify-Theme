@@ -1,0 +1,8 @@
+src/
+node_modules/
+package.json
+package-lock.json
+tailwind.config.js
+postcss.config.js
+docs/
+.superpowers/
