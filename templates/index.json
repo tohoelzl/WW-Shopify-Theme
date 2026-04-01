@@ -1,11 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": { "type": "hero-banner", "settings": {} },
-    "collection-list": { "type": "collection-list", "settings": {} },
-    "featured-collection": { "type": "featured-collection", "settings": {} },
-    "image-with-text": { "type": "image-with-text", "settings": {} },
-    "trust-badges": { "type": "trust-badges", "settings": {} },
-    "newsletter": { "type": "newsletter", "settings": {} }
+    "hero": {
+      "type": "hero-banner",
+      "settings": {}
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "settings": {
+        "heading": "Entdecke unsere Kategorien",
+        "center_heading": false
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "",
+        "collection": "tische",
+        "products_count": 4,
+        "show_view_all": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/852bb113-db36-4cd6-8693-0887d6945ffe.jpg",
+        "image_position": "left",
+        "subheading": "",
+        "heading": "Nachhaltige Möbel aus Biokunststoff",
+        "text": "<p>Unsere Möbel werden aus nachhaltigem Biokunststoff in Italien hergestellt. Premium-Qualität trifft auf Umweltbewusstsein.</p>",
+        "button_text": "",
+        "button_link": "",
+        "background": "light"
+      }
+    },
+    "trust-badges": {
+      "type": "trust-badges",
+      "settings": {
+        "heading": ""
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    }
   },
-  "order": ["hero", "collection-list", "featured-collection", "image-with-text", "trust-badges", "newsletter"]
+  "order": [
+    "hero",
+    "collection-list",
+    "featured-collection",
+    "image-with-text",
+    "trust-badges",
+    "newsletter"
+  ]
 }
