@@ -1,91 +1,157 @@
 {%- if section.blocks.size > 0 -%}
-<section class="relative">
+<section class="relative overflow-hidden">
   {%- if section.blocks.size == 1 -%}
     {%- assign block = section.blocks.first -%}
-    <div class="relative aspect-[16/9] lg:aspect-[21/9] overflow-hidden" {{ block.shopify_attributes }}>
-      {%- if block.settings.image != blank -%}
-        {% render 'image',
-          image: block.settings.image,
-          alt: block.settings.heading,
-          class: 'w-full h-full object-cover',
-          sizes: '100vw',
-          priority: true
-        %}
+    <div class="relative min-h-[70vh] lg:min-h-[85vh] flex items-center overflow-hidden" {{ block.shopify_attributes }}>
+
+      {%- comment -%} Background: Video or Image with parallax {%- endcomment -%}
+      {%- if block.settings.video_url != blank -%}
+        <video
+          class="absolute inset-0 w-full h-full object-cover"
+          autoplay muted loop playsinline
+          poster="{{ block.settings.image | image_url: width: 1920 }}"
+        >
+          <source src="{{ block.settings.video_url }}" type="video/mp4">
+        </video>
+      {%- elsif block.settings.image != blank -%}
+        <div class="absolute inset-0 transform scale-105" style="will-change: transform;" data-parallax>
+          {% render 'image',
+            image: block.settings.image,
+            alt: block.settings.heading,
+            class: 'w-full h-full object-cover',
+            sizes: '100vw',
+            priority: true
+          %}
+        </div>
       {%- else -%}
-        <div class="w-full h-full bg-secondary"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700"></div>
       {%- endif -%}
 
-      {%- if block.settings.heading != blank or block.settings.text != blank -%}
-        <div class="absolute inset-0 flex items-center bg-black/20">
-          <div class="container">
-            <div class="max-w-xl {% if block.settings.text_alignment == 'center' %}mx-auto text-center{% endif %}">
-              {%- if block.settings.heading != blank -%}
-                <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white mb-4">{{ block.settings.heading }}</h2>
-              {%- endif -%}
-              {%- if block.settings.text != blank -%}
-                <p class="text-lg text-white/90 mb-6">{{ block.settings.text }}</p>
-              {%- endif -%}
-              {%- if block.settings.button_text != blank -%}
-                <a href="{{ block.settings.button_link }}" class="btn-primary bg-white text-primary hover:bg-gray-100">
-                  {{ block.settings.button_text }}
-                </a>
-              {%- endif -%}
-            </div>
+      {%- comment -%} Overlay {%- endcomment -%}
+      <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+
+      {%- comment -%} Content {%- endcomment -%}
+      <div class="container relative z-10 py-20 lg:py-32">
+        <div class="max-w-2xl {% if block.settings.text_alignment == 'center' %}mx-auto text-center{% endif %}">
+          {%- if block.settings.subheading != blank -%}
+            <p class="text-sm sm:text-base font-medium text-white/70 uppercase tracking-[0.2em] mb-4 animate-fade-in-up" style="animation-delay: 0.1s">
+              {{ block.settings.subheading }}
+            </p>
+          {%- endif -%}
+          {%- if block.settings.heading != blank -%}
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold text-white leading-[1.1] mb-6 animate-fade-in-up" style="animation-delay: 0.2s">
+              {{ block.settings.heading }}
+            </h1>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="text-lg sm:text-xl text-white/80 mb-8 max-w-lg {% if block.settings.text_alignment == 'center' %}mx-auto{% endif %} animate-fade-in-up" style="animation-delay: 0.3s">
+              {{ block.settings.text }}
+            </p>
+          {%- endif -%}
+          <div class="flex flex-wrap gap-4 {% if block.settings.text_alignment == 'center' %}justify-center{% endif %} animate-fade-in-up" style="animation-delay: 0.4s">
+            {%- if block.settings.button_text != blank -%}
+              <a href="{{ block.settings.button_link }}" class="inline-flex items-center px-8 py-4 bg-white text-primary font-medium rounded hover:bg-gray-100 transition-colors text-sm uppercase tracking-wider">
+                {{ block.settings.button_text }}
+              </a>
+            {%- endif -%}
+            {%- if block.settings.button_text_2 != blank -%}
+              <a href="{{ block.settings.button_link_2 }}" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-medium rounded hover:bg-white hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                {{ block.settings.button_text_2 }}
+              </a>
+            {%- endif -%}
           </div>
+        </div>
+      </div>
+
+      {%- comment -%} Scroll indicator {%- endcomment -%}
+      {%- if block.settings.show_scroll_indicator -%}
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </div>
       {%- endif -%}
     </div>
 
   {%- else -%}
+    {%- comment -%} Multi-slide hero with Splide {%- endcomment -%}
     <div class="hero-slider splide" aria-label="Hero Banner">
       <div class="splide__track">
         <div class="splide__list">
           {%- for block in section.blocks -%}
             <div class="splide__slide" {{ block.shopify_attributes }}>
-              <div class="relative aspect-[16/9] lg:aspect-[21/9] overflow-hidden">
+              <div class="relative min-h-[70vh] lg:min-h-[85vh] flex items-center overflow-hidden">
                 {%- if block.settings.image != blank -%}
                   {% render 'image',
                     image: block.settings.image,
                     alt: block.settings.heading,
-                    class: 'w-full h-full object-cover',
+                    class: 'absolute inset-0 w-full h-full object-cover',
                     sizes: '100vw',
                     priority: forloop.first
                   %}
                 {%- else -%}
-                  <div class="w-full h-full bg-secondary"></div>
+                  <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700"></div>
                 {%- endif -%}
-
-                {%- if block.settings.heading != blank or block.settings.text != blank -%}
-                  <div class="absolute inset-0 flex items-center bg-black/20">
-                    <div class="container">
-                      <div class="max-w-xl {% if block.settings.text_alignment == 'center' %}mx-auto text-center{% endif %}">
-                        {%- if block.settings.heading != blank -%}
-                          <h2 class="text-3xl lg:text-5xl font-heading font-bold text-white mb-4">{{ block.settings.heading }}</h2>
-                        {%- endif -%}
-                        {%- if block.settings.text != blank -%}
-                          <p class="text-lg text-white/90 mb-6">{{ block.settings.text }}</p>
-                        {%- endif -%}
-                        {%- if block.settings.button_text != blank -%}
-                          <a href="{{ block.settings.button_link }}" class="btn-primary bg-white text-primary hover:bg-gray-100">
-                            {{ block.settings.button_text }}
-                          </a>
-                        {%- endif -%}
-                      </div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+                <div class="container relative z-10 py-20 lg:py-32">
+                  <div class="max-w-2xl {% if block.settings.text_alignment == 'center' %}mx-auto text-center{% endif %}">
+                    {%- if block.settings.subheading != blank -%}
+                      <p class="text-sm sm:text-base font-medium text-white/70 uppercase tracking-[0.2em] mb-4">{{ block.settings.subheading }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.heading != blank -%}
+                      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold text-white leading-[1.1] mb-6">{{ block.settings.heading }}</h1>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <p class="text-lg sm:text-xl text-white/80 mb-8 max-w-lg {% if block.settings.text_alignment == 'center' %}mx-auto{% endif %}">{{ block.settings.text }}</p>
+                    {%- endif -%}
+                    <div class="flex flex-wrap gap-4 {% if block.settings.text_alignment == 'center' %}justify-center{% endif %}">
+                      {%- if block.settings.button_text != blank -%}
+                        <a href="{{ block.settings.button_link }}" class="inline-flex items-center px-8 py-4 bg-white text-primary font-medium rounded hover:bg-gray-100 transition-colors text-sm uppercase tracking-wider">
+                          {{ block.settings.button_text }}
+                        </a>
+                      {%- endif -%}
+                      {%- if block.settings.button_text_2 != blank -%}
+                        <a href="{{ block.settings.button_link_2 }}" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-medium rounded hover:bg-white hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                          {{ block.settings.button_text_2 }}
+                        </a>
+                      {%- endif -%}
                     </div>
                   </div>
-                {%- endif -%}
+                </div>
               </div>
             </div>
           {%- endfor -%}
         </div>
       </div>
     </div>
-
     {{ 'splide-core.min.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'hero-slider.js' | asset_url }}" type="module" defer></script>
   {%- endif -%}
 </section>
 {%- endif -%}
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+</style>
+
+{%- comment -%} Simple parallax effect {%- endcomment -%}
+<script>
+  (function() {
+    const el = document.querySelector('[data-parallax]');
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    window.addEventListener('scroll', () => {
+      const speed = 0.3;
+      el.style.transform = 'scale(1.05) translateY(' + (window.scrollY * speed) + 'px)';
+    }, { passive: true });
+  })();
+</script>
 
 {% schema %}
 {
@@ -96,30 +162,28 @@
       "type": "slide",
       "name": "Slide",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Bild" },
-        { "type": "text", "id": "heading", "label": "Überschrift", "default": "Nachhaltige Möbel" },
-        { "type": "text", "id": "text", "label": "Text", "default": "Hochwertige Möbel aus Biokunststoff, Made in Italy." },
-        { "type": "text", "id": "button_text", "label": "Button-Text", "default": "Jetzt entdecken" },
-        { "type": "url", "id": "button_link", "label": "Button-Link" },
+        { "type": "image_picker", "id": "image", "label": "Hintergrundbild" },
+        { "type": "url", "id": "video_url", "label": "Video URL (MP4)", "info": "Optional: Video statt Bild. Wird automatisch abgespielt (stumm, Loop)." },
+        { "type": "text", "id": "subheading", "label": "Subheading", "default": "Made in Italy" },
+        { "type": "text", "id": "heading", "label": "Überschrift", "default": "Nachhaltige Möbel aus Biokunststoff" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Zeitloses Design trifft auf Innovation. Entdecke Möbel, die gut aussehen und der Umwelt gut tun." },
+        { "type": "text", "id": "button_text", "label": "Button 1 Text", "default": "Kollektion entdecken" },
+        { "type": "url", "id": "button_link", "label": "Button 1 Link" },
+        { "type": "text", "id": "button_text_2", "label": "Button 2 Text" },
+        { "type": "url", "id": "button_link_2", "label": "Button 2 Link" },
         {
-          "type": "select",
-          "id": "text_alignment",
-          "label": "Text-Ausrichtung",
+          "type": "select", "id": "text_alignment", "label": "Text-Ausrichtung",
           "options": [
             { "value": "left", "label": "Links" },
             { "value": "center", "label": "Zentriert" }
           ],
           "default": "left"
-        }
+        },
+        { "type": "checkbox", "id": "show_scroll_indicator", "label": "Scroll-Indikator anzeigen", "default": true }
       ]
     }
   ],
   "max_blocks": 5,
-  "presets": [
-    {
-      "name": "Hero Banner",
-      "blocks": [{ "type": "slide" }]
-    }
-  ]
+  "presets": [{ "name": "Hero Banner", "blocks": [{ "type": "slide" }] }]
 }
 {% endschema %}
