@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "landing": {
+      "type": "category-landing",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Leuchten",
+        "text": "<p>Tischlampen, Stehlampen, Hängelampen und Wandleuchten — stimmungsvolles Licht aus nachhaltigem Design.</p>"
+      },
+      "blocks": {
+        "tischlampen": { "type": "tile", "settings": { "title": "Tischlampen" } },
+        "stehlampen": { "type": "tile", "settings": { "title": "Stehlampen" } },
+        "haengelampen": { "type": "tile", "settings": { "title": "Hängelampen" } },
+        "wandleuchten": { "type": "tile", "settings": { "title": "Wandleuchten" } }
+      },
+      "block_order": ["tischlampen", "stehlampen", "haengelampen", "wandleuchten"]
+    },
+    "faq": {
+      "type": "faq-section",
+      "settings": {}
+    }
+  },
+  "order": ["landing", "faq"]
+}

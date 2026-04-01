@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "landing": {
+      "type": "category-landing",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Deko & Accessoires",
+        "text": "<p>Blumentöpfe, Vasen, Spiegel, Skulpturen und mehr — die perfekten Akzente für dein Zuhause.</p>"
+      },
+      "blocks": {
+        "blumentoepfe": { "type": "tile", "settings": { "title": "Blumentöpfe" } },
+        "vasen": { "type": "tile", "settings": { "title": "Vasen" } },
+        "spiegel": { "type": "tile", "settings": { "title": "Spiegel" } },
+        "skulpturen": { "type": "tile", "settings": { "title": "Skulpturen" } },
+        "tabletts": { "type": "tile", "settings": { "title": "Tabletts" } },
+        "kissen": { "type": "tile", "settings": { "title": "Kissen" } }
+      },
+      "block_order": ["blumentoepfe", "vasen", "spiegel", "skulpturen", "tabletts", "kissen"]
+    },
+    "faq": {
+      "type": "faq-section",
+      "settings": {}
+    }
+  },
+  "order": ["landing", "faq"]
+}

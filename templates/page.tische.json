@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "landing": {
+      "type": "category-landing",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Tische",
+        "text": "<p>Esstische, Couchtische, Beistelltische und Stehtische — alle aus nachhaltigem Biokunststoff, Made in Italy.</p>"
+      },
+      "blocks": {
+        "tische": { "type": "tile", "settings": { "title": "Esstische" } },
+        "couchtische": { "type": "tile", "settings": { "title": "Couchtische" } },
+        "beistelltische": { "type": "tile", "settings": { "title": "Beistelltische" } },
+        "stehtische": { "type": "tile", "settings": { "title": "Stehtische" } }
+      },
+      "block_order": ["tische", "couchtische", "beistelltische", "stehtische"]
+    },
+    "faq": {
+      "type": "faq-section",
+      "settings": {}
+    }
+  },
+  "order": ["landing", "faq"]
+}

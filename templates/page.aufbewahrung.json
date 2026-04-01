@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "landing": {
+      "type": "category-landing",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Aufbewahrung",
+        "text": "<p>Regale, Flaschenregale und Raumteiler — funktional und stilvoll.</p>"
+      },
+      "blocks": {
+        "regale": { "type": "tile", "settings": { "title": "Regale" } },
+        "flaschenregale": { "type": "tile", "settings": { "title": "Flaschenregale" } },
+        "raumteiler": { "type": "tile", "settings": { "title": "Raumteiler" } }
+      },
+      "block_order": ["regale", "flaschenregale", "raumteiler"]
+    },
+    "faq": {
+      "type": "faq-section",
+      "settings": {}
+    }
+  },
+  "order": ["landing", "faq"]
+}

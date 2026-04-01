@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "landing": {
+      "type": "category-landing",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Bar & Gastro",
+        "text": "<p>Bartheken, Bartresen und Zubehör für den professionellen und privaten Einsatz.</p>"
+      },
+      "blocks": {
+        "bartheken": { "type": "tile", "settings": { "title": "Bartheken" } },
+        "bartresen": { "type": "tile", "settings": { "title": "Bartresen" } },
+        "eiskuebel": { "type": "tile", "settings": { "title": "Eiskübel" } }
+      },
+      "block_order": ["bartheken", "bartresen", "eiskuebel"]
+    },
+    "faq": {
+      "type": "faq-section",
+      "settings": {}
+    }
+  },
+  "order": ["landing", "faq"]
+}

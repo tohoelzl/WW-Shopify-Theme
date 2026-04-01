@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "landing": {
+      "type": "category-landing",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Sitzmöbel",
+        "text": "<p>Von Stühlen über Sofas bis hin zu Bänken — entdecke unsere Sitzmöbel aus nachhaltigem Biokunststoff, Made in Italy.</p>"
+      },
+      "blocks": {
+        "stuehle": { "type": "tile", "settings": { "title": "Stühle" } },
+        "sessel": { "type": "tile", "settings": { "title": "Sessel" } },
+        "sofas": { "type": "tile", "settings": { "title": "Sofas" } },
+        "sitzbaenke": { "type": "tile", "settings": { "title": "Sitzbänke" } },
+        "hocker": { "type": "tile", "settings": { "title": "Hocker" } },
+        "barhocker": { "type": "tile", "settings": { "title": "Barhocker" } },
+        "liegen": { "type": "tile", "settings": { "title": "Liegen" } }
+      },
+      "block_order": ["stuehle", "sessel", "sofas", "sitzbaenke", "hocker", "barhocker", "liegen"]
+    },
+    "faq": {
+      "type": "faq-section",
+      "settings": {}
+    }
+  },
+  "order": ["landing", "faq"]
+}

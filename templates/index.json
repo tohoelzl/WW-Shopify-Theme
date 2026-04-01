@@ -15,19 +15,76 @@
     },
     "bento": {
       "type": "category-bento",
-      "settings": {}
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Entdecke unsere Welt"
+      }
+    },
+    "highlight-sitzmoebel": {
+      "type": "category-highlight",
+      "settings": {
+        "subheading": "Bestseller",
+        "heading": "Sitzmöbel",
+        "text": "<p>Von zeitlosen Stühlen bis zu luxuriösen Sofas — unsere Sitzmöbel aus Biokunststoff verbinden Nachhaltigkeit mit italienischem Design.</p>",
+        "button_text": "Alle Sitzmöbel entdecken",
+        "image_position": "left",
+        "background": "white"
+      }
     },
     "featured-collection": {
       "type": "featured-collection",
-      "settings": {}
+      "settings": {
+        "heading": "Neu eingetroffen"
+      }
+    },
+    "highlight-tische": {
+      "type": "category-highlight",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Tische",
+        "text": "<p>Esstische, Couchtische und Beistelltische — jeder Tisch ein Statement. Made in Italy aus nachhaltigem Biokunststoff.</p>",
+        "button_text": "Alle Tische entdecken",
+        "image_position": "right",
+        "background": "subtle"
+      }
     },
     "storytelling": {
       "type": "storytelling",
-      "settings": {}
+      "settings": {
+        "subheading": "Unsere Geschichte",
+        "heading": "Made in Italy — mit Liebe zum Detail",
+        "text": "<p>Jedes unserer Möbelstücke wird in Italien aus nachhaltigem Biokunststoff gefertigt. Wir verbinden traditionelles Handwerk mit innovativen Materialien für eine bessere Zukunft.</p>",
+        "button_text": "Mehr erfahren"
+      }
+    },
+    "highlight-leuchten": {
+      "type": "category-highlight",
+      "settings": {
+        "subheading": "Kollektion",
+        "heading": "Leuchten",
+        "text": "<p>Stimmungsvolles Licht für jeden Raum. Unsere Leuchten vereinen Form und Funktion in nachhaltigem Design.</p>",
+        "button_text": "Alle Leuchten entdecken",
+        "image_position": "left",
+        "background": "white"
+      }
+    },
+    "highlight-bar": {
+      "type": "category-highlight",
+      "settings": {
+        "subheading": "Für Profis & Zuhause",
+        "heading": "Bar & Gastro",
+        "text": "<p>Bartheken, Bartresen und Zubehör — perfekt für die Gastronomie oder deine private Home-Bar.</p>",
+        "button_text": "Bar & Gastro entdecken",
+        "image_position": "right",
+        "background": "subtle"
+      }
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {}
+      "settings": {
+        "subheading": "Kundenstimmen",
+        "heading": "Das sagen unsere Kunden"
+      }
     },
     "trust-badges": {
       "type": "trust-badges",
@@ -41,8 +98,12 @@
   "order": [
     "hero",
     "bento",
+    "highlight-sitzmoebel",
     "featured-collection",
+    "highlight-tische",
     "storytelling",
+    "highlight-leuchten",
+    "highlight-bar",
     "testimonials",
     "trust-badges",
     "newsletter"

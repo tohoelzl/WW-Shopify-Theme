@@ -1,0 +1,177 @@
+{%- comment -%}
+  Category Landing Page
+  Grid of subcategory tiles with images. Used for hub pages like "Sitzmöbel".
+{%- endcomment -%}
+
+<section class="py-12 lg:py-20">
+  <div class="container">
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div class="max-w-3xl mb-12 lg:mb-16">
+      {%- if section.settings.subheading != blank -%}
+        <p class="text-sm font-medium text-accent uppercase tracking-[0.2em] mb-2">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="text-3xl lg:text-5xl font-heading font-bold leading-tight mb-4">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="text-lg text-gray-600 leading-relaxed">{{ section.settings.text }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Category Tiles Grid {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        {%- for block in section.blocks -%}
+          {%- assign tile_collection = block.settings.collection -%}
+          <a
+            href="{{ tile_collection.url | default: block.settings.link | default: '#' }}"
+            class="group relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-[3/2]"
+            {{ block.shopify_attributes }}
+          >
+            {%- comment -%} Image {%- endcomment -%}
+            {%- if block.settings.image != blank -%}
+              {% render 'image',
+                image: block.settings.image,
+                alt: block.settings.title | default: tile_collection.title,
+                class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110',
+                sizes: '(min-width: 1024px) 33vw, 50vw'
+              %}
+            {%- elsif tile_collection.image -%}
+              {% render 'image',
+                image: tile_collection.image,
+                alt: tile_collection.title,
+                class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110',
+                sizes: '(min-width: 1024px) 33vw, 50vw'
+              %}
+            {%- else -%}
+              <div class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200"></div>
+            {%- endif -%}
+
+            {%- comment -%} Overlay + Label {%- endcomment -%}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent transition-colors duration-300 group-hover:from-black/80">
+              <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                <h2 class="text-white font-heading font-bold text-xl lg:text-2xl mb-1">
+                  {{ block.settings.title | default: tile_collection.title | default: 'Kategorie' }}
+                </h2>
+                {%- if block.settings.description != blank -%}
+                  <p class="text-white/70 text-sm mb-2">{{ block.settings.description }}</p>
+                {%- elsif tile_collection.products_count -%}
+                  <p class="text-white/70 text-sm mb-2">{{ tile_collection.products_count }} Produkte</p>
+                {%- endif -%}
+                <span class="inline-flex items-center gap-1 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  Entdecken
+                  <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </span>
+              </div>
+            </div>
+
+            {%- comment -%} Product count badge {%- endcomment -%}
+            {%- if tile_collection.products_count and block.settings.show_count -%}
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-primary text-xs font-bold px-2.5 py-1 rounded-full">
+                {{ tile_collection.products_count }}
+              </div>
+            {%- endif -%}
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Bottom CTA {%- endcomment -%}
+    {%- if section.settings.bottom_button_text != blank -%}
+      <div class="text-center mt-12">
+        <a href="{{ section.settings.bottom_button_link }}" class="btn-primary inline-flex items-center gap-2">
+          {{ section.settings.bottom_button_text }}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kategorie Landingpage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Sitzmöbel"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Beschreibung",
+      "default": "<p>Entdecke unsere Auswahl an hochwertigen Sitzmöbeln aus nachhaltigem Biokunststoff.</p>"
+    },
+    {
+      "type": "text",
+      "id": "bottom_button_text",
+      "label": "Button Text (unten)"
+    },
+    {
+      "type": "url",
+      "id": "bottom_button_link",
+      "label": "Button Link (unten)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Kategorie-Kachel",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Kollektion"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Bild (überschreibt Kollektionsbild)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel (überschreibt Kollektionsname)"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Beschreibung"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (überschreibt Kollektions-URL)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_count",
+          "label": "Produktanzahl anzeigen",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Kategorie Landingpage",
+      "blocks": [
+        { "type": "tile", "settings": { "title": "Stühle" } },
+        { "type": "tile", "settings": { "title": "Sessel" } },
+        { "type": "tile", "settings": { "title": "Sofas" } },
+        { "type": "tile", "settings": { "title": "Sitzbänke" } },
+        { "type": "tile", "settings": { "title": "Hocker" } },
+        { "type": "tile", "settings": { "title": "Liegen" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
