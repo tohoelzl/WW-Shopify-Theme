@@ -28,18 +28,22 @@
             class="group relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-[3/2]"
             {{ block.shopify_attributes }}
           >
-            {%- comment -%} Image {%- endcomment -%}
-            {%- if block.settings.image != blank -%}
+            {%- comment -%} Image: manual → collection image → first product image → placeholder {%- endcomment -%}
+            {%- liquid
+              assign tile_image = block.settings.image
+              unless tile_image
+                assign tile_image = tile_collection.image
+              endunless
+              unless tile_image
+                if tile_collection.products.size > 0
+                  assign tile_image = tile_collection.products.first.featured_image
+                endif
+              endunless
+            -%}
+            {%- if tile_image -%}
               {% render 'image',
-                image: block.settings.image,
+                image: tile_image,
                 alt: block.settings.title | default: tile_collection.title,
-                class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110',
-                sizes: '(min-width: 1024px) 33vw, 50vw'
-              %}
-            {%- elsif tile_collection.image -%}
-              {% render 'image',
-                image: tile_collection.image,
-                alt: tile_collection.title,
                 class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110',
                 sizes: '(min-width: 1024px) 33vw, 50vw'
               %}

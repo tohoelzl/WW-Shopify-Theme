@@ -13,17 +13,21 @@
       {%- comment -%} Image side {%- endcomment -%}
       <div class="{% if section.settings.image_position == 'right' %}lg:order-2{% endif %}">
         <a href="{{ collection.url | default: section.settings.button_link }}" class="block group rounded-2xl overflow-hidden relative aspect-[4/3]">
-          {%- if section.settings.image != blank -%}
+          {%- liquid
+            assign highlight_image = section.settings.image
+            unless highlight_image
+              assign highlight_image = collection.image
+            endunless
+            unless highlight_image
+              if collection.products.size > 0
+                assign highlight_image = collection.products.first.featured_image
+              endif
+            endunless
+          -%}
+          {%- if highlight_image -%}
             {% render 'image',
-              image: section.settings.image,
+              image: highlight_image,
               alt: section.settings.heading,
-              class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-105',
-              sizes: '(min-width: 1024px) 50vw, 100vw'
-            %}
-          {%- elsif collection.image -%}
-            {% render 'image',
-              image: collection.image,
-              alt: collection.title,
               class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-105',
               sizes: '(min-width: 1024px) 50vw, 100vw'
             %}

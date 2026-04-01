@@ -12,16 +12,20 @@
         <a href="{{ collection.url | default: '#' }}" class="flex-shrink-0 snap-start group" {{ block.shopify_attributes }}>
           <div class="w-36 lg:w-44">
             <div class="aspect-square rounded-full overflow-hidden bg-gray-50 mb-3">
-              {%- if block.settings.image != blank -%}
+              {%- liquid
+                assign list_image = block.settings.image
+                unless list_image
+                  assign list_image = collection.image
+                endunless
+                unless list_image
+                  if collection.products.size > 0
+                    assign list_image = collection.products.first.featured_image
+                  endif
+                endunless
+              -%}
+              {%- if list_image -%}
                 {% render 'image',
-                  image: block.settings.image,
-                  alt: collection.title,
-                  class: 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-110',
-                  sizes: '180px'
-                %}
-              {%- elsif collection.image -%}
-                {% render 'image',
-                  image: collection.image,
+                  image: list_image,
                   alt: collection.title,
                   class: 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-110',
                   sizes: '180px'
