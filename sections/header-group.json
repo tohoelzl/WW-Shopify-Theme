@@ -2,18 +2,13 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {
-        "text": "Kostenloser Versand ab 150€"
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
-        "menu": "main-menu"
+        "menu": "main-menu",
+        "announcement_text": "Kostenloser Versand ab 150€ | Made in Italy"
       }
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": ["header"]
 }
