@@ -1,0 +1,35 @@
+Title,Handle,Link Type,Link,Position,Parent Title
+Main menu,main-menu,,,,
+Sitzmöbel,main-menu,HTTP,#,1,
+Stühle,main-menu,Collection,stuehle,1,Sitzmöbel
+Sessel,main-menu,Collection,sessel,2,Sitzmöbel
+Sofas,main-menu,Collection,sofas,3,Sitzmöbel
+Sitzbänke,main-menu,Collection,sitzbaenke,4,Sitzmöbel
+Hocker,main-menu,Collection,hocker,5,Sitzmöbel
+Barhocker,main-menu,Collection,barhocker,6,Sitzmöbel
+Liegen,main-menu,Collection,liegen,7,Sitzmöbel
+Tische,main-menu,HTTP,#,2,
+Tische,main-menu,Collection,tische,1,Tische
+Couchtische,main-menu,Collection,couchtische,2,Tische
+Beistelltische,main-menu,Collection,beistelltische,3,Tische
+Stehtische,main-menu,Collection,stehtische,4,Tische
+Leuchten,main-menu,HTTP,#,3,
+Tischlampen,main-menu,Collection,tischlampen,1,Leuchten
+Stehlampen,main-menu,Collection,stehlampen,2,Leuchten
+Hängelampen,main-menu,Collection,haengelampen,3,Leuchten
+Wandleuchten,main-menu,Collection,wandleuchten,4,Leuchten
+Bar & Gastro,main-menu,HTTP,#,4,
+Bartheken,main-menu,Collection,bartheken,1,Bar & Gastro
+Bartresen,main-menu,Collection,bartresen,2,Bar & Gastro
+Eiskübel,main-menu,Collection,eiskuebel,3,Bar & Gastro
+Aufbewahrung,main-menu,HTTP,#,5,
+Regale,main-menu,Collection,regale,1,Aufbewahrung
+Flaschenregale,main-menu,Collection,flaschenregale,2,Aufbewahrung
+Raumteiler,main-menu,Collection,raumteiler,3,Aufbewahrung
+Deko & Accessoires,main-menu,HTTP,#,6,
+Blumentöpfe,main-menu,Collection,blumentoepfe,1,Deko & Accessoires
+Vasen,main-menu,Collection,vasen,2,Deko & Accessoires
+Spiegel,main-menu,Collection,spiegel,3,Deko & Accessoires
+Skulpturen,main-menu,Collection,skulpturen,4,Deko & Accessoires
+Tabletts,main-menu,Collection,tabletts,5,Deko & Accessoires
+Kissen,main-menu,Collection,kissen,6,Deko & Accessoires
