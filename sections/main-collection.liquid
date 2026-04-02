@@ -22,7 +22,7 @@
           Filter
         </button>
         <p class="text-sm text-gray-500">
-          {{ collection.products_count }} {{ collection.products_count | pluralize: 'Produkt', 'Produkte' }}
+          {{ collection.products_count }} {% if collection.products_count == 1 %}Produkt{% else %}Produkte{% endif %}
         </p>
       </div>
 
