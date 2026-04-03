@@ -1,0 +1,353 @@
+{%- comment -%}
+  FAQ Schema.org JSON-LD — outputs FAQPage structured data for a given handle.
+  Usage: {% render 'faq-schema-data', faq_handle: 'stuehle' %}
+  No Metaobjects needed — all data is hardcoded here.
+{%- endcomment -%}
+
+{%- case faq_handle -%}
+
+{%- when 'stuehle' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie viel wiegt ein Stuhl aus Biokunststoff?","acceptedAnswer":{"@type":"Answer","text":"Unsere Stühle wiegen je nach Modell zwischen 3 und 6 kg — deutlich leichter als vergleichbare Holz- oder Metallstühle. Das macht sie besonders praktisch zum Umstellen und Stapeln."}},
+{"@type":"Question","name":"Sind die Stühle für Gastro und Events geeignet?","acceptedAnswer":{"@type":"Answer","text":"Absolut. Unsere Stühle sind stapelbar, extrem robust und leicht zu reinigen — perfekte Eigenschaften für Restaurants, Cafés, Hotels und Eventlocations. Bei größeren Mengen bieten wir Staffelpreise an."}},
+{"@type":"Question","name":"Kann ich Sitzkissen für die Stühle bekommen?","acceptedAnswer":{"@type":"Answer","text":"Ja, für viele unserer Stuhlmodelle bieten wir passende Sitzkissen als Zubehör an. Diese finden Sie in der Kategorie Kissen oder direkt auf der Produktseite des jeweiligen Stuhls unter Passendes Zubehör."}},
+{"@type":"Question","name":"Gibt es die Stühle mit Armlehnen?","acceptedAnswer":{"@type":"Answer","text":"Ja, wir bieten sowohl Stühle mit als auch ohne Armlehnen an. In unserer Kategorie Sessel finden Sie zudem Modelle mit besonders komfortablen Armlehnen für entspanntes Sitzen."}}
+]}
+</script>
+
+{%- when 'sessel' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Besonderheiten bieten Ihre Sessel aus Biokunststoff im Vergleich zu herkömmlichen Kunststoff- oder Polstersesseln?","acceptedAnswer":{"@type":"Answer","text":"Unsere Sessel aus Biokunststoff verbinden das Beste aus beiden Welten: die Robustheit, Pflegeleichtigkeit und Witterungsbeständigkeit von Kunststoff mit einem Designanspruch, der sonst eher aus dem Bereich der Polstermöbel bekannt ist. Im Gegensatz zu herkömmlichem Kunststoff ist Biokunststoff auf Basis nachwachsender Rohstoffe produziert, was den CO₂-Fußabdruck des Produkts erheblich reduziert."}},
+{"@type":"Question","name":"Sind die Sessel auch für längeres Sitzen komfortabel, oder sind sie eher dekorativ gedacht?","acceptedAnswer":{"@type":"Answer","text":"Unsere Sessel sind auf Sitzkomfort ausgelegt und verfügen über ergonomisch geformte Schalen, die den Rücken und den Sitzbereich optimal unterstützen. Für besonders langes Sitzen empfehlen wir die Kombination mit einem unserer passenden Sitzkissen aus der Kissenkollektion."}},
+{"@type":"Question","name":"Kann ich einen Sessel aus Biokunststoff problemlos auf der Terrasse oder im Garten stehen lassen?","acceptedAnswer":{"@type":"Answer","text":"Ja — viele unserer Sesselmodelle sind explizit für den Außenbereich konzipiert und widerstehen UV-Strahlung, Regen, Feuchtigkeit und Temperaturschwankungen. Der Biokunststoff verändert seine Farbe oder Form nicht durch Sonneneinstrahlung und rostet nicht."}},
+{"@type":"Question","name":"Wie reinige ich einen Sessel aus Biokunststoff, der im Außenbereich steht?","acceptedAnswer":{"@type":"Answer","text":"Die Reinigung unserer Outdoor-Sessel aus Biokunststoff ist denkbar einfach: Ein Abspülen mit dem Gartenschlauch reicht für die normale Reinigung vollkommen aus. Für stärkere Verschmutzungen empfiehlt sich ein mildes Reinigungsmittel und eine weiche Bürste."}}
+]}
+</script>
+
+{%- when 'sofas' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie ist ein Sofa aus Biokunststoff aufgebaut, und wo kommt das Material konkret zum Einsatz?","acceptedAnswer":{"@type":"Answer","text":"Bei unseren Sofas kommt Biokunststoff primär im Rahmen, in der Grundkonstruktion und in den Formteilen zum Einsatz, während Sitz- und Rückenflächen mit hochwertigen Polstermaterialien bezogen sind."}},
+{"@type":"Question","name":"Für welche Räume und Einrichtungsstile eignen sich Ihre Sofas am besten?","acceptedAnswer":{"@type":"Answer","text":"Unsere Sofas aus Biokunststoff-Rahmen sind durch ihr klares, zeitloses Design für moderne, minimalistisch geprägte Wohnräume besonders gut geeignet, harmonieren aber auch mit mediterranen oder nordischen Einrichtungskonzepten."}},
+{"@type":"Question","name":"Wie pflegeleicht sind die Sofabezüge, und kann ich sie selbst waschen?","acceptedAnswer":{"@type":"Answer","text":"Die meisten unserer Sofas sind mit abnehmbaren Bezügen ausgestattet, die bei 40 °C gewaschen werden können."}},
+{"@type":"Question","name":"Welche Sofa-Konfigurationen sind erhältlich — 2-Sitzer, 3-Sitzer, L-Form?","acceptedAnswer":{"@type":"Answer","text":"Unser Sofa-Sortiment umfasst verschiedene Konfigurationen, von kompakten 2-Sitzern für kleine Wohnräume über klassische 3-Sitzer bis hin zu großzügigen Ecksofas in L-Form für offene Wohnbereiche."}}
+]}
+</script>
+
+{%- when 'sitzbaenke' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Für welche Einsatzbereiche eignen sich Ihre Sitzbänke aus Biokunststoff am besten?","acceptedAnswer":{"@type":"Answer","text":"Unsere Sitzbänke aus Biokunststoff sind äußerst vielseitig: Sie finden ihren Platz im Flur, im Esszimmer, auf der Terrasse oder im Garten sowie in öffentlichen Bereichen wie Hotels, Restaurants oder Büros."}},
+{"@type":"Question","name":"Wie belastbar sind die Sitzbänke, und können mehrere Personen gleichzeitig darauf sitzen?","acceptedAnswer":{"@type":"Answer","text":"Unsere Sitzbänke sind für die gleichzeitige Nutzung durch mehrere Personen ausgelegt. Modelle mit einer Sitzlänge von 120–160 cm tragen eine Gesamtlast von bis zu 300 kg."}},
+{"@type":"Question","name":"Gibt es Sitzbänke mit Stauraum oder Rückenlehne in Ihrem Sortiment?","acceptedAnswer":{"@type":"Answer","text":"Ja, unser Sitzbank-Sortiment bietet verschiedene Varianten: von schlichten Bänken ohne Rückenlehne bis hin zu Modellen mit Rückenlehne. Einige Modelle verfügen zudem über einen integrierten Stauraum unter der Sitzfläche."}},
+{"@type":"Question","name":"Sind die Sitzbänke für den Außenbereich wetterfest, und muss ich sie im Winter einräumen?","acceptedAnswer":{"@type":"Answer","text":"Outdoor-geeignete Modelle sind für den ganzjährigen Außeneinsatz konzipiert und widerstehen Regen, UV-Strahlung und normalen Temperaturschwankungen ohne Qualitätsverlust."}}
+]}
+</script>
+
+{%- when 'hocker' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Arten von Hockern bieten Sie an, und für welche Einsatzbereiche sind sie jeweils gedacht?","acceptedAnswer":{"@type":"Answer","text":"Unser Hocker-Sortiment aus Biokunststoff umfasst Sitzhocker, Fußhocker, Dekohocker und multifunktionale Modelle, die als Sitzgelegenheit, Beistelltisch oder Aufbewahrungselement genutzt werden können."}},
+{"@type":"Question","name":"Sind die Hocker aus Biokunststoff stabil genug für den täglichen Einsatz, und wie hoch ist die maximale Belastbarkeit?","acceptedAnswer":{"@type":"Answer","text":"Unsere Hocker aus Biokunststoff sind in der Regel für Körpergewichte bis zu 120 kg zugelassen."}},
+{"@type":"Question","name":"Kann ich Hocker aus Biokunststoff im Außenbereich stehen lassen, ohne sie einzuräumen?","acceptedAnswer":{"@type":"Answer","text":"Viele unserer Hocker-Modelle sind für den dauerhaften Outdoor-Einsatz konzipiert und widerstehen Regen, UV-Strahlung und Temperaturschwankungen ohne sichtbaren Qualitätsverlust."}},
+{"@type":"Question","name":"Lassen sich die Hocker stapeln, und eignen sie sich für die Gastronomie oder Eventnutzung?","acceptedAnswer":{"@type":"Answer","text":"Mehrere Modelle unserer Hocker-Kollektion sind stapelbar ausgelegt, was sie besonders attraktiv für den Einsatz in Gastronomie, Hotels oder bei Veranstaltungen macht."}}
+]}
+</script>
+
+{%- when 'barhocker' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Aus welchem Material bestehen Ihre Barhocker, und warum ist Biokunststoff eine gute Wahl für die Gastronomie?","acceptedAnswer":{"@type":"Answer","text":"Unsere Barhocker werden aus hochwertigem Biokunststoff gefertigt, einem nachhaltigen Material auf Basis nachwachsender Rohstoffe. Gerade in der Gastronomie punktet das Material durch seine leichte Reinigungsfähigkeit und Widerstandsfähigkeit gegenüber Feuchtigkeit und häufiger Benutzung."}},
+{"@type":"Question","name":"Sind die Barhocker für den Außenbereich — etwa auf einer Terrasse oder einem Biergarten — geeignet?","acceptedAnswer":{"@type":"Answer","text":"Ja, viele unserer Barhocker aus Biokunststoff sind für den Innen- und Außenbereich gleichermaßen konzipiert. Das Material ist UV-beständig und reagiert nicht empfindlich auf Temperaturschwankungen, Regen oder Feuchtigkeit."}},
+{"@type":"Question","name":"Welche Sitzhöhen sind bei Ihren Barhockern erhältlich, und worauf sollte ich bei der Auswahl achten?","acceptedAnswer":{"@type":"Answer","text":"Unsere Barhocker sind in verschiedenen Sitzhöhen erhältlich, typischerweise zwischen 65 cm und 80 cm, um sowohl zu Standard-Bartheken als auch zu höheren Stehtischen zu passen."}},
+{"@type":"Question","name":"Wie werden die Barhocker in Italien gefertigt, und welche Qualitätsstandards gelten?","acceptedAnswer":{"@type":"Answer","text":"Alle unsere Barhocker werden in Italien in spezialisierten Produktionsstätten hergestellt. Die italienische Fertigungstradition verbindet präzises Handwerk mit modernem Designanspruch — jedes Stück wird auf Maßhaltigkeit, Stabilität und Oberflächenqualität geprüft."}}
+]}
+</script>
+
+{%- when 'liegen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Sind Ihre Liegen aus Biokunststoff für den dauerhaften Outdoor-Einsatz, z. B. am Pool oder auf der Terrasse, geeignet?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Liegen sind speziell für den Außenbereich konzipiert und werden aus witterungsbeständigem Biokunststoff gefertigt, der UV-Strahlung, Chlorwasser, Salzwasser und Regen problemlos standhält."}},
+{"@type":"Question","name":"Wie bequem sind Liegen aus Biokunststoff, und gibt es Modelle mit Polsterung oder verstellbarer Rückenlehne?","acceptedAnswer":{"@type":"Answer","text":"Mehrere unserer Liegenmodelle verfügen über verstellbare Rückenlehnen, die verschiedene Positionen ermöglichen — von vollständig flach bis aufrecht sitzend. Für zusätzlichen Komfort empfehlen wir unsere passenden Outdoor-Auflagen und Kissen."}},
+{"@type":"Question","name":"Wie schwer sind die Liegen, und lassen sie sich einfach verstauen oder transportieren?","acceptedAnswer":{"@type":"Answer","text":"Unsere Liegen aus Biokunststoff sind deutlich leichter als vergleichbare Modelle aus Aluminium, Teak oder Stahlrohr — das typische Gewicht liegt je nach Modell zwischen 8 und 15 kg."}}
+]}
+</script>
+
+{%- when 'tische' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Tischtypen umfasst Ihre Kollektion, und welche Größen sind verfügbar?","acceptedAnswer":{"@type":"Answer","text":"Unsere Tisch-Kollektion aus Biokunststoff umfasst Esstische, Schreibtische, Arbeitstische und Mehrzwecktische in verschiedenen Größen — von kleinen Zweiertischen bis hin zu großzügigen Esstischen für sechs bis acht Personen."}},
+{"@type":"Question","name":"Wie robust sind Tischplatten aus Biokunststoff gegenüber Kratzern, Hitze und alltäglichen Belastungen?","acceptedAnswer":{"@type":"Answer","text":"Tischplatten aus Biokunststoff sind für den alltäglichen Einsatz im Haushalt und in der Gastronomie ausgelegt und widerstehen normalen Kratzbelastungen zuverlässig. Gegenüber direkter Hitze empfehlen wir die Verwendung von Untersetzen."}},
+{"@type":"Question","name":"Sind die Tische für den Außenbereich geeignet, und wie verhalten sie sich bei Witterungseinflüssen?","acceptedAnswer":{"@type":"Answer","text":"Viele Modelle unserer Tischkollektion sind explizit für den Außenbereich konzipiert — Biokunststoff ist von Natur aus witterungsbeständig und reagiert nicht auf Regen, UV-Strahlung oder Feuchtigkeit mit Quellen, Splittern oder Rosten."}},
+{"@type":"Question","name":"Kann ich die Tische mit anderen Möbeln aus Ihrer Kollektion kombinieren?","acceptedAnswer":{"@type":"Answer","text":"Ja — unser gesamtes Möbelsortiment folgt einem einheitlichen Designvokabular. Tische, Stühle, Bänke, Hocker und Sofas lassen sich daher problemlos zu stimmigen Ensembles kombinieren."}}
+]}
+</script>
+
+{%- when 'couchtische' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Couchtisch-Formen gibt es?","acceptedAnswer":{"@type":"Answer","text":"Wir bieten Couchtische in verschiedenen Formen an — rund, quadratisch, rechteckig und organisch. Die Höhe liegt typischerweise zwischen 40 und 45 cm. Alle Modelle sind aus nachhaltigem Biokunststoff gefertigt und in mehreren Farben erhältlich."}},
+{"@type":"Question","name":"Wie groß sollte mein Couchtisch sein?","acceptedAnswer":{"@type":"Answer","text":"Als Faustregel gilt: Der Couchtisch sollte etwa zwei Drittel der Sofabreite messen und etwa so hoch sein wie die Sitzhöhe des Sofas. Bei einem 3-Sitzer-Sofa empfehlen wir einen Couchtisch mit einer Breite von 80–120 cm."}},
+{"@type":"Question","name":"Kann ich den Couchtisch auch draußen nutzen?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Couchtische aus Biokunststoff sind wetterfest und können problemlos auf der Terrasse oder im Garten verwendet werden. Das Material ist UV-beständig, wasserabweisend und frostfest."}}
+]}
+</script>
+
+{%- when 'beistelltische' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Für welche Räume sind Ihre Beistelltische aus Biokunststoff am besten geeignet?","acceptedAnswer":{"@type":"Answer","text":"Unsere Beistelltische aus Biokunststoff sind vielseitig einsetzbar: Sie harmonieren gleichermaßen im Wohnzimmer neben dem Sofa, im Schlafzimmer als Nachttisch, auf der Terrasse oder im Garten."}},
+{"@type":"Question","name":"Wie schwer sind Ihre Beistelltische, und lassen sie sich leicht umstellen?","acceptedAnswer":{"@type":"Answer","text":"Unsere Beistelltische wiegen je nach Modell zwischen 2 und 6 kg und lassen sich daher mühelos umstellen, ohne Kratzer auf dem Boden zu hinterlassen."}},
+{"@type":"Question","name":"Welche Traglast haben die Beistelltische, und kann ich darauf auch schwerere Gegenstände wie Bücher oder Vasen stellen?","acceptedAnswer":{"@type":"Answer","text":"Unsere Beistelltische sind für die typische Nutzung ausgelegt und tragen problemlos Gegenstände wie Bücher, Vasen oder Getränke. Die Traglast liegt in der Regel zwischen 15 und 40 kg."}},
+{"@type":"Question","name":"Kann ich die Beistelltische auch miteinander kombinieren oder stapeln?","acceptedAnswer":{"@type":"Answer","text":"Einige Modelle unserer Beistelltischserie sind als Nest-Sets konzipiert und können ineinandergeschoben oder gestapelt werden — ideal für flexible Wohnkonzepte und platzsparendes Verstauen."}}
+]}
+</script>
+
+{%- when 'stehtische' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Für welche Einsatzbereiche eignen sich Ihre Stehtische aus Biokunststoff besonders?","acceptedAnswer":{"@type":"Answer","text":"Unsere Stehtische aus Biokunststoff sind ideal für Empfangsbereiche, Büros, Gastronomiebetriebe, Messen, Events und Terrassen. Die Standhöhe von typischerweise 100–110 cm eignet sich für bequemes Stehen und kurze Gespräche."}},
+{"@type":"Question","name":"Wie stabil sind die Stehtische, und sind sie für schwere Tabletts oder Getränke geeignet?","acceptedAnswer":{"@type":"Answer","text":"Unsere Stehtische sind auf die typischen Belastungen in Gastronomie und Büro ausgelegt und tragen problemlos das Gewicht von Getränken, Tellern oder Laptops."}},
+{"@type":"Question","name":"Kann ich einen Stehtisch aus Biokunststoff auch dauerhaft im Außenbereich aufstellen?","acceptedAnswer":{"@type":"Answer","text":"Ja — outdoor-geeignete Modelle widerstehen Regen, UV-Strahlung und den typischen Temperaturschwankungen in Mitteleuropa ohne sichtbaren Qualitätsverlust."}},
+{"@type":"Question","name":"Gibt es Stehtische in unterschiedlichen Tischplattendurchmessern für kleinere und größere Gruppen?","acceptedAnswer":{"@type":"Answer","text":"Ja, unser Stehtisch-Sortiment bietet verschiedene Tischplattendurchmesser: von kleinen Bistrotischen mit ca. 60 cm Durchmesser bis hin zu größeren Tischplatten mit 80–100 cm Durchmesser."}}
+]}
+</script>
+
+{%- when 'tischlampen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Besonderheiten zeichnen Ihre Tischlampen aus Biokunststoff als Designobjekte aus?","acceptedAnswer":{"@type":"Answer","text":"Unsere Tischlampen kombinieren die gestalterischen Freiheiten des Biokunststoffs mit dem Formenreichtum der italienischen Designtradition. Jede Tischlampe ist ein Objekt, das auch ausgeschaltet als Designelement im Raum wirkt."}},
+{"@type":"Question","name":"Welche Leuchtmittel sind für Ihre Tischlampen empfohlen, und wie hoch ist der Energieverbrauch?","acceptedAnswer":{"@type":"Answer","text":"Wir empfehlen energiesparende LED-Leuchtmittel. Typische LED-Leuchtmittel verbrauchen zwischen 5 und 10 Watt — eine Energieersparnis von über 80 % gegenüber alten Glühbirnen."}},
+{"@type":"Question","name":"Sind die Tischlampen mit einem Schalter ausgestattet, und wie wird das Kabel geführt?","acceptedAnswer":{"@type":"Answer","text":"Ja, alle unsere Tischlampen verfügen entweder über einen Inline-Schalter am Kabel oder über einen integrierten Berührungsschalter am Fuß. Das Textilkabel ist in der Regel 1,5–2 m lang."}},
+{"@type":"Question","name":"Kann ich eine Tischlampe aus Biokunststoff auch im Freien, z. B. auf einer Terrasse, verwenden?","acceptedAnswer":{"@type":"Answer","text":"Für den Outdoor-Einsatz sind spezielle, feuchtraumgeeignete Tischlampen erforderlich, die in unserem Sortiment explizit als solche ausgewiesen sind."}}
+]}
+</script>
+
+{%- when 'stehlampen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie verbinden Ihre Stehlampen Biokunststoff und Beleuchtungsfunktion zu einem nachhaltigen Produkt?","acceptedAnswer":{"@type":"Answer","text":"Unsere Stehlampen nutzen Biokunststoff für Schirme, Standfüße und dekorative Gehäuseteile. Die Kombination aus nachhaltigem Material und energiesparendem LED-Betrieb macht sie zu einem rundum ökologisch sinnvollen Produkt."}},
+{"@type":"Question","name":"Welche Lichtleistung und Leuchtmittel-Typen sind für Ihre Stehlampen empfohlen?","acceptedAnswer":{"@type":"Answer","text":"Wir empfehlen ausschließlich LED-Leuchtmittel, da diese wenig Wärme erzeugen. Mit warmweißen LEDs (2700–3000 K) erzielen Sie eine behagliche Wohnatmosphäre, tageslichtweiße LEDs (4000–5000 K) eignen sich für Lesebereiche."}},
+{"@type":"Question","name":"Wie wird die Stehlampe angeschlossen, und benötige ich für die Installation einen Elektriker?","acceptedAnswer":{"@type":"Answer","text":"Unsere Stehlampen werden mit einem Netzkabel und einem Standardstecker für Schuko-Steckdosen geliefert und sind sofort einsatzbereit — kein Elektriker erforderlich."}},
+{"@type":"Question","name":"Sind die Stehlampen stabil genug, damit sie auch in Haushalten mit Kindern und Haustieren sicher sind?","acceptedAnswer":{"@type":"Answer","text":"Unsere Stehlampen verfügen über einen breiten, gewichteten Standfuß, der die Kippstabilität maximiert. Das Biokunststoff-Material ist deutlich bruchresistenter als Keramik oder Glas."}}
+]}
+</script>
+
+{%- when 'haengelampen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Aus welchen Materialien bestehen die Schirme Ihrer Hängelampen, und wie wird Biokunststoff in der Lampenproduktion eingesetzt?","acceptedAnswer":{"@type":"Answer","text":"Bei unseren Hängelampen kommen Biokunststoff-Elemente insbesondere für die Lampenschirme, Gehäuse und dekorativen Komponenten zum Einsatz. Alle Lampen erfüllen die europäischen CE-Anforderungen für Leuchten."}},
+{"@type":"Question","name":"Welche Leuchtmittel sind für Ihre Hängelampen geeignet, und sind sie LED-kompatibel?","acceptedAnswer":{"@type":"Answer","text":"Alle unsere Hängelampen sind mit modernen LED-Leuchtmitteln kompatibel. LED-Leuchtmittel erzeugen deutlich weniger Wärme als Halogen oder klassische Glühbirnen, was auch dem Biokunststoff-Schirm zugute kommt."}},
+{"@type":"Question","name":"Wie werden die Hängelampen installiert, und benötige ich dafür einen Elektriker?","acceptedAnswer":{"@type":"Answer","text":"Unsere Hängelampen werden mit einem Textilkabel und einer Standard-Baldachinrosette geliefert. Für den Erstanschluss an das Stromnetz empfehlen wir aus Sicherheitsgründen, eine Elektrofachkraft hinzuzuziehen."}},
+{"@type":"Question","name":"Sind die Hängelampen auch für den Außenbereich oder für feuchte Räume wie Badezimmer geeignet?","acceptedAnswer":{"@type":"Answer","text":"Nicht alle unserer Hängelampen sind für den Außen- oder Feuchtraumeinsatz zertifiziert. Bitte prüfen Sie die Schutzklasse (IP-Wert) in der jeweiligen Produktbeschreibung. Für überdachte Terrassen benötigen Sie mindestens IP44."}}
+]}
+</script>
+
+{%- when 'wandleuchten' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Für welche Räume und Einsatzbereiche sind Ihre Wandleuchten aus Biokunststoff besonders geeignet?","acceptedAnswer":{"@type":"Answer","text":"Unsere Wandleuchten sind vielseitig einsetzbar: Als indirektes Licht im Wohnzimmer schaffen sie eine warme Ambienteatmosphäre, im Flur sorgen sie für Orientierungsbeleuchtung, und im zertifizierten Außenbereich beleuchten sie Hauseingänge und Terrassen."}},
+{"@type":"Question","name":"Wie werden Ihre Wandleuchten montiert, und benötige ich dafür einen Elektriker?","acceptedAnswer":{"@type":"Answer","text":"Für den elektrischen Anschluss an eine vorhandene Wanddose empfehlen wir, eine Elektrofachkraft hinzuzuziehen, da der Anschluss an das Festnetz Fachkenntnisse und die Einhaltung von Sicherheitsvorschriften erfordert."}},
+{"@type":"Question","name":"Welche Leuchtmittel werden für die Wandleuchten empfohlen, und lassen sie sich dimmen?","acceptedAnswer":{"@type":"Answer","text":"Wir empfehlen LED-Leuchtmittel für alle unsere Wandleuchten. Dimmbare LEDs können bei Wandleuchten mit entsprechend verdrahteten Dimmer-Schaltern eingesetzt werden."}},
+{"@type":"Question","name":"Gibt es in Ihrem Sortiment auch Wandleuchten, die für den Außeneinsatz zertifiziert sind?","acceptedAnswer":{"@type":"Answer","text":"Ja — unser Sortiment umfasst sowohl Modelle für den Innenbereich als auch IP44- und IP65-zertifizierte Außenwandleuchten. Die Schutzklasse ist klar in der Produktbeschreibung angegeben."}}
+]}
+</script>
+
+{%- when 'bartheken' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was unterscheidet Ihre Bartheken aus Biokunststoff von herkömmlichen Bartheken aus Holz oder Metall?","acceptedAnswer":{"@type":"Answer","text":"Unsere Bartheken aus Biokunststoff sind deutlich leichter, pflegeleichter und widerstandsfähig gegen Feuchtigkeit, Flecken und Abrieb. Während Holzoberflächen regelmäßig versiegelt werden müssen, bleibt Biokunststoff ohne aufwendige Pflege stabil."}},
+{"@type":"Question","name":"Sind Ihre Bartheken für den professionellen Einsatz in Bars und Restaurants geeignet?","acceptedAnswer":{"@type":"Answer","text":"Absolut — unsere Bartheken sind speziell für den Einsatz in der Gastronomie entwickelt. Die Oberflächen aus Biokunststoff sind leicht zu desinfizieren und erfüllen die hygienischen Anforderungen der Gastronomie."}},
+{"@type":"Question","name":"Kann ich eine Bartheke auch für mein Zuhause oder meine Privatterrasse nutzen?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Bartheken eignen sich hervorragend für den privaten Bereich — ob als stilvoller Mittelpunkt in einem Wohnzimmer, als Raumtrenner oder als Ergänzung auf einer überdachten Terrasse."}},
+{"@type":"Question","name":"Welche Abmessungen haben Ihre Bartheken, und wie viel Stellfläche benötige ich?","acceptedAnswer":{"@type":"Answer","text":"Bartheken sind in der Regel zwischen 100 cm und 200 cm breit und weisen eine Stehhöhe von 100–110 cm auf. Für ausreichende Bewegungsfreiheit hinter der Theke empfehlen wir einen Mindestabstand von 80–90 cm zur nächsten Wand."}}
+]}
+</script>
+
+{%- when 'bartresen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was ist der Unterschied zwischen einem Bartresen und einer Bartheke in Ihrem Sortiment?","acceptedAnswer":{"@type":"Answer","text":"Bartresen bezeichnet in der Regel freistehende oder wandmontierte Thekenelemente als Servicefläche und Sichtbarriere zwischen Gästen und Servicepersonal. Bartheken sind oft kompaktere, modulare Einheiten für den Heimbereich oder kleinere Gastronomieflächen."}},
+{"@type":"Question","name":"Wie reinige ich einen Bartresen aus Biokunststoff nach intensiver Nutzung?","acceptedAnswer":{"@type":"Answer","text":"Wischen Sie die Oberfläche mit einem feuchten Tuch und einem milden Reinigungsmittel ab. Für hartnäckigere Verschmutzungen eignet sich ein pH-neutrales Reinigungsmittel. Vermeiden Sie scheuernde Schwämme oder aggressive Lösungsmittel."}},
+{"@type":"Question","name":"Ist der Bartresen auch für Outdoor-Veranstaltungen oder Catering-Events geeignet?","acceptedAnswer":{"@type":"Answer","text":"Ja, dank der witterungsbeständigen Eigenschaften des Biokunststoffs eignen sich unsere Bartresen sehr gut für temporäre Outdoor-Einsätze bei Events, Catering oder Gartenpartys."}},
+{"@type":"Question","name":"Welche Traglast haben Ihre Bartresen, und kann ich schwere Gegenstände wie Eiswürfelbehälter oder Glasregale darauf abstellen?","acceptedAnswer":{"@type":"Answer","text":"Unsere Bartresen sind auf die üblichen Belastungen im Gastronomiebetrieb ausgelegt und tragen problemlos das Gewicht von Gläsern, Flaschen und Eiswürfelbehältern."}}
+]}
+</script>
+
+{%- when 'eiskuebel' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Ist Biokunststoff als Material für Eiskübel lebensmittelsicher und hygienisch?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Eiskübel werden aus lebensmittelechtem Biokunststoff hergestellt, der alle relevanten europäischen Anforderungen erfüllt. Das Material nimmt keine Gerüche oder Geschmacksstoffe an."}},
+{"@type":"Question","name":"Wie lange bleibt das Eis in Ihren Eiskübeln aus Biokunststoff kalt?","acceptedAnswer":{"@type":"Answer","text":"Biokunststoff hat ähnliche Wärmedämmeigenschaften wie herkömmlicher Kunststoff und kühlt damit Eis über mehrere Stunden wirksam. Im Vergleich zu dünnen Metalleiskübeln schneidet Biokunststoff oft besser ab."}},
+{"@type":"Question","name":"Für welche Anlässe eignen sich Ihre Eiskübel besonders gut?","acceptedAnswer":{"@type":"Answer","text":"Unsere Eiskübel aus Biokunststoff sind vielseitig einsetzbar: Sie passen auf eine elegant gedeckte Terrasse ebenso wie hinter die Hausbar oder in eine professionelle Gastronomieumgebung."}},
+{"@type":"Question","name":"Sind die Eiskübel spülmaschinengeeignet?","acceptedAnswer":{"@type":"Answer","text":"Die meisten unserer Eiskübel aus Biokunststoff sind spülmaschinengeeignet, bitte prüfen Sie jedoch die spezifischen Pflegehinweise im jeweiligen Produktdatenblatt."}}
+]}
+</script>
+
+{%- when 'regale' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie tragfähig sind Ihre Regale aus Biokunststoff, und für welche Gegenstände sind sie geeignet?","acceptedAnswer":{"@type":"Answer","text":"Unsere Regale aus Biokunststoff sind für Bücher, Dekorationsobjekte, Pflanzen und Geschirr ausgelegt. Die Tragfähigkeit liegt je nach Modell zwischen 10 und 25 kg pro Fachboden."}},
+{"@type":"Question","name":"Sind die Regale wandmontiert oder freistehend, und wie erfolgt die Montage?","acceptedAnswer":{"@type":"Answer","text":"Unser Sortiment umfasst sowohl freistehende Standregale als auch wandmontierte Hängeregale, die jeweils mit einer ausführlichen Montageanleitung geliefert werden."}},
+{"@type":"Question","name":"Kann ich die Regale auch im Badezimmer oder in der Küche verwenden?","acceptedAnswer":{"@type":"Answer","text":"Ja — Biokunststoff ist feuchtigkeitsresistent und daher ideal für den Einsatz in Küche und Badezimmer. Anders als Holzregale quillt Biokunststoff nicht auf und bildet keinen Schimmel."}},
+{"@type":"Question","name":"In welchen Farben und Formaten sind die Regale erhältlich?","acceptedAnswer":{"@type":"Answer","text":"Unsere Regale sind in verschiedenen Größen und einer kuratierten Farbpalette erhältlich, von zeitlosem Weiß und Schwarz über warme Erdtöne bis hin zu kräftigeren Akzentfarben."}}
+]}
+</script>
+
+{%- when 'flaschenregale' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie viele Flaschen fassen Ihre Flaschenregale aus Biokunststoff, und welche Flaschenformate passen hinein?","acceptedAnswer":{"@type":"Answer","text":"Unser Sortiment reicht von kompakten Tischmodellen für 3–6 Flaschen bis hin zu großformatigen Standregalen für 12 Flaschen und mehr. Die meisten Modelle sind für Standard-Weinflaschen ausgelegt."}},
+{"@type":"Question","name":"Sind die Flaschenregale standsicher, auch wenn sie vollständig mit Weinflaschen befüllt sind?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Flaschenregale sind auf volle Beladung ausgelegt und verfügen über eine breite, stabile Standfläche, die auch bei vollständiger Befüllung einen sicheren Stand gewährleistet."}},
+{"@type":"Question","name":"Kann ich ein Flaschenregal aus Biokunststoff auch im Weinkeller oder in einem feuchten Keller verwenden?","acceptedAnswer":{"@type":"Answer","text":"Biokunststoff ist vollkommen feuchtigkeitsresistent und schimmelt oder quillt nicht auf — damit ist er dem klassischen Holzregal in feuchten Umgebungen wie Kellern deutlich überlegen."}},
+{"@type":"Question","name":"Welche Pflegehinweise gelten für Flaschenregale aus Biokunststoff?","acceptedAnswer":{"@type":"Answer","text":"Wischen Sie das Regal regelmäßig mit einem leicht feuchten Tuch ab. Für hartnäckigere Flecken empfiehlt sich ein mildes Reinigungsmittel und ein weiches Tuch."}}
+]}
+</script>
+
+{%- when 'raumteiler' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie werden Ihre Raumteiler aus Biokunststoff im Innenraum eingesetzt, und welche Raumgrößen sind typischerweise geeignet?","acceptedAnswer":{"@type":"Answer","text":"Unsere Raumteiler eignen sich hervorragend zur flexiblen Unterteilung von offenen Wohn-, Büro- oder Gastronomiebereichen, ohne bauliche Eingriffe vorzunehmen."}},
+{"@type":"Question","name":"Sind die Raumteiler standfest, und besteht eine Kippgefahr, insbesondere in Haushalten mit Kindern oder Haustieren?","acceptedAnswer":{"@type":"Answer","text":"Unsere Raumteiler verfügen über eine breite, stabile Standfläche. In Haushalten mit Kleinkindern empfehlen wir, den Raumteiler zusätzlich mit einer dezenten Wandhalterung zu sichern."}},
+{"@type":"Question","name":"Lassen sich die Raumteiler auch im Außenbereich, etwa auf einer Terrasse oder in einem Wintergarten, nutzen?","acceptedAnswer":{"@type":"Answer","text":"Biokunststoff ist grundsätzlich witterungsbeständig, weshalb unsere Raumteiler auch in überdachten Außenbereichen oder Wintergärten eingesetzt werden können."}}
+]}
+</script>
+
+{%- when 'blumentoepfe' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Sind Ihre Blumentöpfe aus Biokunststoff für den dauerhaften Außeneinsatz geeignet?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Blumentöpfe sind speziell für den Einsatz im Außenbereich entwickelt und widerstehen problemlos Regen, Frost und UV-Strahlung. Die Farben bleiben dank UV-Stabilisierung über mehrere Saisons leuchtend und farbecht."}},
+{"@type":"Question","name":"Hat Biokunststoff als Pflanzgefäß Auswirkungen auf das Pflanzenwachstum?","acceptedAnswer":{"@type":"Answer","text":"Nein, Biokunststoff ist in Bezug auf Pflanzenwachstum vollkommen neutral und gibt keine schädlichen Substanzen an Erde oder Pflanzen ab. Das Material ist lebensmittelsicher geprüft."}},
+{"@type":"Question","name":"In welchen Größen und Formen sind Ihre Blumentöpfe erhältlich?","acceptedAnswer":{"@type":"Answer","text":"Unser Sortiment reicht von kleinen Tischpflanzkübeln mit ca. 15 cm Durchmesser bis hin zu großen Standkübeln mit über 60 cm Durchmesser. Neben runden Formen gibt es auch geometrische und organisch geschwungene Designs."}},
+{"@type":"Question","name":"Wie pflege ich meine Blumentöpfe aus Biokunststoff, und wie entferne ich Kalkflecken oder Erde?","acceptedAnswer":{"@type":"Answer","text":"Entfernen Sie Schmutz und Erde mit einem feuchten Tuch oder einer weichen Bürste. Kalkflecken lassen sich mit einer milden Essig-Wasser-Lösung problemlos entfernen."}},
+{"@type":"Question","name":"Kann ich die Blumentöpfe auch als reine Dekorationsobjekte ohne Bepflanzung nutzen?","acceptedAnswer":{"@type":"Answer","text":"Absolut — viele unserer Kunden setzen die Blumentöpfe bewusst als dekorative Elemente ein, etwa mit Steinen, Trockenblumen, Kerzen oder Lichterketten gefüllt."}}
+]}
+</script>
+
+{%- when 'vasen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was macht eine Vase aus Biokunststoff besonders, und warum ist sie einer Glasvase oder Keramikvase vorzuziehen?","acceptedAnswer":{"@type":"Answer","text":"Eine Vase aus Biokunststoff ist bruchsicher — im Gegensatz zu Glas oder Keramik — und damit ideal für Haushalte mit Kindern, Haustieren oder für den Außenbereich. Das Material erlaubt außerdem eine außergewöhnliche Formgebung."}},
+{"@type":"Question","name":"Ist die Vase wasserdicht, und kann ich darin frische Blumen aufstellen?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Vasen aus Biokunststoff sind vollständig wasserdicht und können problemlos mit Wasser befüllt werden. Das Material nimmt kein Wasser auf, quillt nicht auf und bildet keinen Kalk- oder Algenbesatz."}},
+{"@type":"Question","name":"In welchen Stilen und Farben ist die Vase erhältlich, und wie fügt sie sich in verschiedene Einrichtungsstile ein?","acceptedAnswer":{"@type":"Answer","text":"Unsere Vasen sind in einem zeitlosen Design erhältlich. Die Farbpalette umfasst Töne wie Weiß, Schwarz und Sandbeige sowie akzentuierende Farben in Terrakotta, Dunkelblau oder Mattgrün."}}
+]}
+</script>
+
+{%- when 'spiegel' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Rolle spielt Biokunststoff bei der Herstellung Ihrer Spiegel?","acceptedAnswer":{"@type":"Answer","text":"Bei unseren Spiegeln kommt Biokunststoff für die Rahmen, Fassungen und dekorativen Elemente zum Einsatz. Biokunststoff ist feuchtigkeitsresistent, was Spiegel im Badezimmer langlebiger macht als Holzrahmen."}},
+{"@type":"Question","name":"Sind Ihre Spiegel zur Wandmontage geeignet, und wie erfolgt die Befestigung?","acceptedAnswer":{"@type":"Answer","text":"Ja, alle unsere Spiegel sind für die Wandmontage konzipiert und werden mit dem erforderlichen Befestigungsmaterial sowie einer detaillierten Montageanleitung geliefert."}},
+{"@type":"Question","name":"Können die Spiegel auch im Badezimmer verwendet werden?","acceptedAnswer":{"@type":"Answer","text":"Ja — Biokunststoff ist feuchtigkeitsresistent und eignet sich daher hervorragend für den Einsatz im Badezimmer. Der Rahmen schimmelt nicht und verändert seine Form auch bei dauerhaft hoher Luftfeuchtigkeit nicht."}},
+{"@type":"Question","name":"In welchen Formen und Größen sind die Spiegel erhältlich?","acceptedAnswer":{"@type":"Answer","text":"Unser Spiegelsortiment umfasst runde, ovale, rechteckige und organisch geformte Varianten in verschiedenen Größen — von kleinen Wandspiegeln bis hin zu großformatigen Ganzkörperspiegeln (bis zu 180 cm Höhe)."}}
+]}
+</script>
+
+{%- when 'skulpturen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was versteht Ihre Marke unter Skulpturen, und wie entstehen diese Objekte aus Biokunststoff?","acceptedAnswer":{"@type":"Answer","text":"Unsere Skulpturen sind Designobjekte, die an der Schnittstelle von Kunst und Möbel stehen. Sie entstehen in enger Zusammenarbeit mit italienischen Designern und Künstlern. Jede Skulptur wird in einer limitierten Auflage in Italien gefertigt."}},
+{"@type":"Question","name":"Wo in einer Wohnung oder einem Geschäft kann ich die Skulpturen am wirkungsvollsten platzieren?","acceptedAnswer":{"@type":"Answer","text":"Skulpturen wirken besonders eindrucksvoll als Einzelstücke auf einem Sockel, auf einem Beistelltisch oder in einer Wandnische, wo sie gezielt angestrahlt werden können."}},
+{"@type":"Question","name":"Sind die Skulpturen aus Biokunststoff auch für den Außenbereich geeignet, und wie verhalten sie sich bei Witterungseinflüssen?","acceptedAnswer":{"@type":"Answer","text":"Einige unserer Skulpturen sind für den Außeneinsatz konzipiert und entsprechend witterungsbeständig. Biokunststoff weder rostet noch splittert und behält seine Farbgebung bei UV-stabilisierten Ausführungen über viele Jahre."}}
+]}
+</script>
+
+{%- when 'tabletts' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Aus welchem Biokunststoff sind Ihre Tabletts gefertigt, und sind sie lebensmittelsicher?","acceptedAnswer":{"@type":"Answer","text":"Unsere Tabletts werden aus lebensmittelechtem Biokunststoff hergestellt. Das Material ist BPA-frei und gibt keine Schadstoffe oder Gerüche an Lebensmittel, Getränke oder Geschirr ab."}},
+{"@type":"Question","name":"Eignen sich die Tabletts auch als Dekorationselemente, oder sind sie rein funktional gedacht?","acceptedAnswer":{"@type":"Answer","text":"Unsere Tabletts erfüllen beide Funktionen gleichermaßen: Sie sind als Serviertabletts ebenso praktisch wie als dekorative Ablageflächen auf einem Couchtisch oder Sideboard."}},
+{"@type":"Question","name":"Sind die Tabletts spülmaschinengeeignet, und wie reinige ich sie richtig?","acceptedAnswer":{"@type":"Answer","text":"Die meisten unserer Tabletts aus Biokunststoff sind spülmaschinengeeignet, bitte prüfen Sie jedoch die Temperaturangaben auf dem jeweiligen Produkt."}}
+]}
+</script>
+
+{%- when 'kissen' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Materialien werden für die Kissen in Ihrer Kollektion verwendet, und inwiefern ist das Produkt nachhaltig?","acceptedAnswer":{"@type":"Answer","text":"Unsere Kissen sind aus nachhaltigen Textilmaterialien gefertigt. Je nach Modell kommen recycelte oder biologisch abbaubare Fasern zum Einsatz, darunter Bio-Baumwolle oder recyceltes Polyester aus PET-Flaschen."}},
+{"@type":"Question","name":"Sind die Kissenbezüge waschbar, und wie pflege ich die Kissen richtig?","acceptedAnswer":{"@type":"Answer","text":"Die meisten unserer Kissenbezüge sind abnehmbar und bei 40 °C waschbar. Die Füllung sollte nicht gewaschen, sondern bei Bedarf an einem schattigen, gut belüfteten Ort ausgelüftet werden."}},
+{"@type":"Question","name":"Eignen sich die Kissen auch für den Outdoor-Bereich, etwa auf Lounge-Inventar oder Gartenmöbeln?","acceptedAnswer":{"@type":"Answer","text":"Für den Outdoor-Einsatz empfehlen wir ausdrücklich die als outdoor-geeignet gekennzeichneten Modelle, deren Bezüge aus wasser- und UV-beständigen Spezialtextilien bestehen."}},
+{"@type":"Question","name":"In welchen Größen und Farben sind die Kissen erhältlich?","acceptedAnswer":{"@type":"Answer","text":"Unser Kissensortiment reicht von kompakten Zierkissen (40 × 40 cm) über Rückenkissen (50 × 50 cm) bis hin zu großformatigen Sitzkissen. Die Farbpalette umfasst neutrale Töne sowie Akzentfarben in Meeresblau, Terrakotta oder Olivgrün."}}
+]}
+</script>
+
+{%- when 'sitzmoebel' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Sitzmöbel bietet ihr an?","acceptedAnswer":{"@type":"Answer","text":"Unser Sortiment umfasst Stühle, Sessel, Sofas, Sitzbänke, Hocker, Barhocker und Liegen. Alle Sitzmöbel werden aus nachhaltigem Biokunststoff in Italien gefertigt."}},
+{"@type":"Question","name":"Sind die Stühle stapelbar?","acceptedAnswer":{"@type":"Answer","text":"Ja, viele unserer Stuhlmodelle sind stapelbar — ideal für Gastronomie, Veranstaltungen oder wenn Sie flexibel Platz schaffen möchten."}},
+{"@type":"Question","name":"Wie hoch ist die Belastbarkeit der Sitzmöbel?","acceptedAnswer":{"@type":"Answer","text":"Unsere Sitzmöbel sind für eine Belastung von bis zu 120 kg ausgelegt. Die Biokunststoff-Konstruktion ist extrem stabil und behält auch bei dauerhafter Nutzung ihre Form."}},
+{"@type":"Question","name":"Gibt es die Sitzmöbel in verschiedenen Farben?","acceptedAnswer":{"@type":"Answer","text":"Ja, die meisten unserer Sitzmöbel sind in einer Vielzahl von Farben erhältlich. Von klassischen Tönen wie Weiß, Schwarz und Grau bis hin zu lebhaften Farben wie Rot, Blau oder Grün."}}
+]}
+</script>
+
+{%- when 'page-tische' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Tischarten bietet ihr an?","acceptedAnswer":{"@type":"Answer","text":"Wir führen Esstische, Couchtische, Beistelltische und Stehtische. Jeder Tisch wird aus nachhaltigem Biokunststoff in Italien hergestellt und ist sowohl für den Innen- als auch den Außenbereich geeignet."}},
+{"@type":"Question","name":"Wie kratzfest sind die Tischoberflächen?","acceptedAnswer":{"@type":"Answer","text":"Die Oberflächen unserer Biokunststoff-Tische sind sehr widerstandsfähig gegen Kratzer und Abrieb. Für den täglichen Gebrauch sind sie bestens geeignet."}},
+{"@type":"Question","name":"Sind die Tische auch für die Gastronomie geeignet?","acceptedAnswer":{"@type":"Answer","text":"Absolut. Unsere Tische sind robust, pflegeleicht und wetterbeständig — ideal für Restaurants, Cafés, Hotels und Biergärten. Bei größeren Bestellungen bieten wir auch Mengenrabatte an."}},
+{"@type":"Question","name":"Welche Maße haben die Tische?","acceptedAnswer":{"@type":"Answer","text":"Die Maße variieren je nach Modell. Unsere Esstische haben typischerweise eine Höhe von 73–75 cm, Couchtische liegen bei 40–45 cm und Stehtische bei 105–110 cm."}}
+]}
+</script>
+
+{%- when 'leuchten' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Leuchtenarten bietet ihr an?","acceptedAnswer":{"@type":"Answer","text":"Unser Leuchtensortiment umfasst Tischlampen, Stehlampen, Hängelampen und Wandleuchten. Alle Leuchten werden in Italien designt und gefertigt."}},
+{"@type":"Question","name":"Welche Leuchtmittel werden verwendet?","acceptedAnswer":{"@type":"Answer","text":"Unsere Leuchten sind für handelsübliche LED-Leuchtmittel mit E27- oder E14-Fassungen ausgelegt. LED-Leuchtmittel sind energiesparend und langlebig."}},
+{"@type":"Question","name":"Sind die Leuchten für den Außenbereich geeignet?","acceptedAnswer":{"@type":"Answer","text":"Einige unserer Leuchten sind speziell für den Außenbereich konzipiert und verfügen über die entsprechende IP-Schutzklasse. Bitte achten Sie auf die Angabe Outdoor geeignet in der Produktbeschreibung."}},
+{"@type":"Question","name":"Kann ich die Leuchten dimmen?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom verwendeten Leuchtmittel ab. Wenn Sie ein dimmbares LED-Leuchtmittel einsetzen, können die meisten unserer Leuchten problemlos gedimmt werden."}}
+]}
+</script>
+
+{%- when 'bar-gastro' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Sind eure Bar-Möbel für den professionellen Einsatz geeignet?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Bartheken, Bartresen und Barhocker sind speziell für den professionellen Gastronomiebetrieb konzipiert. Sie sind extrem robust, pflegeleicht und halten auch intensiver täglicher Nutzung stand."}},
+{"@type":"Question","name":"Bietet ihr Mengenrabatte für die Gastronomie an?","acceptedAnswer":{"@type":"Answer","text":"Ja, bei größeren Bestellungen bieten wir attraktive Staffelpreise an. Kontaktieren Sie uns gerne für ein individuelles Angebot."}},
+{"@type":"Question","name":"Können die Bartheken beleuchtet werden?","acceptedAnswer":{"@type":"Answer","text":"Ja, viele unserer Bartheken-Modelle sind mit integrierbarer LED-Beleuchtung erhältlich. Die Beleuchtung kann in verschiedenen Farben eingestellt werden."}}
+]}
+</script>
+
+{%- when 'aufbewahrung' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie stabil sind die Regale aus Biokunststoff?","acceptedAnswer":{"@type":"Answer","text":"Unsere Regale sind trotz ihres leichten Gewichts äußerst stabil. Die Regalböden tragen je nach Modell zwischen 5 und 15 kg pro Fach."}},
+{"@type":"Question","name":"Kann ich die Regale als Raumteiler verwenden?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Regale eignen sich hervorragend als Raumteiler. Wir bieten auch spezielle Raumteiler-Modelle an, die von beiden Seiten zugänglich sind."}},
+{"@type":"Question","name":"Gibt es Flaschenregale für Weinliebhaber?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Flaschenregale sind speziell für die Aufbewahrung von Wein- und Getränkeflaschen konzipiert und setzen Ihre Weinsammlung stilvoll in Szene."}}
+]}
+</script>
+
+{%- when 'deko' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welche Deko-Artikel bietet ihr an?","acceptedAnswer":{"@type":"Answer","text":"Unser Deko-Sortiment umfasst Blumentöpfe, Vasen, Spiegel, Skulpturen, Tabletts und Kissen. Alle Accessoires passen perfekt zu unseren Möbeln und ergänzen Ihr Raumkonzept mit italienischem Designflair."}},
+{"@type":"Question","name":"Sind die Blumentöpfe frostbeständig?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Blumentöpfe aus Biokunststoff sind frostbeständig und können ganzjährig im Freien stehen. Sie sind leichter als Keramik-Töpfe, aber genauso stabil und UV-beständig."}},
+{"@type":"Question","name":"Kann ich die Vasen mit Wasser befüllen?","acceptedAnswer":{"@type":"Answer","text":"Ja, unsere Vasen sind vollständig wasserdicht und können sowohl für Schnittblumen als auch für Trockengestecke verwendet werden. Das Material ist lebensmittelecht und färbt nicht ab."}}
+]}
+</script>
+
+{%- when 'allgemein' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Aus welchem Material bestehen eure Möbel?","acceptedAnswer":{"@type":"Answer","text":"Unsere Möbel werden aus hochwertigem Biokunststoff hergestellt — einem nachhaltigen Material, das aus nachwachsenden Rohstoffen gewonnen wird. Alle unsere Produkte sind zu 100 % recycelbar."}},
+{"@type":"Question","name":"Was genau ist Biokunststoff?","acceptedAnswer":{"@type":"Answer","text":"Biokunststoff ist ein Kunststoff, der ganz oder teilweise aus nachwachsenden Rohstoffen wie Maisstärke, Zuckerrohr oder Zellulose hergestellt wird. Im Gegensatz zu herkömmlichem Kunststoff auf Erdölbasis hat Biokunststoff einen deutlich geringeren CO₂-Fußabdruck."}},
+{"@type":"Question","name":"Wo werden die Möbel hergestellt?","acceptedAnswer":{"@type":"Answer","text":"Alle unsere Möbel werden in Italien gefertigt — Made in Italy. Wir arbeiten mit erfahrenen italienischen Manufakturen zusammen, die höchste Qualitätsstandards einhalten."}},
+{"@type":"Question","name":"Sind die Möbel auch für den Außenbereich geeignet?","acceptedAnswer":{"@type":"Answer","text":"Ja, die meisten unserer Biokunststoff-Möbel sind sowohl für den Innen- als auch den Außenbereich geeignet. Das Material ist UV-beständig, wasserabweisend und witterungsbeständig."}},
+{"@type":"Question","name":"Wie pflege ich Biokunststoff-Möbel?","acceptedAnswer":{"@type":"Answer","text":"Die Pflege ist denkbar einfach: Wischen Sie die Oberflächen mit einem feuchten Tuch und mildem Reinigungsmittel ab. Die Möbel müssen nicht geölt, lackiert oder anderweitig behandelt werden."}},
+{"@type":"Question","name":"Wie nachhaltig ist euer Unternehmen?","acceptedAnswer":{"@type":"Answer","text":"Nachhaltigkeit ist unser Kernprinzip. Neben der Verwendung von Biokunststoff achten wir auf CO₂-neutralen Versand, recycelbare Verpackungen und faire Produktionsbedingungen in Italien."}}
+]}
+</script>
+
+{%- when 'versand' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie lange dauert die Lieferung?","acceptedAnswer":{"@type":"Answer","text":"Die Lieferzeit beträgt in der Regel 5–10 Werktage innerhalb Deutschlands. Bei lagernden Artikeln versenden wir innerhalb von 1–3 Werktagen. Sperrige Möbel werden per Spedition geliefert."}},
+{"@type":"Question","name":"Ist der Versand kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ab einem Bestellwert von 150 € liefern wir innerhalb Deutschlands kostenlos. Bei Bestellungen unter 150 € fallen Versandkosten von 4,95 € für Paketware und 29,95 € für Speditionsware an."}},
+{"@type":"Question","name":"Wie funktioniert die Rückgabe?","acceptedAnswer":{"@type":"Answer","text":"Sie haben 30 Tage Zeit, Ihre Bestellung zurückzugeben. Wir organisieren die Abholung und erstatten den Kaufpreis nach Eingang der Ware. Die Rücksendung ist für Sie kostenlos."}},
+{"@type":"Question","name":"Liefert ihr auch nach Österreich und in die Schweiz?","acceptedAnswer":{"@type":"Answer","text":"Ja, wir liefern in die meisten europäischen Länder. Die Versandkosten und Lieferzeiten variieren je nach Zielland. Die genauen Konditionen werden im Checkout angezeigt."}}
+]}
+</script>
+
+{%- endcase -%}
