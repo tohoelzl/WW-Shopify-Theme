@@ -22,9 +22,10 @@
     assign faq_handle = page.handle
   endif
 
-  if request.page_type == 'product' and product.collections.size > 0
-    assign faq_handle = product.collections.first.handle
-  endif
+  comment
+    No FAQ on product pages — avoid duplicate content across products in the same collection.
+    FAQs belong on collection and category pages only.
+  endcomment
 -%}
 
 {%- if faq_handle != blank -%}
