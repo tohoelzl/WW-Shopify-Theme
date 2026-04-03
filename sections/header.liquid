@@ -61,7 +61,7 @@
           {%- for link in section.settings.menu.links -%}
             {%- if link.links.size > 0 -%}
               <div
-                class="relative h-full flex items-center"
+                class="static h-full flex items-center"
                 @mouseenter="activeDesktop = '{{ link.title | handleize }}'; hoveredChild = null"
                 @mouseleave="activeDesktop = null; hoveredChild = null"
               >
@@ -83,7 +83,7 @@
 
                 {%- comment -%} ===== MEGA MENU PANEL ===== {%- endcomment -%}
                 <div
-                  class="fixed left-0 right-0 top-auto w-full"
+                  class="absolute left-0 right-0 top-full w-full"
                   x-show="activeDesktop === '{{ link.title | handleize }}'"
                   x-transition:enter="transition ease-out duration-250"
                   x-transition:enter-start="opacity-0 -translate-y-3"
