@@ -1,0 +1,48 @@
+{%- paginate collection.products by 24 -%}
+
+<section class="py-8 lg:py-12">
+  <div class="container">
+    <h1 class="text-2xl lg:text-4xl font-heading font-bold mb-8">{{ collection.title }}</h1>
+
+    {%- if collection.description != blank -%}
+      <div class="prose prose-sm max-w-none text-gray-600 mb-8">{{ collection.description }}</div>
+    {%- endif -%}
+
+    {%- if collection.products.size > 0 -%}
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+        {%- for product in collection.products -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+          {%- if paginate.previous -%}
+            <a href="{{ paginate.previous.url }}" class="px-4 py-2 text-sm border border-gray-200 rounded hover:border-primary transition-colors">&larr; Zurück</a>
+          {%- endif -%}
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}" class="w-10 h-10 flex items-center justify-center text-sm border border-gray-200 rounded hover:border-primary transition-colors">{{ part.title }}</a>
+            {%- else -%}
+              {%- if part.title == paginate.current_page -%}
+                <span class="w-10 h-10 flex items-center justify-center text-sm bg-primary text-white rounded font-medium">{{ part.title }}</span>
+              {%- else -%}
+                <span class="w-10 h-10 flex items-center justify-center text-sm text-gray-400">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if paginate.next -%}
+            <a href="{{ paginate.next.url }}" class="px-4 py-2 text-sm border border-gray-200 rounded hover:border-primary transition-colors">Weiter &rarr;</a>
+          {%- endif -%}
+        </nav>
+      {%- endif -%}
+    {%- else -%}
+      <div class="text-center py-16">
+        <p class="text-gray-500 mb-4">Keine Produkte in dieser Kollektion gefunden.</p>
+        <a href="/" class="btn-secondary">Zurück zum Shop</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- endpaginate -%}

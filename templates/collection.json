@@ -1,7 +1,0 @@
-{
-  "sections": {
-    "main-collection": { "type": "main-collection", "settings": {} },
-    "faq": { "type": "faq-section", "settings": {} }
-  },
-  "order": ["main-collection", "faq"]
-}
