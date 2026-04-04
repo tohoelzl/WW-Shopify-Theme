@@ -1,23 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "landing": {
       "type": "category-landing",
+      "blocks": {
+        "bartheken": {
+          "type": "tile",
+          "settings": {
+            "collection": "bartheken",
+            "title": "Bartheken",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "bartresen": {
+          "type": "tile",
+          "settings": {
+            "collection": "bartresen",
+            "title": "Bartresen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "eiskuebel": {
+          "type": "tile",
+          "settings": {
+            "collection": "eiskuebel",
+            "title": "Eiskübel",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        }
+      },
+      "block_order": [
+        "bartheken",
+        "bartresen",
+        "eiskuebel"
+      ],
       "settings": {
         "subheading": "Kollektion",
         "heading": "Bar & Gastro",
-        "text": "<p>Bartheken, Bartresen und Zubehör für den professionellen und privaten Einsatz.</p>"
-      },
-      "blocks": {
-        "bartheken": { "type": "tile", "settings": { "title": "Bartheken" } },
-        "bartresen": { "type": "tile", "settings": { "title": "Bartresen" } },
-        "eiskuebel": { "type": "tile", "settings": { "title": "Eiskübel" } }
-      },
-      "block_order": ["bartheken", "bartresen", "eiskuebel"]
+        "text": "<p>Bartheken, Bartresen und Zubehör für den professionellen und privaten Einsatz.</p>",
+        "bottom_button_text": "",
+        "bottom_button_link": ""
+      }
     },
     "faq": {
       "type": "faq-section",
-      "settings": {}
+      "settings": {
+        "heading": "Häufige Fragen"
+      }
     }
   },
-  "order": ["landing", "faq"]
+  "order": [
+    "landing",
+    "faq"
+  ]
 }
