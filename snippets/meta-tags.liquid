@@ -45,3 +45,15 @@
   <meta property="product:price:amount" content="{{ product.price | money_without_currency }}">
   <meta property="product:price:currency" content="{{ cart.currency.iso_code }}">
 {%- endif -%}
+
+{%- comment -%} Twitter Card {%- endcomment -%}
+<meta name="twitter:card" content="summary_large_image">
+{%- if page_title -%}
+  <meta name="twitter:title" content="{{ page_title | escape }}">
+{%- endif -%}
+{%- if page_description -%}
+  <meta name="twitter:description" content="{{ page_description | escape }}">
+{%- endif -%}
+{%- if product.featured_image -%}
+  <meta name="twitter:image" content="{{ product.featured_image | image_url: width: 1200 }}">
+{%- endif -%}
