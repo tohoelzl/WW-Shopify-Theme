@@ -15,6 +15,7 @@
         "slide-1": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/amore_ocean.jpg",
             "subheading": "100% Made in Italy",
             "heading": "Italienisches Design für dein Zuhause",
             "text": "Nachhaltige Möbel aus recycelbarem Bio-Kunststoff — designed von weltbekannten Designern.",
