@@ -82,7 +82,7 @@
           "type": "category",
           "settings": {
             "link": "shopify://pages/sitzmoebel",
-            "collection": "",
+            "collection": "stuehle",
             "label": "Sitzmöbel",
             "subtitle": "Stühle, Sessel & Hocker"
           }
@@ -91,7 +91,7 @@
           "type": "category",
           "settings": {
             "link": "shopify://pages/tische",
-            "collection": "",
+            "collection": "tische",
             "label": "Tische",
             "subtitle": "Esstische, Couchtische & Beistelltische"
           }
@@ -100,7 +100,7 @@
           "type": "category",
           "settings": {
             "link": "shopify://pages/leuchten",
-            "collection": "",
+            "collection": "tischlampen",
             "label": "Leuchten",
             "subtitle": "Steh-, Tisch- & Hängeleuchten"
           }
