@@ -1,24 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "landing": {
       "type": "category-landing",
+      "blocks": {
+        "tischlampen": {
+          "type": "tile",
+          "settings": {
+            "collection": "tischlampen",
+            "title": "Tischlampen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "stehlampen": {
+          "type": "tile",
+          "settings": {
+            "collection": "stehlampen",
+            "title": "Stehlampen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "haengelampen": {
+          "type": "tile",
+          "settings": {
+            "collection": "haengelampen",
+            "title": "Hängelampen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "wandleuchten": {
+          "type": "tile",
+          "settings": {
+            "collection": "wandleuchten",
+            "title": "Wandleuchten",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        }
+      },
+      "block_order": [
+        "tischlampen",
+        "stehlampen",
+        "haengelampen",
+        "wandleuchten"
+      ],
       "settings": {
         "subheading": "Kollektion",
         "heading": "Leuchten",
-        "text": "<p>Tischlampen, Stehlampen, Hängelampen und Wandleuchten — stimmungsvolles Licht aus nachhaltigem Design.</p>"
-      },
-      "blocks": {
-        "tischlampen": { "type": "tile", "settings": { "title": "Tischlampen" } },
-        "stehlampen": { "type": "tile", "settings": { "title": "Stehlampen" } },
-        "haengelampen": { "type": "tile", "settings": { "title": "Hängelampen" } },
-        "wandleuchten": { "type": "tile", "settings": { "title": "Wandleuchten" } }
-      },
-      "block_order": ["tischlampen", "stehlampen", "haengelampen", "wandleuchten"]
+        "text": "<p>Tischlampen, Stehlampen, Hängelampen und Wandleuchten — stimmungsvolles Licht aus nachhaltigem Design.</p>",
+        "bottom_button_text": "",
+        "bottom_button_link": ""
+      }
     },
     "faq": {
       "type": "faq-section",
-      "settings": {}
+      "settings": {
+        "heading": "Häufige Fragen"
+      }
     }
   },
-  "order": ["landing", "faq"]
+  "order": [
+    "landing",
+    "faq"
+  ]
 }
