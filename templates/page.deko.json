@@ -1,26 +1,103 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "landing": {
       "type": "category-landing",
+      "blocks": {
+        "blumentoepfe": {
+          "type": "tile",
+          "settings": {
+            "collection": "blumentoepfe",
+            "title": "Blumentöpfe",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "vasen": {
+          "type": "tile",
+          "settings": {
+            "collection": "vasen",
+            "title": "Vasen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "spiegel": {
+          "type": "tile",
+          "settings": {
+            "collection": "spiegel",
+            "title": "Spiegel",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "skulpturen": {
+          "type": "tile",
+          "settings": {
+            "collection": "skulpturen",
+            "title": "Skulpturen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "tabletts": {
+          "type": "tile",
+          "settings": {
+            "collection": "tabletts",
+            "title": "Tabletts",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "kissen": {
+          "type": "tile",
+          "settings": {
+            "collection": "kissen",
+            "title": "Kissen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        }
+      },
+      "block_order": [
+        "blumentoepfe",
+        "vasen",
+        "spiegel",
+        "skulpturen",
+        "tabletts",
+        "kissen"
+      ],
       "settings": {
         "subheading": "Kollektion",
         "heading": "Deko & Accessoires",
-        "text": "<p>Blumentöpfe, Vasen, Spiegel, Skulpturen und mehr — die perfekten Akzente für dein Zuhause.</p>"
-      },
-      "blocks": {
-        "blumentoepfe": { "type": "tile", "settings": { "title": "Blumentöpfe" } },
-        "vasen": { "type": "tile", "settings": { "title": "Vasen" } },
-        "spiegel": { "type": "tile", "settings": { "title": "Spiegel" } },
-        "skulpturen": { "type": "tile", "settings": { "title": "Skulpturen" } },
-        "tabletts": { "type": "tile", "settings": { "title": "Tabletts" } },
-        "kissen": { "type": "tile", "settings": { "title": "Kissen" } }
-      },
-      "block_order": ["blumentoepfe", "vasen", "spiegel", "skulpturen", "tabletts", "kissen"]
+        "text": "<p>Blumentöpfe, Vasen, Spiegel, Skulpturen und mehr — die perfekten Akzente für dein Zuhause.</p>",
+        "bottom_button_text": "",
+        "bottom_button_link": ""
+      }
     },
     "faq": {
       "type": "faq-section",
-      "settings": {}
+      "settings": {
+        "heading": "Häufige Fragen"
+      }
     }
   },
-  "order": ["landing", "faq"]
+  "order": [
+    "landing",
+    "faq"
+  ]
 }
