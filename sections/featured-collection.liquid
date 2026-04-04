@@ -9,7 +9,7 @@
       {%- if align == 'right' -%}
         {%- if collection and section.settings.show_view_all -%}
           <a href="{{ collection.url }}" class="text-sm font-medium text-accent hover:underline shrink-0">
-            ← {{ section.settings.view_all_text | default: 'Alle anzeigen' }}
+            {{ section.settings.view_all_text | default: 'Alle anzeigen' }} →
           </a>
         {%- else -%}
           <div></div>
