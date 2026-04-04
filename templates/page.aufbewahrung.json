@@ -1,23 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "landing": {
       "type": "category-landing",
+      "blocks": {
+        "regale": {
+          "type": "tile",
+          "settings": {
+            "collection": "regale",
+            "title": "Regale",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "flaschenregale": {
+          "type": "tile",
+          "settings": {
+            "collection": "flaschenregale",
+            "title": "Flaschenregale",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "raumteiler": {
+          "type": "tile",
+          "settings": {
+            "collection": "raumteiler",
+            "title": "Raumteiler",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        }
+      },
+      "block_order": [
+        "regale",
+        "flaschenregale",
+        "raumteiler"
+      ],
       "settings": {
         "subheading": "Kollektion",
         "heading": "Aufbewahrung",
-        "text": "<p>Regale, Flaschenregale und Raumteiler — funktional und stilvoll.</p>"
-      },
-      "blocks": {
-        "regale": { "type": "tile", "settings": { "title": "Regale" } },
-        "flaschenregale": { "type": "tile", "settings": { "title": "Flaschenregale" } },
-        "raumteiler": { "type": "tile", "settings": { "title": "Raumteiler" } }
-      },
-      "block_order": ["regale", "flaschenregale", "raumteiler"]
+        "text": "<p>Regale, Flaschenregale und Raumteiler — funktional und stilvoll.</p>",
+        "bottom_button_text": "",
+        "bottom_button_link": ""
+      }
     },
     "faq": {
       "type": "faq-section",
-      "settings": {}
+      "settings": {
+        "heading": "Häufige Fragen"
+      }
     }
   },
-  "order": ["landing", "faq"]
+  "order": [
+    "landing",
+    "faq"
+  ]
 }
