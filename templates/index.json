@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -10,12 +19,16 @@
             "heading": "Italienisches Design für dein Zuhause",
             "text": "Nachhaltige Möbel aus recycelbarem Bio-Kunststoff — designed von weltbekannten Designern.",
             "button_text": "Kollektion entdecken",
+            "button_link": "",
             "button_text_2": "Über Slide Design",
+            "button_link_2": "",
             "text_alignment": "left"
           }
         }
       },
-      "block_order": ["slide-1"],
+      "block_order": [
+        "slide-1"
+      ],
       "settings": {}
     },
     "trust-bar": {
@@ -54,7 +67,12 @@
           }
         }
       },
-      "block_order": ["made-in-italy", "recycelbar", "versand", "rueckgabe"],
+      "block_order": [
+        "made-in-italy",
+        "recycelbar",
+        "versand",
+        "rueckgabe"
+      ],
       "settings": {}
     },
     "categories": {
@@ -63,6 +81,8 @@
         "sitzmoebel": {
           "type": "category",
           "settings": {
+            "link": "shopify://pages/sitzmoebel",
+            "collection": "",
             "label": "Sitzmöbel",
             "subtitle": "Stühle, Sessel & Hocker"
           }
@@ -70,6 +90,8 @@
         "tische": {
           "type": "category",
           "settings": {
+            "link": "shopify://pages/tische",
+            "collection": "",
             "label": "Tische",
             "subtitle": "Esstische, Couchtische & Beistelltische"
           }
@@ -77,15 +99,21 @@
         "leuchten": {
           "type": "category",
           "settings": {
+            "link": "shopify://pages/leuchten",
+            "collection": "",
             "label": "Leuchten",
             "subtitle": "Steh-, Tisch- & Hängeleuchten"
           }
         }
       },
-      "block_order": ["sitzmoebel", "tische", "leuchten"],
+      "block_order": [
+        "sitzmoebel",
+        "tische",
+        "leuchten"
+      ],
       "settings": {
-        "heading": "Unsere Kategorien",
-        "subheading": "Kollektion"
+        "subheading": "Kollektion",
+        "heading": "Unsere Kategorien"
       }
     },
     "featured-collection": {
@@ -93,6 +121,7 @@
       "settings": {
         "heading": "Bestseller",
         "subtitle": "Die beliebtesten Designs unserer Kunden",
+        "collection": "",
         "products_count": 4,
         "show_view_all": true,
         "view_all_text": "Alle ansehen"
@@ -134,12 +163,19 @@
           }
         }
       },
-      "block_order": ["usp-bio", "usp-recycle", "usp-designer", "usp-outdoor"],
+      "block_order": [
+        "usp-bio",
+        "usp-recycle",
+        "usp-designer",
+        "usp-outdoor"
+      ],
       "settings": {
         "subheading": "Über die Marke",
         "heading": "Slide Design — Seit 2002 aus Mailand",
         "text": "<p>Gegründet von Giò Colonna Romano, verbindet Slide Design italienische Handwerkskunst mit nachhaltiger Innovation. Jedes Möbelstück wird in der eigenen Fabrik in Buccinasco gefertigt.</p>",
-        "button_text": "Mehr über Slide Design"
+        "button_text": "Mehr über Slide Design",
+        "button_link": "",
+        "background": ""
       }
     },
     "testimonials": {
@@ -173,7 +209,11 @@
           }
         }
       },
-      "block_order": ["review-1", "review-2", "review-3"],
+      "block_order": [
+        "review-1",
+        "review-2",
+        "review-3"
+      ],
       "settings": {
         "subheading": "Kundenstimmen",
         "heading": "Das sagen unsere Kunden",
