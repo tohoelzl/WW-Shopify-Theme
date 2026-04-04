@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "landing": {
+      "type": "category-landing",
+      "settings": {
+        "subheading": "Alle Kategorien",
+        "heading": "Unsere Kollektionen",
+        "text": "<p>Entdecke nachhaltige Designmöbel aus Italien — von Sitzmöbeln über Tische bis hin zu Leuchten und Bar-Ausstattung.</p>"
+      },
+      "blocks": {
+        "sitzmoebel": { "type": "tile", "settings": { "title": "Sitzmöbel", "description": "Stühle, Sessel, Sofas & Hocker", "link": "shopify://pages/sitzmoebel" } },
+        "tische": { "type": "tile", "settings": { "title": "Tische", "description": "Esstische, Couchtische & Beistelltische", "link": "shopify://pages/tische" } },
+        "leuchten": { "type": "tile", "settings": { "title": "Leuchten", "description": "Steh-, Tisch- & Hängeleuchten", "link": "shopify://pages/leuchten" } },
+        "bar": { "type": "tile", "settings": { "title": "Bar & Gastro", "description": "Bartheken, Bartresen & Zubehör", "link": "shopify://pages/bar-gastro" } },
+        "aufbewahrung": { "type": "tile", "settings": { "title": "Aufbewahrung", "description": "Regale, Schränke & Vasen", "link": "shopify://pages/aufbewahrung" } },
+        "deko": { "type": "tile", "settings": { "title": "Deko & Accessoires", "description": "Pflanzgefäße, Eiswürfelbehälter & mehr", "link": "shopify://pages/deko" } }
+      },
+      "block_order": ["sitzmoebel", "tische", "leuchten", "bar", "aufbewahrung", "deko"]
+    }
+  },
+  "order": ["landing"]
+}
