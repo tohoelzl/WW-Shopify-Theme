@@ -1,27 +1,114 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "landing": {
       "type": "category-landing",
+      "blocks": {
+        "stuehle": {
+          "type": "tile",
+          "settings": {
+            "collection": "stuehle",
+            "title": "",
+            "description": "",
+            "link": "shopify://collections/stuehle",
+            "show_count": true
+          }
+        },
+        "sessel": {
+          "type": "tile",
+          "settings": {
+            "collection": "sessel",
+            "title": "Sessel",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "sofas": {
+          "type": "tile",
+          "settings": {
+            "collection": "sofas",
+            "title": "Sofas",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "sitzbaenke": {
+          "type": "tile",
+          "settings": {
+            "collection": "sitzbaenke",
+            "title": "Sitzbänke",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "hocker": {
+          "type": "tile",
+          "settings": {
+            "collection": "hocker",
+            "title": "Hocker",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "barhocker": {
+          "type": "tile",
+          "settings": {
+            "collection": "barhocker",
+            "title": "Barhocker",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        },
+        "liegen": {
+          "type": "tile",
+          "settings": {
+            "collection": "liegen",
+            "title": "Liegen",
+            "description": "",
+            "link": "",
+            "show_count": true
+          }
+        }
+      },
+      "block_order": [
+        "stuehle",
+        "sessel",
+        "sofas",
+        "sitzbaenke",
+        "hocker",
+        "barhocker",
+        "liegen"
+      ],
       "settings": {
         "subheading": "Kollektion",
         "heading": "Sitzmöbel",
-        "text": "<p>Von Stühlen über Sofas bis hin zu Bänken — entdecke unsere Sitzmöbel aus nachhaltigem Biokunststoff, Made in Italy.</p>"
-      },
-      "blocks": {
-        "stuehle": { "type": "tile", "settings": { "title": "Stühle" } },
-        "sessel": { "type": "tile", "settings": { "title": "Sessel" } },
-        "sofas": { "type": "tile", "settings": { "title": "Sofas" } },
-        "sitzbaenke": { "type": "tile", "settings": { "title": "Sitzbänke" } },
-        "hocker": { "type": "tile", "settings": { "title": "Hocker" } },
-        "barhocker": { "type": "tile", "settings": { "title": "Barhocker" } },
-        "liegen": { "type": "tile", "settings": { "title": "Liegen" } }
-      },
-      "block_order": ["stuehle", "sessel", "sofas", "sitzbaenke", "hocker", "barhocker", "liegen"]
+        "text": "<p>Von Stühlen über Sofas bis hin zu Bänken — entdecke unsere Sitzmöbel aus nachhaltigem Biokunststoff, Made in Italy.</p>",
+        "bottom_button_text": "",
+        "bottom_button_link": ""
+      }
     },
     "faq": {
       "type": "faq-section",
-      "settings": {}
+      "settings": {
+        "heading": "Häufige Fragen"
+      }
     }
   },
-  "order": ["landing", "faq"]
+  "order": [
+    "landing",
+    "faq"
+  ]
 }
