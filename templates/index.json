@@ -125,15 +125,16 @@
         "collection": "tische",
         "products_count": 4,
         "show_view_all": true,
-        "view_all_text": "Alle ansehen"
+        "view_all_text": "Alle ansehen",
+        "alignment": "left"
       }
     },
     "featured-collection-2": {
       "type": "featured-collection",
       "settings": {
-        "heading": "",
-        "subtitle": "",
-        "collection": "",
+        "heading": "Sitzmöbel",
+        "subtitle": "Perfekt für Outdoor & Indoor",
+        "collection": "stuehle",
         "products_count": 4,
         "show_view_all": true,
         "view_all_text": "Alle ansehen",
