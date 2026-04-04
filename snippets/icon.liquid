@@ -77,4 +77,48 @@
       <circle cx="12" cy="7" r="4"/>
     </svg>
 
+  {%- when 'leaf' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="{{ icon_class }}" aria-hidden="true">
+      <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.5 10-10 10Z"/>
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+    </svg>
+
+  {%- when 'recycle' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="{{ icon_class }}" aria-hidden="true">
+      <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/>
+      <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/>
+      <path d="m14 16-3 3 3 3"/>
+      <path d="M8.293 13.596 7.196 9.5 3.1 10.598"/>
+      <path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 12.013 3a 1.784 1.784 0 0 1 1.575.887l3.974 6.89"/>
+      <path d="m20.898 13.408-1.098-4.096-4.096 1.098"/>
+    </svg>
+
+  {%- when 'palette' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="{{ icon_class }}" aria-hidden="true">
+      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+    </svg>
+
+  {%- when 'sun' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="{{ icon_class }}" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+    </svg>
+
+  {%- when 'italy' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="{{ icon_class }}" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <line x1="8.67" y1="4" x2="8.67" y2="20"/>
+      <line x1="15.33" y1="4" x2="15.33" y2="20"/>
+    </svg>
+
+  {%- when 'return-arrow' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="{{ icon_class }}" aria-hidden="true">
+      <path d="m9 14-4-4 4-4"/>
+      <path d="M5 10h11a4 4 0 1 1 0 8h-1"/>
+    </svg>
+
 {%- endcase -%}
