@@ -1,5 +1,15 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
+    "logo": "shopify://shop_images/logo_shop.webp",
     "color_primary": "#1a1a2e",
     "color_secondary": "#e2e8f0",
     "color_accent": "#16a34a",
@@ -11,7 +21,12 @@
     "trust_badge_1": "Made in Italy",
     "trust_badge_2": "Kostenloser Versand",
     "trust_badge_3": "30 Tage Rückgabe",
-    "sections": {},
+    "sections": {
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      }
+    },
     "content_for_index": []
   },
   "presets": {
