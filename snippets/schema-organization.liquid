@@ -1,0 +1,20 @@
+{%- comment -%}
+  Organization Schema — renders on every page via theme.liquid.
+  Provides company info for Google Knowledge Panel.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ shop.name | json }},
+  "url": {{ shop.url | json }},
+  {%- if shop.brand.logo -%}
+  "logo": {{ shop.brand.logo | image_url: width: 600 | json }},
+  {%- endif -%}
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": {{ shop.email | json }}
+  }
+}
+</script>
