@@ -2,8 +2,18 @@
 
 <section class="py-12 lg:py-16">
   <div class="container">
-    <div class="flex items-end justify-between mb-8">
-      <div>
+    {%- liquid
+      assign align = section.settings.alignment | default: 'left'
+      if align == 'right'
+        assign flex_dir = 'flex-row-reverse'
+        assign text_align = 'text-right'
+      else
+        assign flex_dir = ''
+        assign text_align = ''
+      endif
+    -%}
+    <div class="flex items-end justify-between mb-8 {{ flex_dir }}">
+      <div class="{{ text_align }}">
         {%- if section.settings.heading != blank -%}
           <h2 class="text-2xl lg:text-3xl font-heading font-bold">{{ section.settings.heading }}</h2>
         {%- elsif collection -%}
@@ -49,7 +59,17 @@
     { "type": "collection", "id": "collection", "label": "Kollektion" },
     { "type": "range", "id": "products_count", "label": "Anzahl Produkte", "min": 2, "max": 12, "step": 1, "default": 4 },
     { "type": "checkbox", "id": "show_view_all", "label": "\"Alle anzeigen\" Link", "default": true },
-    { "type": "text", "id": "view_all_text", "label": "\"Alle anzeigen\" Text", "default": "Alle ansehen" }
+    { "type": "text", "id": "view_all_text", "label": "\"Alle anzeigen\" Text", "default": "Alle ansehen" },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Ausrichtung",
+      "options": [
+        { "value": "left", "label": "Links" },
+        { "value": "right", "label": "Rechts" }
+      ],
+      "default": "left"
+    }
   ],
   "presets": [
     { "name": "Featured Collection" }

@@ -128,6 +128,18 @@
         "view_all_text": "Alle ansehen"
       }
     },
+    "featured-collection-2": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "",
+        "subtitle": "",
+        "collection": "",
+        "products_count": 4,
+        "show_view_all": true,
+        "view_all_text": "Alle ansehen",
+        "alignment": "right"
+      }
+    },
     "brand-story": {
       "type": "brand-story",
       "blocks": {
@@ -242,6 +254,7 @@
     "trust-bar",
     "categories",
     "featured-collection",
+    "featured-collection-2",
     "brand-story",
     "testimonials",
     "newsletter",
