@@ -1,0 +1,127 @@
+<section class="py-12 lg:py-20 {{ section.settings.background }}">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      {%- comment -%} Image {%- endcomment -%}
+      <div class="relative rounded-xl overflow-hidden aspect-[4/3]">
+        {%- if section.settings.image != blank -%}
+          {% render 'image',
+            image: section.settings.image,
+            alt: section.settings.heading,
+            class: 'w-full h-full object-cover',
+            sizes: '(min-width: 1024px) 50vw, 100vw'
+          %}
+        {%- else -%}
+          <div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400 text-sm">
+            Bild hinzufügen
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Content {%- endcomment -%}
+      <div>
+        {%- if section.settings.subheading != blank -%}
+          <p class="text-sm font-semibold text-accent uppercase tracking-[0.15em] mb-3">
+            {{ section.settings.subheading }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="text-2xl lg:text-3xl font-heading font-bold leading-snug mb-4">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="text-gray-600 leading-relaxed mb-6">
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            {%- for block in section.blocks -%}
+              <div class="flex items-start gap-3" {{ block.shopify_attributes }}>
+                <div class="text-accent shrink-0 mt-0.5">
+                  {% render 'icon', name: block.settings.icon, size: 22 %}
+                </div>
+                <div>
+                  <p class="text-sm font-semibold leading-tight">{{ block.settings.title }}</p>
+                  {%- if block.settings.subtitle != blank -%}
+                    <p class="text-xs text-gray-500 mt-0.5">{{ block.settings.subtitle }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link }}" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:underline">
+            {{ section.settings.button_text }} →
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand Story",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Bild" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Über die Marke" },
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Slide Design — Seit 2002 aus Mailand" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Gegründet von Giò Colonna Romano, verbindet Slide Design italienische Handwerkskunst mit nachhaltiger Innovation. Jedes Möbelstück wird in der eigenen Fabrik in Buccinasco gefertigt.</p>" },
+    { "type": "text", "id": "button_text", "label": "Link Text", "default": "Mehr über Slide Design" },
+    { "type": "url", "id": "button_link", "label": "Link URL" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Hintergrund",
+      "options": [
+        { "value": "", "label": "Weiß" },
+        { "value": "bg-gray-50", "label": "Hellgrau" }
+      ],
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "leaf", "label": "Blatt/Bio" },
+            { "value": "recycle", "label": "Recycling" },
+            { "value": "palette", "label": "Design/Palette" },
+            { "value": "sun", "label": "Sonne/Outdoor" },
+            { "value": "italy", "label": "Italien" },
+            { "value": "shield", "label": "Qualität" },
+            { "value": "truck", "label": "Lieferung" }
+          ],
+          "default": "leaf"
+        },
+        { "type": "text", "id": "title", "label": "Titel", "default": "USP Titel" },
+        { "type": "text", "id": "subtitle", "label": "Untertitel" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Brand Story",
+      "blocks": [
+        { "type": "usp", "settings": { "icon": "leaf", "title": "Bio-Polyethylen", "subtitle": "Aus Zuckerrohr gewonnen" } },
+        { "type": "usp", "settings": { "icon": "recycle", "title": "100% Recycelbar", "subtitle": "Null Schadstoffemissionen" } },
+        { "type": "usp", "settings": { "icon": "palette", "title": "Star-Designer", "subtitle": "Karim Rashid, Marcel Wanders" } },
+        { "type": "usp", "settings": { "icon": "sun", "title": "Indoor & Outdoor", "subtitle": "Wetterfest & UV-beständig" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
