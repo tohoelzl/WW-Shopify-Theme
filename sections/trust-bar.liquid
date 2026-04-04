@@ -1,0 +1,63 @@
+<section class="py-4 lg:py-5 bg-[#f8faf8] border-y border-gray-100">
+  <div class="container">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+      {%- for block in section.blocks -%}
+        <div class="flex items-center gap-3 justify-center" {{ block.shopify_attributes }}>
+          <div class="text-accent shrink-0">
+            {% render 'icon', name: block.settings.icon, size: 28 %}
+          </div>
+          <div>
+            <p class="text-sm font-semibold leading-tight">{{ block.settings.title }}</p>
+            {%- if block.settings.subtitle != blank -%}
+              <p class="text-xs text-gray-500 mt-0.5">{{ block.settings.subtitle }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust Bar",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "italy", "label": "Italien-Flagge" },
+            { "value": "recycle", "label": "Recycling" },
+            { "value": "truck", "label": "Lieferung" },
+            { "value": "return-arrow", "label": "Rückgabe" },
+            { "value": "shield", "label": "Schutz" },
+            { "value": "leaf", "label": "Blatt/Bio" },
+            { "value": "lock", "label": "Schloss" }
+          ],
+          "default": "shield"
+        },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Trust Feature" },
+        { "type": "text", "id": "subtitle", "label": "Untertitel" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Trust Bar",
+      "blocks": [
+        { "type": "trust_item", "settings": { "icon": "italy", "title": "Made in Italy", "subtitle": "Fabrik in Mailand" } },
+        { "type": "trust_item", "settings": { "icon": "recycle", "title": "100% Recycelbar", "subtitle": "Bio-Polyethylen" } },
+        { "type": "trust_item", "settings": { "icon": "truck", "title": "Kostenloser Versand", "subtitle": "Ab 150€ Bestellwert" } },
+        { "type": "trust_item", "settings": { "icon": "return-arrow", "title": "30 Tage Rückgabe", "subtitle": "Kostenlos & einfach" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
