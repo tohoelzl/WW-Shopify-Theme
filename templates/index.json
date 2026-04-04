@@ -105,12 +105,22 @@
             "label": "Leuchten",
             "subtitle": "Steh-, Tisch- & Hängeleuchten"
           }
+        },
+        "category_fhehVr": {
+          "type": "category",
+          "settings": {
+            "link": "shopify://pages/deko",
+            "collection": "",
+            "label": "",
+            "subtitle": ""
+          }
         }
       },
       "block_order": [
         "sitzmoebel",
         "tische",
-        "leuchten"
+        "leuchten",
+        "category_fhehVr"
       ],
       "settings": {
         "subheading": "Kollektion",
