@@ -1,111 +1,209 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero": {
       "type": "hero-banner",
+      "blocks": {
+        "slide-1": {
+          "type": "slide",
+          "settings": {
+            "subheading": "100% Made in Italy",
+            "heading": "Italienisches Design für dein Zuhause",
+            "text": "Nachhaltige Möbel aus recycelbarem Bio-Kunststoff — designed von weltbekannten Designern.",
+            "button_text": "Kollektion entdecken",
+            "button_text_2": "Über Slide Design",
+            "text_alignment": "left"
+          }
+        }
+      },
+      "block_order": ["slide-1"],
       "settings": {}
     },
-    "bento": {
-      "type": "category-bento",
-      "settings": {
-        "subheading": "Kollektion",
-        "heading": "Entdecke unsere Welt"
-      }
+    "trust-bar": {
+      "type": "trust-bar",
+      "blocks": {
+        "made-in-italy": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "italy",
+            "title": "Made in Italy",
+            "subtitle": "Fabrik in Mailand"
+          }
+        },
+        "recycelbar": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "recycle",
+            "title": "100% Recycelbar",
+            "subtitle": "Bio-Polyethylen"
+          }
+        },
+        "versand": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "truck",
+            "title": "Kostenloser Versand",
+            "subtitle": "Ab 150€ Bestellwert"
+          }
+        },
+        "rueckgabe": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "return-arrow",
+            "title": "30 Tage Rückgabe",
+            "subtitle": "Kostenlos & einfach"
+          }
+        }
+      },
+      "block_order": ["made-in-italy", "recycelbar", "versand", "rueckgabe"],
+      "settings": {}
     },
-    "highlight-sitzmoebel": {
-      "type": "category-highlight",
+    "categories": {
+      "type": "category-grid",
+      "blocks": {
+        "sitzmoebel": {
+          "type": "category",
+          "settings": {
+            "label": "Sitzmöbel",
+            "subtitle": "Stühle, Sessel & Hocker"
+          }
+        },
+        "tische": {
+          "type": "category",
+          "settings": {
+            "label": "Tische",
+            "subtitle": "Esstische, Couchtische & Beistelltische"
+          }
+        },
+        "leuchten": {
+          "type": "category",
+          "settings": {
+            "label": "Leuchten",
+            "subtitle": "Steh-, Tisch- & Hängeleuchten"
+          }
+        }
+      },
+      "block_order": ["sitzmoebel", "tische", "leuchten"],
       "settings": {
-        "subheading": "Bestseller",
-        "heading": "Sitzmöbel",
-        "text": "<p>Von zeitlosen Stühlen bis zu luxuriösen Sofas — unsere Sitzmöbel aus Biokunststoff verbinden Nachhaltigkeit mit italienischem Design.</p>",
-        "button_text": "Alle Sitzmöbel entdecken",
-        "image_position": "left",
-        "background": "white"
+        "heading": "Unsere Kategorien",
+        "subheading": "Kollektion"
       }
     },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "heading": "Neu eingetroffen"
+        "heading": "Bestseller",
+        "subtitle": "Die beliebtesten Designs unserer Kunden",
+        "products_count": 4,
+        "show_view_all": true,
+        "view_all_text": "Alle ansehen"
       }
     },
-    "highlight-tische": {
-      "type": "category-highlight",
+    "brand-story": {
+      "type": "brand-story",
+      "blocks": {
+        "usp-bio": {
+          "type": "usp",
+          "settings": {
+            "icon": "leaf",
+            "title": "Bio-Polyethylen",
+            "subtitle": "Aus Zuckerrohr gewonnen"
+          }
+        },
+        "usp-recycle": {
+          "type": "usp",
+          "settings": {
+            "icon": "recycle",
+            "title": "100% Recycelbar",
+            "subtitle": "Null Schadstoffemissionen"
+          }
+        },
+        "usp-designer": {
+          "type": "usp",
+          "settings": {
+            "icon": "palette",
+            "title": "Star-Designer",
+            "subtitle": "Karim Rashid, Marcel Wanders"
+          }
+        },
+        "usp-outdoor": {
+          "type": "usp",
+          "settings": {
+            "icon": "sun",
+            "title": "Indoor & Outdoor",
+            "subtitle": "Wetterfest & UV-beständig"
+          }
+        }
+      },
+      "block_order": ["usp-bio", "usp-recycle", "usp-designer", "usp-outdoor"],
       "settings": {
-        "subheading": "Kollektion",
-        "heading": "Tische",
-        "text": "<p>Esstische, Couchtische und Beistelltische — jeder Tisch ein Statement. Made in Italy aus nachhaltigem Biokunststoff.</p>",
-        "button_text": "Alle Tische entdecken",
-        "image_position": "right",
-        "background": "subtle"
-      }
-    },
-    "storytelling": {
-      "type": "storytelling",
-      "settings": {
-        "subheading": "Unsere Geschichte",
-        "heading": "Made in Italy — mit Liebe zum Detail",
-        "text": "<p>Jedes unserer Möbelstücke wird in Italien aus nachhaltigem Biokunststoff gefertigt. Wir verbinden traditionelles Handwerk mit innovativen Materialien für eine bessere Zukunft.</p>",
-        "button_text": "Mehr erfahren"
-      }
-    },
-    "highlight-leuchten": {
-      "type": "category-highlight",
-      "settings": {
-        "subheading": "Kollektion",
-        "heading": "Leuchten",
-        "text": "<p>Stimmungsvolles Licht für jeden Raum. Unsere Leuchten vereinen Form und Funktion in nachhaltigem Design.</p>",
-        "button_text": "Alle Leuchten entdecken",
-        "image_position": "left",
-        "background": "white"
-      }
-    },
-    "highlight-bar": {
-      "type": "category-highlight",
-      "settings": {
-        "subheading": "Für Profis & Zuhause",
-        "heading": "Bar & Gastro",
-        "text": "<p>Bartheken, Bartresen und Zubehör — perfekt für die Gastronomie oder deine private Home-Bar.</p>",
-        "button_text": "Bar & Gastro entdecken",
-        "image_position": "right",
-        "background": "subtle"
+        "subheading": "Über die Marke",
+        "heading": "Slide Design — Seit 2002 aus Mailand",
+        "text": "<p>Gegründet von Giò Colonna Romano, verbindet Slide Design italienische Handwerkskunst mit nachhaltiger Innovation. Jedes Möbelstück wird in der eigenen Fabrik in Buccinasco gefertigt.</p>",
+        "button_text": "Mehr über Slide Design"
       }
     },
     "testimonials": {
       "type": "testimonials",
+      "blocks": {
+        "review-1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Die Qualität ist herausragend. Man merkt sofort, dass hier mit Liebe zum Detail gearbeitet wird. Und das Beste: nachhaltig produziert!",
+            "author": "Maria S.",
+            "location": "München"
+          }
+        },
+        "review-2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Endlich Möbel, bei denen man kein schlechtes Gewissen haben muss. Das Design ist zeitlos und die Verarbeitung erstklassig.",
+            "author": "Thomas K.",
+            "location": "Berlin"
+          }
+        },
+        "review-3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Made in Italy — das spürt man. Wir haben unser komplettes Wohnzimmer damit eingerichtet und sind begeistert.",
+            "author": "Sarah L.",
+            "location": "Hamburg"
+          }
+        }
+      },
+      "block_order": ["review-1", "review-2", "review-3"],
       "settings": {
         "subheading": "Kundenstimmen",
-        "heading": "Das sagen unsere Kunden"
+        "heading": "Das sagen unsere Kunden",
+        "subtitle": "Über 500 zufriedene Kunden in ganz Europa"
       }
-    },
-    "trust-badges": {
-      "type": "trust-badges",
-      "settings": {}
     },
     "newsletter": {
       "type": "newsletter",
-      "settings": {}
+      "settings": {
+        "heading": "10% Rabatt auf deine erste Bestellung",
+        "subtitle": "Melde dich an und erhalte exklusive Angebote, neue Designs und Einrichtungstipps.",
+        "disclaimer": "Kein Spam. Jederzeit abbestellbar."
+      }
+    },
+    "seo-text": {
+      "type": "seo-text",
+      "settings": {
+        "heading": "Nachhaltige Designmöbel online kaufen — Made in Italy",
+        "text": "<p>Bei uns findest du nachhaltige Möbel des italienischen Designlabels Slide Design. Seit 2002 fertigt Slide in seiner Fabrik bei Mailand Sitzmöbel, Tische und Leuchten aus 100% recycelbarem Bio-Polyethylen — ein Material, das aus Zuckerrohr gewonnen wird und vollständig ohne Schadstoffe verarbeitet wird.</p><p>Ob für Indoor oder Outdoor — unsere Designermöbel sind wetterfest, UV-beständig und leicht zu reinigen. Entworfen von international renommierten Designern wie Karim Rashid, Marcel Wanders und Paola Navone, verbinden sie italienische Ästhetik mit nachhaltiger Produktion.</p><p>Entdecke unsere Kollektion an Stühlen, Sesseln, Hockern, Esstischen und Couchtischen. Kostenloser Versand ab 150€ und 30 Tage Rückgaberecht — damit du in Ruhe entscheiden kannst.</p>"
+      }
     }
   },
   "order": [
     "hero",
-    "bento",
-    "highlight-sitzmoebel",
+    "trust-bar",
+    "categories",
     "featured-collection",
-    "highlight-tische",
-    "storytelling",
-    "highlight-leuchten",
-    "highlight-bar",
+    "brand-story",
     "testimonials",
-    "trust-badges",
-    "newsletter"
+    "newsletter",
+    "seo-text"
   ]
 }
