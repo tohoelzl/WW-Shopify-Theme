@@ -35,6 +35,22 @@
     "trust-bar": {
       "type": "trust-bar",
       "blocks": {
+        "trust_item_PbJ3ay": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "title": "Trust Feature",
+            "subtitle": ""
+          }
+        },
+        "trust_item_Wn7EYp": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "title": "Trust Feature",
+            "subtitle": ""
+          }
+        },
         "made-in-italy": {
           "type": "trust_item",
           "settings": {
@@ -53,6 +69,8 @@
         }
       },
       "block_order": [
+        "trust_item_PbJ3ay",
+        "trust_item_Wn7EYp",
         "made-in-italy",
         "recycelbar"
       ],
