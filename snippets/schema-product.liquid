@@ -15,14 +15,28 @@
     "name": {{ product.vendor | json }}
   },
   {%- if product.featured_image -%}
-  "image": {{ product.featured_image | image_url: width: 1200 | json }},
+  "image": [
+    {{ product.featured_image | image_url: width: 1200 | json }}
+    {%- for image in product.images offset: 1 limit: 4 -%}
+      ,{{ image | image_url: width: 1200 | json }}
+    {%- endfor -%}
+  ],
+  {%- endif -%}
+  {%- if product.variants.first.barcode != blank -%}
+  "gtin": {{ product.variants.first.barcode | json }},
   {%- endif -%}
   "offers": {
-    "@type": "Offer",
-    "price": {{ product.price | money_without_currency | json }},
+    "@type": "AggregateOffer",
+    "lowPrice": {{ product.price_min | money_without_currency | json }},
+    "highPrice": {{ product.price_max | money_without_currency | json }},
     "priceCurrency": {{ cart.currency.iso_code | json }},
     "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
-    "url": {{ request.origin | append: product.url | json }}
+    "url": {{ request.origin | append: product.url | json }},
+    "seller": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    },
+    "offerCount": {{ product.variants.size }}
     {%- if product.variants.first.sku != blank -%}
     ,"sku": {{ product.variants.first.sku | json }}
     {%- endif -%}
