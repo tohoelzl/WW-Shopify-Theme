@@ -112,13 +112,18 @@
         <h1 class="text-2xl lg:text-3xl font-heading font-bold mb-3">{{ product.title }}</h1>
 
         {%- comment -%} Price {%- endcomment -%}
-        <div class="flex items-center gap-3 mb-6" id="product-price">
-          <span class="text-xl font-bold" :class="$store.productForm.compareAtPrice && 'text-red-600'" x-text="$store.productForm.price">
-            {{ current_variant.price | money }}
-          </span>
-          <template x-if="$store.productForm.compareAtPrice">
-            <span class="text-gray-400 line-through" x-text="$store.productForm.compareAtPrice"></span>
-          </template>
+        <div class="mb-6" id="product-price">
+          <div class="flex items-center gap-3">
+            <span class="text-xl font-bold" :class="$store.productForm.compareAtPrice && 'text-red-600'" x-text="$store.productForm.price">
+              {{ current_variant.price | money }}
+            </span>
+            <template x-if="$store.productForm.compareAtPrice">
+              <span class="text-gray-400 line-through" x-text="$store.productForm.compareAtPrice"></span>
+            </template>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">
+            inkl. MwSt., <a href="{{ pages['versand-und-ruckgabe'].url | default: '/policies/shipping-policy' }}" class="underline hover:text-accent">zzgl. Versandkosten</a>
+          </p>
         </div>
 
         {%- comment -%} Variant Swatches {%- endcomment -%}

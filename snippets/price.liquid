@@ -1,13 +1,21 @@
 {%- comment -%}
   Price display component.
   Usage: {% render 'price', product: product %}
+  Optional: {% render 'price', product: product, show_tax_note: true %}
 {%- endcomment -%}
 
-<div class="flex items-center gap-2">
-  {%- if product.compare_at_price > product.price -%}
-    <span class="text-red-600 font-medium">{{ product.price | money }}</span>
-    <span class="text-gray-400 line-through text-sm">{{ product.compare_at_price | money }}</span>
-  {%- else -%}
-    <span class="font-medium">{{ product.price | money }}</span>
+<div>
+  <div class="flex items-center gap-2">
+    {%- if product.compare_at_price > product.price -%}
+      <span class="text-red-600 font-medium">{{ product.price | money }}</span>
+      <span class="text-gray-400 line-through text-sm">{{ product.compare_at_price | money }}</span>
+    {%- else -%}
+      <span class="font-medium">{{ product.price | money }}</span>
+    {%- endif -%}
+  </div>
+  {%- if show_tax_note -%}
+    <p class="text-xs text-gray-400 mt-0.5">
+      inkl. MwSt., <a href="{{ pages['versand-und-ruckgabe'].url | default: '/policies/shipping-policy' }}" class="underline hover:text-accent">zzgl. Versandkosten</a>
+    </p>
   {%- endif -%}
 </div>
