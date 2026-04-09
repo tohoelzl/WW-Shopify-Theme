@@ -2,42 +2,59 @@
 
 /* Arrow base styling */
 .splide__arrow {
-  @apply bg-white/90 backdrop-blur-sm shadow-md rounded-full w-10 h-10 flex items-center justify-center;
-  @apply opacity-0 group-hover:opacity-100 transition-opacity duration-200;
-  @apply absolute top-1/2 -translate-y-1/2 z-10 cursor-pointer border-0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border: 0;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .splide__arrow:hover {
-  @apply bg-white shadow-lg;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .splide__arrow svg {
-  @apply w-5 h-5 fill-current text-primary;
+  width: 20px;
+  height: 20px;
+  fill: var(--color-primary, #1a1a2e);
 }
 
-/* Left arrow */
+/* Fix: prev arrow SVG should point left */
+.splide__arrow--prev svg {
+  transform: scaleX(-1);
+}
+
 .splide__arrow--prev {
   left: 12px;
 }
 
-/* Right arrow */
 .splide__arrow--next {
   right: 12px;
 }
 
-/* Make gallery a group for hover */
-.product-gallery-main {
-  @apply relative;
-}
-
-.product-gallery-main .splide__track {
-  @apply relative;
+/* Show arrows on hover over the gallery */
+.product-gallery-main:hover .splide__arrow,
+.splide:hover > .splide__arrow {
+  opacity: 1;
 }
 
 /* Always show arrows on touch devices */
 @media (hover: none) {
   .splide__arrow {
-    @apply opacity-70;
+    opacity: 0.7;
   }
 }
 
