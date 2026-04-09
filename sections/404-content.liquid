@@ -1,0 +1,55 @@
+<section class="py-16 lg:py-24">
+  <div class="container max-w-3xl text-center">
+    <p class="text-6xl lg:text-8xl font-heading font-bold text-gray-200 mb-4">404</p>
+    <h1 class="text-2xl lg:text-3xl font-heading font-bold mb-3">Seite nicht gefunden</h1>
+    <p class="text-gray-500 mb-8">Die gesuchte Seite existiert leider nicht oder wurde verschoben.</p>
+
+    {%- comment -%} Search {%- endcomment -%}
+    <form action="/search" method="get" class="flex gap-2 max-w-md mx-auto mb-12">
+      <input
+        type="search"
+        name="q"
+        placeholder="Wonach suchst du?"
+        class="flex-1 px-4 py-3 rounded border border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent outline-none text-sm"
+      >
+      <button type="submit" class="px-6 py-3 bg-accent text-white font-semibold rounded hover:bg-accent/90 transition-colors text-sm">
+        Suchen
+      </button>
+    </form>
+
+    {%- comment -%} Helpful links {%- endcomment -%}
+    <div class="border-t border-gray-100 pt-8">
+      <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Beliebte Kategorien</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {%- for block in section.blocks -%}
+          <a href="{{ block.settings.link }}" class="px-4 py-2 text-sm font-medium border border-gray-200 rounded-full hover:border-accent hover:text-accent transition-colors" {{ block.shopify_attributes }}>
+            {{ block.settings.label }}
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a href="/" class="text-sm font-medium text-accent hover:underline">← Zurück zur Startseite</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404 Seite",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Kategorie-Link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Kategorie" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "404 Seite" }]
+}
+{% endschema %}

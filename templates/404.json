@@ -1,11 +1,15 @@
 {
   "sections": {
     "main": {
-      "type": "rich-text",
-      "settings": {
-        "heading": "Seite nicht gefunden",
-        "text": "<p>Die gesuchte Seite konnte leider nicht gefunden werden.</p>"
-      }
+      "type": "404-content",
+      "blocks": {
+        "sitzmoebel": { "type": "link", "settings": { "label": "Sitzmöbel", "link": "shopify://pages/sitzmoebel" } },
+        "tische": { "type": "link", "settings": { "label": "Tische", "link": "shopify://pages/tische" } },
+        "leuchten": { "type": "link", "settings": { "label": "Leuchten", "link": "shopify://pages/leuchten" } },
+        "bar": { "type": "link", "settings": { "label": "Bar & Gastro", "link": "shopify://pages/bar-gastro" } }
+      },
+      "block_order": ["sitzmoebel", "tische", "leuchten", "bar"],
+      "settings": {}
     }
   },
   "order": ["main"]
