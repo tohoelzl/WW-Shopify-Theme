@@ -42,7 +42,7 @@
       {%- comment -%} ===== LEFT: Product Gallery ===== {%- endcomment -%}
       <div>
         {%- if product.images.size > 1 -%}
-          <div class="product-gallery-main splide" aria-label="Product images">
+          <div class="product-gallery-main splide group" aria-label="Product images">
             <div class="splide__track">
               <div class="splide__list">
                 {%- for image in product.images -%}

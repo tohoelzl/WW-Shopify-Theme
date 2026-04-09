@@ -1,6 +1,44 @@
 /* Splide.js custom overrides */
+
+/* Arrow base styling */
 .splide__arrow {
-  @apply bg-white shadow-md;
+  @apply bg-white/90 backdrop-blur-sm shadow-md rounded-full w-10 h-10 flex items-center justify-center;
+  @apply opacity-0 group-hover:opacity-100 transition-opacity duration-200;
+  @apply absolute top-1/2 -translate-y-1/2 z-10 cursor-pointer border-0;
+}
+
+.splide__arrow:hover {
+  @apply bg-white shadow-lg;
+}
+
+.splide__arrow svg {
+  @apply w-5 h-5 fill-current text-primary;
+}
+
+/* Left arrow */
+.splide__arrow--prev {
+  left: 12px;
+}
+
+/* Right arrow */
+.splide__arrow--next {
+  right: 12px;
+}
+
+/* Make gallery a group for hover */
+.product-gallery-main {
+  @apply relative;
+}
+
+.product-gallery-main .splide__track {
+  @apply relative;
+}
+
+/* Always show arrows on touch devices */
+@media (hover: none) {
+  .splide__arrow {
+    @apply opacity-70;
+  }
 }
 
 .splide__pagination__page.is-active {
