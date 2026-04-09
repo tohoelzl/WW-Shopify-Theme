@@ -13,9 +13,11 @@
       <span class="font-medium">{{ product.price | money }}</span>
     {%- endif -%}
   </div>
-  {%- if show_tax_note -%}
+  {%- if show_tax_note == true -%}
     <p class="text-xs text-gray-400 mt-0.5">
       inkl. MwSt., <a href="{{ pages['versand-und-ruckgabe'].url | default: '/policies/shipping-policy' }}" class="underline hover:text-accent">zzgl. Versandkosten</a>
     </p>
+  {%- elsif show_tax_note == 'short' -%}
+    <p class="text-xs text-gray-400 mt-0.5">inkl. MwSt.</p>
   {%- endif -%}
 </div>
