@@ -14,32 +14,32 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "text_VfCBHr": {
+          "type": "text",
+          "settings": {
+            "title": "W-W-Shop.de",
+            "text": "<p>Top Outdoor und Indoor Möbel seit 2024.</p>"
+          }
+        },
+        "menu_rk38n7": {
+          "type": "menu",
+          "settings": {
+            "title": "Kategorien",
+            "menu": "main-menu"
+          }
+        },
         "menu_XjzDXR": {
           "type": "menu",
           "settings": {
             "title": "Allgemeines",
             "menu": "allgemeines"
           }
-        },
-        "text_VfCBHr": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "text": ""
-          }
-        },
-        "menu_rk38n7": {
-          "type": "menu",
-          "settings": {
-            "title": "",
-            "menu": "footer"
-          }
         }
       },
       "block_order": [
-        "menu_XjzDXR",
         "text_VfCBHr",
-        "menu_rk38n7"
+        "menu_rk38n7",
+        "menu_XjzDXR"
       ],
       "settings": {}
     }
