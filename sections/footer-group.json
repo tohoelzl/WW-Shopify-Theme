@@ -21,6 +21,13 @@
             "text": "<p>Top Outdoor und Indoor Möbel seit 2024.</p>"
           }
         },
+        "text_ynAHae": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        },
         "menu_rk38n7": {
           "type": "menu",
           "settings": {
@@ -38,6 +45,7 @@
       },
       "block_order": [
         "text_VfCBHr",
+        "text_ynAHae",
         "menu_rk38n7",
         "menu_XjzDXR"
       ],
