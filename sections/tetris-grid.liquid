@@ -54,7 +54,18 @@
       -%}
 
       {%- if block.settings.row_title != blank -%}
-        <h3 class="text-xl lg:text-2xl font-heading font-bold mb-4 {% if forloop.first == false %}mt-8 lg:mt-10{% endif %}">
+        {%- liquid
+          assign title_align = block.settings.title_alignment | default: 'left'
+          case title_align
+            when 'center'
+              assign title_align_class = 'text-center'
+            when 'right'
+              assign title_align_class = 'text-right'
+            else
+              assign title_align_class = 'text-left'
+          endcase
+        -%}
+        <h3 class="text-xl lg:text-2xl font-heading font-bold mb-4 {{ title_align_class }} {% if forloop.first == false %}mt-8 lg:mt-10{% endif %}">
           {{ block.settings.row_title }}
         </h3>
       {%- elsif forloop.first == false -%}
@@ -202,6 +213,17 @@
           "type": "text",
           "id": "row_title",
           "label": "Titel (optional)"
+        },
+        {
+          "type": "select",
+          "id": "title_alignment",
+          "label": "Titel-Ausrichtung",
+          "options": [
+            { "value": "left", "label": "Links" },
+            { "value": "center", "label": "Mitte" },
+            { "value": "right", "label": "Rechts" }
+          ],
+          "default": "left"
         },
         {
           "type": "select",
