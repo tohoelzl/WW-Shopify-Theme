@@ -127,7 +127,7 @@
                 endif
               -%}
               <div class="{{ card_class }} overflow-hidden rounded">
-                {% render 'product-card', product: product, class: 'h-full', image_aspect: 'h-full' %}
+                {% render 'product-card', product: product, class: 'h-full', image_aspect: 'flex-grow' %}
               </div>
             {%- endfor -%}
           {%- else -%}

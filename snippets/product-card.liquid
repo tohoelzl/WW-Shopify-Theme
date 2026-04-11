@@ -6,11 +6,15 @@
 {%- liquid
   assign card_class = class | default: ''
   assign aspect_class = image_aspect | default: 'aspect-square'
+  assign is_flex = false
+  if image_aspect == 'flex-grow'
+    assign is_flex = true
+  endif
 -%}
 
 <div class="group {{ card_class }}">
-  <a href="{{ product.url }}" class="block h-full">
-    <div class="relative {{ aspect_class }} overflow-hidden rounded bg-gray-50 mb-3">
+  <a href="{{ product.url }}" class="block h-full{% if is_flex %} flex flex-col{% endif %}">
+    <div class="relative {% if is_flex %}flex-grow{% else %}{{ aspect_class }}{% endif %} overflow-hidden rounded bg-gray-50 mb-3">
       {%- if product.featured_image -%}
         {% render 'image',
           image: product.featured_image,
