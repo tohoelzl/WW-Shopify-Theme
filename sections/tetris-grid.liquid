@@ -16,6 +16,16 @@
     aspect-ratio: 1/1;
   }
 
+  @media (min-width: 1024px) {
+    .tetris-row {
+      margin-bottom: var(--row-gap-desktop) !important;
+    }
+  }
+
+  .tetris-row:last-child {
+    margin-bottom: 0 !important;
+  }
+
   @media (max-width: 1023px) {
     .tetris-row {
       grid-template-columns: repeat(2, 1fr);
@@ -90,7 +100,7 @@
         {%- endfor -%}
       {%- endif -%}
 
-      <div class="tetris-row {{ align_class }}" {{ block.shopify_attributes }}>
+      <div class="tetris-row {{ align_class }}" style="--row-gap-desktop: {{ block.settings.row_gap_desktop | default: 24 }}px; --row-gap-mobile: {{ block.settings.row_gap_mobile | default: 12 }}px; margin-bottom: var(--row-gap-mobile);" {{ block.shopify_attributes }}>
         {%- if collection -%}
           {%- if display_type == 'products' -%}
             {%- for product in collection.products limit: 4 offset: product_offset -%}
@@ -233,6 +243,24 @@
           "max": 80,
           "step": 4,
           "default": 16
+        },
+        {
+          "type": "range",
+          "id": "row_gap_desktop",
+          "label": "Abstand zur nächsten Reihe — Desktop (px)",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "row_gap_mobile",
+          "label": "Abstand zur nächsten Reihe — Mobile (px)",
+          "min": 0,
+          "max": 60,
+          "step": 4,
+          "default": 12
         },
         {
           "type": "select",
