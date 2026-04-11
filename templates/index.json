@@ -127,33 +127,28 @@
         "heading": "Unsere Kategorien"
       }
     },
-    "tetris-grid": {
-      "type": "tetris-grid",
-      "blocks": {
-        "row-1": {
-          "type": "row",
-          "settings": {
-            "row_title": "Bestseller",
-            "pattern": "outside_tall",
-            "collection": "tische",
-            "display_type": "products"
-          }
-        },
-        "row-2": {
-          "type": "row",
-          "settings": {
-            "row_title": "Sitzmöbel",
-            "pattern": "center_tall",
-            "collection": "stuehle",
-            "display_type": "products"
-          }
-        }
-      },
-      "block_order": ["row-1", "row-2"],
+    "featured-collection": {
+      "type": "featured-collection",
       "settings": {
-        "heading": "",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "heading": "Bestseller",
+        "subtitle": "Die beliebtesten Designs unserer Kunden",
+        "collection": "tische",
+        "products_count": 4,
+        "show_view_all": true,
+        "view_all_text": "Alle ansehen",
+        "alignment": "left"
+      }
+    },
+    "featured-collection-2": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Sitzmöbel",
+        "subtitle": "Perfekt für Outdoor & Indoor",
+        "collection": "stuehle",
+        "products_count": 4,
+        "show_view_all": true,
+        "view_all_text": "Alle ansehen",
+        "alignment": "right"
       }
     },
     "brand-story": {
@@ -257,15 +252,75 @@
         "subtitle": "Melde dich an und erhalte exklusive Angebote, neue Designs und Einrichtungstipps.",
         "disclaimer": "Kein Spam. Jederzeit abbestellbar."
       }
+    },
+    "tetris_grid_JkJWRM": {
+      "type": "tetris-grid",
+      "blocks": {
+        "row_trFQeM": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "spacing_top": 32,
+            "spacing_bottom": 16,
+            "row_gap_desktop": -40,
+            "row_gap_mobile": -40,
+            "title_alignment": "left",
+            "pattern": "center_tall",
+            "collection": "blumentoepfe",
+            "display_type": "products"
+          }
+        },
+        "row_tJiHeg": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "spacing_top": 32,
+            "spacing_bottom": 16,
+            "row_gap_desktop": -56,
+            "row_gap_mobile": 4,
+            "title_alignment": "left",
+            "pattern": "outside_tall",
+            "collection": "barhocker",
+            "display_type": "categories"
+          }
+        },
+        "row_pTNMeq": {
+          "type": "row",
+          "settings": {
+            "row_title": "Sitzmöbel",
+            "spacing_top": 32,
+            "spacing_bottom": 16,
+            "row_gap_desktop": -64,
+            "row_gap_mobile": 12,
+            "title_alignment": "center",
+            "pattern": "center_tall",
+            "collection": "bartresen",
+            "display_type": "products"
+          }
+        }
+      },
+      "block_order": [
+        "row_trFQeM",
+        "row_tJiHeg",
+        "row_pTNMeq"
+      ],
+      "name": "Tetris Grid",
+      "settings": {
+        "heading": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "hero",
     "trust-bar",
     "categories",
-    "tetris-grid",
+    "featured-collection",
+    "featured-collection-2",
     "brand-story",
     "testimonials",
-    "newsletter"
+    "newsletter",
+    "tetris_grid_JkJWRM"
   ]
 }
