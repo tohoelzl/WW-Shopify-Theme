@@ -71,7 +71,7 @@
           {%- if forloop.index >= row_index -%}
             {%- break -%}
           {%- endif -%}
-          {%- if prev_block.settings.collection == collection and prev_block.settings.display_type == display_type -%}
+          {%- if prev_block.settings.collection == collection -%}
             {%- assign product_offset = product_offset | plus: 4 -%}
           {%- endif -%}
         {%- endfor -%}
