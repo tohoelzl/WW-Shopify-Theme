@@ -127,28 +127,33 @@
         "heading": "Unsere Kategorien"
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
+    "tetris-grid": {
+      "type": "tetris-grid",
+      "blocks": {
+        "row-1": {
+          "type": "row",
+          "settings": {
+            "row_title": "Bestseller",
+            "pattern": "outside_tall",
+            "collection": "tische",
+            "display_type": "products"
+          }
+        },
+        "row-2": {
+          "type": "row",
+          "settings": {
+            "row_title": "Sitzmöbel",
+            "pattern": "center_tall",
+            "collection": "stuehle",
+            "display_type": "products"
+          }
+        }
+      },
+      "block_order": ["row-1", "row-2"],
       "settings": {
-        "heading": "Bestseller",
-        "subtitle": "Die beliebtesten Designs unserer Kunden",
-        "collection": "tische",
-        "products_count": 4,
-        "show_view_all": true,
-        "view_all_text": "Alle ansehen",
-        "alignment": "left"
-      }
-    },
-    "featured-collection-2": {
-      "type": "featured-collection",
-      "settings": {
-        "heading": "Sitzmöbel",
-        "subtitle": "Perfekt für Outdoor & Indoor",
-        "collection": "stuehle",
-        "products_count": 4,
-        "show_view_all": true,
-        "view_all_text": "Alle ansehen",
-        "alignment": "right"
+        "heading": "",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "brand-story": {
@@ -258,8 +263,7 @@
     "hero",
     "trust-bar",
     "categories",
-    "featured-collection",
-    "featured-collection-2",
+    "tetris-grid",
     "brand-story",
     "testimonials",
     "newsletter"
