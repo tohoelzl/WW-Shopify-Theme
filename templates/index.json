@@ -259,10 +259,10 @@
         "row_trFQeM": {
           "type": "row",
           "settings": {
-            "row_title": "",
+            "row_title": "Sitzmöbel",
             "spacing_top": 32,
             "spacing_bottom": 16,
-            "row_gap_desktop": -40,
+            "row_gap_desktop": -80,
             "row_gap_mobile": -40,
             "title_alignment": "left",
             "pattern": "center_tall",
@@ -276,33 +276,18 @@
             "row_title": "",
             "spacing_top": 32,
             "spacing_bottom": 16,
-            "row_gap_desktop": -56,
+            "row_gap_desktop": -20,
             "row_gap_mobile": 4,
             "title_alignment": "left",
             "pattern": "outside_tall",
             "collection": "barhocker",
-            "display_type": "categories"
-          }
-        },
-        "row_pTNMeq": {
-          "type": "row",
-          "settings": {
-            "row_title": "Sitzmöbel",
-            "spacing_top": 32,
-            "spacing_bottom": 16,
-            "row_gap_desktop": -64,
-            "row_gap_mobile": 12,
-            "title_alignment": "center",
-            "pattern": "center_tall",
-            "collection": "bartresen",
             "display_type": "products"
           }
         }
       },
       "block_order": [
         "row_trFQeM",
-        "row_tJiHeg",
-        "row_pTNMeq"
+        "row_tJiHeg"
       ],
       "name": "Tetris Grid",
       "settings": {
