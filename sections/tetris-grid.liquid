@@ -64,12 +64,14 @@
             else
               assign title_align_class = 'text-left'
           endcase
+          assign spacing_top = block.settings.spacing_top | default: 32
+          assign spacing_bottom = block.settings.spacing_bottom | default: 16
         -%}
-        <h3 class="text-xl lg:text-2xl font-heading font-bold mb-4 {{ title_align_class }} {% if forloop.first == false %}mt-8 lg:mt-10{% endif %}">
+        <h3 class="text-xl lg:text-2xl font-heading font-bold {{ title_align_class }}" style="margin-top: {{ spacing_top }}px; margin-bottom: {{ spacing_bottom }}px;">
           {{ block.settings.row_title }}
         </h3>
       {%- elsif forloop.first == false -%}
-        <div class="mt-6 lg:mt-8"></div>
+        <div style="margin-top: {{ block.settings.spacing_top | default: 32 }}px;"></div>
       {%- endif -%}
 
       {%- assign collection = block.settings.collection -%}
@@ -213,6 +215,24 @@
           "type": "text",
           "id": "row_title",
           "label": "Titel (optional)"
+        },
+        {
+          "type": "range",
+          "id": "spacing_top",
+          "label": "Abstand über Titel (px)",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "default": 32
+        },
+        {
+          "type": "range",
+          "id": "spacing_bottom",
+          "label": "Abstand unter Titel (px)",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "default": 16
         },
         {
           "type": "select",
