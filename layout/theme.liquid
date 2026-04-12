@@ -2,6 +2,8 @@
 <html lang="{{ request.locale.iso_code }}">
 <head>
   {% render 'meta-tags' %}
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preload" href="{{ 'application.css' | asset_url }}" as="style">
   {{ 'application.css' | asset_url | stylesheet_tag }}
 
   {%- unless settings.font_heading.system? -%}

@@ -14,9 +14,20 @@
   {%- liquid
     assign img_height = height | default: image.height
   -%}
+  {%- capture filtered_srcset -%}
+    {%- assign srcset_first = true -%}
+    {%- for w in srcset_widths -%}
+      {%- assign w_num = w | plus: 0 -%}
+      {%- if w_num <= image.width -%}
+        {%- unless srcset_first -%}, {% endunless -%}
+        {{- image | image_url: width: w }} {{ w }}w
+        {%- assign srcset_first = false -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
   <img
     src="{{ image | image_url: width: img_width }}"
-    srcset="{%- for w in srcset_widths -%}{{ image | image_url: width: w }} {{ w }}w{%- unless forloop.last -%}, {%- endunless -%}{%- endfor -%}"
+    srcset="{{ filtered_srcset }}"
     sizes="{{ img_sizes }}"
     width="{{ image.width }}"
     height="{{ image.height }}"
