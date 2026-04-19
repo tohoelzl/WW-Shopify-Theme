@@ -39,16 +39,16 @@
           "type": "trust_item",
           "settings": {
             "icon": "shield",
-            "title": "Trust Feature",
-            "subtitle": ""
+            "title": "Qualität",
+            "subtitle": "Persönlich geprüfte Premiumqualität"
           }
         },
         "trust_item_Wn7EYp": {
           "type": "trust_item",
           "settings": {
-            "icon": "shield",
-            "title": "Trust Feature",
-            "subtitle": ""
+            "icon": "lock",
+            "title": "Sicher",
+            "subtitle": "100% Sicherer Checkout"
           }
         },
         "made-in-italy": {
