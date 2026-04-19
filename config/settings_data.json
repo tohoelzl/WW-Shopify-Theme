@@ -19,8 +19,8 @@
     "free_shipping_threshold": 150,
     "cart_upsell_enabled": true,
     "trust_badge_1": "Made in Italy",
-    "trust_badge_2": "Kostenloser Versand",
-    "trust_badge_3": "30 Tage Rückgabe",
+    "trust_badge_2": "",
+    "trust_badge_3": "14 Tage Rückgabe",
     "sections": {
       "cart-drawer": {
         "type": "cart-drawer",
