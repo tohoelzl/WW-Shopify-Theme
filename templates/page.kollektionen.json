@@ -11,21 +11,91 @@
   "sections": {
     "landing": {
       "type": "category-landing",
+      "blocks": {
+        "sitzmoebel": {
+          "type": "tile",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/big_kroko8.jpg",
+            "title": "Sitzmöbel",
+            "description": "Stühle, Sessel, Sofas & Hocker",
+            "link": "shopify://pages/sitzmoebel",
+            "show_count": true
+          }
+        },
+        "tische": {
+          "type": "tile",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Tisch_reborn17.jpg",
+            "title": "Tische",
+            "description": "Esstische, Couchtische & Beistelltische",
+            "link": "shopify://pages/tische",
+            "show_count": true
+          }
+        },
+        "leuchten": {
+          "type": "tile",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/giotto2.jpg",
+            "title": "Leuchten",
+            "description": "Steh-, Tisch- & Hängeleuchten",
+            "link": "shopify://pages/leuchten",
+            "show_count": true
+          }
+        },
+        "bar": {
+          "type": "tile",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/snack_bar3-scaled.jpg",
+            "title": "Bar & Gastro",
+            "description": "Bartheken, Bartresen & Zubehör",
+            "link": "shopify://pages/bar-gastro",
+            "show_count": true
+          }
+        },
+        "aufbewahrung": {
+          "type": "tile",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/mybook_quadro2.jpg",
+            "title": "Aufbewahrung",
+            "description": "Regale, Schränke & Vasen",
+            "link": "shopify://pages/aufbewahrung",
+            "show_count": true
+          }
+        },
+        "deko": {
+          "type": "tile",
+          "settings": {
+            "collection": "eiskuebel",
+            "title": "Deko & Accessoires",
+            "description": "Pflanzgefäße, Eiswürfelbehälter & mehr",
+            "link": "shopify://pages/deko",
+            "show_count": true
+          }
+        }
+      },
+      "block_order": [
+        "sitzmoebel",
+        "tische",
+        "leuchten",
+        "bar",
+        "aufbewahrung",
+        "deko"
+      ],
       "settings": {
         "subheading": "Alle Kategorien",
         "heading": "Unsere Kollektionen",
-        "text": "<p>Entdecke nachhaltige Designmöbel aus Italien — von Sitzmöbeln über Tische bis hin zu Leuchten und Bar-Ausstattung.</p>"
-      },
-      "blocks": {
-        "sitzmoebel": { "type": "tile", "settings": { "title": "Sitzmöbel", "description": "Stühle, Sessel, Sofas & Hocker", "link": "shopify://pages/sitzmoebel" } },
-        "tische": { "type": "tile", "settings": { "title": "Tische", "description": "Esstische, Couchtische & Beistelltische", "link": "shopify://pages/tische" } },
-        "leuchten": { "type": "tile", "settings": { "title": "Leuchten", "description": "Steh-, Tisch- & Hängeleuchten", "link": "shopify://pages/leuchten" } },
-        "bar": { "type": "tile", "settings": { "title": "Bar & Gastro", "description": "Bartheken, Bartresen & Zubehör", "link": "shopify://pages/bar-gastro" } },
-        "aufbewahrung": { "type": "tile", "settings": { "title": "Aufbewahrung", "description": "Regale, Schränke & Vasen", "link": "shopify://pages/aufbewahrung" } },
-        "deko": { "type": "tile", "settings": { "title": "Deko & Accessoires", "description": "Pflanzgefäße, Eiswürfelbehälter & mehr", "link": "shopify://pages/deko" } }
-      },
-      "block_order": ["sitzmoebel", "tische", "leuchten", "bar", "aufbewahrung", "deko"]
+        "text": "<p>Entdecke nachhaltige Designmöbel aus Italien — von Sitzmöbeln über Tische bis hin zu Leuchten und Bar-Ausstattung.</p>",
+        "bottom_button_text": "",
+        "bottom_button_link": ""
+      }
     }
   },
-  "order": ["landing"]
+  "order": [
+    "landing"
+  ]
 }
