@@ -15,8 +15,7 @@
         "sitzmoebel": {
           "type": "tile",
           "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/big_kroko8.jpg",
+            "collection": "stuehle",
             "title": "Sitzmöbel",
             "description": "Stühle, Sessel, Sofas & Hocker",
             "link": "shopify://pages/sitzmoebel",
@@ -26,8 +25,7 @@
         "tische": {
           "type": "tile",
           "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/Tisch_reborn17.jpg",
+            "collection": "tische",
             "title": "Tische",
             "description": "Esstische, Couchtische & Beistelltische",
             "link": "shopify://pages/tische",
