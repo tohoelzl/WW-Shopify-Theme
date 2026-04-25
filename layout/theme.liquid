@@ -7,7 +7,10 @@
   {{ 'application.css' | asset_url | stylesheet_tag }}
 
   {%- unless settings.font_heading.system? -%}
-    <link rel="preload" as="font" href="{{ settings.font_heading | font_url }}" type="font/woff2" crossorigin>
+    {%- assign font_heading_url = settings.font_heading | font_url -%}
+    {%- unless font_heading_url contains 'Liquid error' -%}
+      <link rel="preload" as="font" href="{{ font_heading_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
   {%- endunless -%}
 
   {{ settings.font_heading | font_face: font_display: 'swap' }}

@@ -163,6 +163,24 @@
   </div>
 </div>
 
+<script>
+  (function () {
+    function activateDrawer() {
+      var el = document.querySelector('[x-show="$store.cart.isOpen"]');
+      if (!el) return;
+      el.removeAttribute('x-cloak');
+      if (window.Alpine && typeof window.Alpine.initTree === 'function') {
+        window.Alpine.initTree(el);
+      }
+    }
+    if (window.Alpine) {
+      activateDrawer();
+    } else {
+      document.addEventListener('alpine:initialized', activateDrawer, { once: true });
+    }
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Cart Drawer",
