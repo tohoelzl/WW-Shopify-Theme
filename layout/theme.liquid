@@ -30,13 +30,19 @@
   </style>
 
   {%- if settings.sky_enabled -%}
-    {%- assign sky_color_encoded = settings.sky_color | default: '#0E7CB4' | replace: '#', '%23' -%}
+    {%- comment -%}
+      Sky-Pattern background-image: aktuelle Setting-Farbe/Opacity in das SVG-Snippet einsetzen
+      und als Data-URI emitten. Manuelles Percent-Encoding (statt url_encode) weil:
+      - url_encode würde Spaces als '+' kodieren — Data-URIs decoden '+' nicht zu Space
+      - Wenn '#' bereits vor url_encode zu '%23' ersetzt wäre, würde url_encode '%23' zu '%2523' doppel-encoden
+    {%- endcomment -%}
+    {%- assign sky_color = settings.sky_color | default: '#0E7CB4' -%}
     {%- assign sky_opacity_value = settings.sky_opacity | default: 40 | divided_by: 100.0 -%}
     {%- capture sky_svg_raw -%}{% render 'sky-pattern-svg' %}{%- endcapture -%}
-    {%- assign sky_svg_filled = sky_svg_raw | replace: '__COLOR__', sky_color_encoded | replace: '__OPACITY__', sky_opacity_value | strip_newlines | replace: '"', "'" | url_encode -%}
+    {%- assign sky_svg = sky_svg_raw | replace: '__COLOR__', sky_color | replace: '__OPACITY__', sky_opacity_value | strip_newlines | replace: '"', "'" | replace: '<', '%3C' | replace: '>', '%3E' | replace: '#', '%23' | replace: ' ', '%20' -%}
     <style>
       body.has-sky-bg {
-        background-image: url("data:image/svg+xml,{{ sky_svg_filled }}");
+        background-image: url("data:image/svg+xml,{{ sky_svg }}");
       }
     </style>
   {%- endif -%}
