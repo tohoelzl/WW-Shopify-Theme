@@ -216,15 +216,15 @@
               <dd class="text-gray-900">
                 {%- assign dim_parts = '' -%}
                 {%- if mf_width != blank -%}
-                  {%- assign dim_parts = dim_parts | append: mf_width.value -%}
+                  {%- assign dim_parts = dim_parts | append: '<span class="text-gray-500">B</span> ' | append: mf_width.value -%}
                 {%- endif -%}
                 {%- if mf_depth != blank -%}
                   {%- if dim_parts != '' -%}{%- assign dim_parts = dim_parts | append: ' × ' -%}{%- endif -%}
-                  {%- assign dim_parts = dim_parts | append: mf_depth.value -%}
+                  {%- assign dim_parts = dim_parts | append: '<span class="text-gray-500">T</span> ' | append: mf_depth.value -%}
                 {%- endif -%}
                 {%- if mf_height != blank -%}
                   {%- if dim_parts != '' -%}{%- assign dim_parts = dim_parts | append: ' × ' -%}{%- endif -%}
-                  {%- assign dim_parts = dim_parts | append: mf_height.value -%}
+                  {%- assign dim_parts = dim_parts | append: '<span class="text-gray-500">H</span> ' | append: mf_height.value -%}
                 {%- endif -%}
                 {{ dim_parts }}{% if dim_unit != '' %} {{ dim_unit }}{% endif %}
               </dd>
