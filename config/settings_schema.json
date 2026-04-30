@@ -18,5 +18,44 @@
         "unit": "px"
       }
     ]
+  },
+  {
+    "name": "Hintergrund",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Sternenhimmel"
+      },
+      {
+        "type": "checkbox",
+        "id": "sky_enabled",
+        "label": "Sternenhimmel-Hintergrund aktivieren",
+        "default": true,
+        "info": "Zeigt ein dezentes Pattern aus Möbel-Icons als globalen Body-Background."
+      },
+      {
+        "type": "color",
+        "id": "sky_color",
+        "label": "Icon-Farbe",
+        "default": "#0E7CB4"
+      },
+      {
+        "type": "range",
+        "id": "sky_opacity",
+        "label": "Transparenz",
+        "min": 10,
+        "max": 60,
+        "step": 5,
+        "default": 40,
+        "unit": "%"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_background_parallax",
+        "label": "Parallax-Effekt",
+        "default": false,
+        "info": "Hintergrund bleibt beim Scrollen stehen statt mitzuscrollen. Auf iOS Safari nicht unterstützt — Fallback auf Mitscrollen."
+      }
+    ]
   }
 ]
