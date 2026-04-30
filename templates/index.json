@@ -124,7 +124,8 @@
       ],
       "settings": {
         "subheading": "Kollektion",
-        "heading": "Unsere Kategorien"
+        "heading": "Unsere Kategorien",
+        "full_width": true
       }
     },
     "featured-collection": {
@@ -134,9 +135,10 @@
         "subtitle": "Die beliebtesten Designs unserer Kunden",
         "collection": "tische",
         "products_count": 4,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_text": "Alle ansehen",
-        "alignment": "left"
+        "alignment": "left",
+        "full_width": true
       }
     },
     "featured-collection-2": {
@@ -148,7 +150,8 @@
         "products_count": 4,
         "show_view_all": true,
         "view_all_text": "Alle ansehen",
-        "alignment": "right"
+        "alignment": "right",
+        "full_width": true
       }
     },
     "brand-story": {
