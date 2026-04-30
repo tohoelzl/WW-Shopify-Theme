@@ -25,7 +25,7 @@ Das Such-Overlay wurde im vorherigen Commit (`9104da8`) in [sections/header.liqu
 
 - **Alpine.js-State**: Im bestehenden `x-data` des Headers werden Felder für Query, Ergebnisse, Loading-Status und Total ergänzt.
 - **API-Aufruf**: Shopifys eingebaute `/search/suggest.json`-API liefert die Produkt-Vorschläge als JSON. Keine externen Dependencies.
-- **JS-Modul**: Neues `src/js/predictive-search.js` kapselt Debounce, AbortController und Fetch-Logik. Wird via esbuild zu `assets/predictive-search.js` gebaut. Das Modul registriert sich beim `alpine:init`-Event als `Alpine.data('predictiveSearch', ...)`. Eingebunden in `theme.liquid` per `<script defer>` **vor** dem Alpine-Bundle, sodass die Komponente registriert ist, wenn Alpine startet.
+- **JS-Komponente**: Wird in `src/js/base.js` als `Alpine.data('predictiveSearch', () => ({...}))` registriert — vor dem bestehenden `Alpine.start()`-Aufruf. Gleiches Pattern wie der bestehende Cart-Store. Kein neues Asset, keine zusätzliche `<script>`-Einbindung in `theme.liquid` nötig.
 - **Render**: Vorschau-Liste rendert direkt unter dem Form im selben Overlay, mit reaktivem Alpine-Binding.
 
 ## Datenfluss
@@ -56,11 +56,9 @@ Genau einer dieser States ist im Vorschau-Bereich aktiv (per `x-show` gesteuert)
 
 ## Komponenten
 
-### `src/js/predictive-search.js` (neu)
+### `src/js/base.js` (Erweiterung)
 
-Exportiert eine Alpine-Component-Factory, die im Header per `x-data="predictiveSearch()"` (auf einem inneren Wrapper) ergänzt zum bestehenden Header-State läuft. Alternative: globale Funktion auf `window` registrieren.
-
-**Empfohlene Struktur:** Eigene Alpine-Component für den Such-Overlay-Wrapper, damit die Logik isoliert bleibt und der Haupt-Header-State (`mobileOpen`, `searchOpen`, …) nicht weiter aufgebläht wird.
+Innerhalb von `base.js`, vor dem bestehenden `Alpine.start()`-Aufruf, wird eine Alpine-Component `predictiveSearch` per `Alpine.data('predictiveSearch', () => ({...}))` registriert. Sie wird im Header per `x-data="predictiveSearch()"` auf einem inneren Wrapper aktiviert, damit die Logik isoliert bleibt und der Haupt-Header-State (`mobileOpen`, `searchOpen`, …) nicht weiter aufgebläht wird.
 
 **State:**
 - `query: string`
@@ -138,9 +136,9 @@ Der bestehende Such-Overlay-Block wird umstrukturiert:
 </div>
 ```
 
-### `layout/theme.liquid` (Anpassung)
+### `layout/theme.liquid`
 
-`<script src="{{ 'predictive-search.js' | asset_url }}" defer></script>` wird ergänzt (analog zu bestehenden JS-Modulen). Der Build-Schritt `npm run build:js` erstellt das Asset aus `src/js/predictive-search.js`.
+Keine Änderung. `base.js` ist bereits eingebunden.
 
 ## Datentransformation (API → State)
 
@@ -202,9 +200,9 @@ Das Modul mappt `data.resources.results.products[*]` auf das interne State-Forma
 
 ## Build & Deployment
 
-1. `npm run build:js` baut `src/js/predictive-search.js` → `assets/predictive-search.js`
-2. `npm run build:css` (falls neue Tailwind-Klassen verwendet werden, z. B. `animate-pulse`, `w-15`, `h-15`)
-3. Commit: `feat: live search with product preview in header overlay`
+1. `npm run build:js` baut `src/js/base.js` → `assets/base.js`
+2. `npm run build:css` (für neue Tailwind-Klassen wie `animate-pulse`, `divide-y`, `w-3/4`)
+3. Commits pro Task gemäß Plan
 4. Push nach `origin/master` — Shopify zieht automatisch.
 
 ## Testing-Strategie
