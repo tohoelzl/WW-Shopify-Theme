@@ -19,10 +19,10 @@
             "subheading": "100% Made in Italy",
             "heading": "Italienisches Design für dein Zuhause",
             "text": "Nachhaltige Möbel aus recycelbarem Bio-Kunststoff — designed von weltbekannten Designern.",
-            "button_text": "Kollektion entdecken",
+            "button_text": "Kollektionen entdecken",
             "button_link": "shopify://pages/kollektionen",
-            "button_text_2": "Über Slide Design",
-            "button_link_2": "",
+            "button_text_2": "Alle Produkte",
+            "button_link_2": "shopify://collections/all",
             "text_alignment": "left"
           }
         }
@@ -201,7 +201,7 @@
         "subheading": "Über die Marke",
         "heading": "Slide Design — Seit 2002 aus Mailand",
         "text": "<p>Gegründet von Giò Colonna Romano, verbindet Slide Design italienische Handwerkskunst mit nachhaltiger Innovation. Jedes Möbelstück wird in der eigenen Fabrik in Buccinasco gefertigt.</p>",
-        "button_text": "Mehr über Slide Design",
+        "button_text": "",
         "button_link": "",
         "background": ""
       }
@@ -243,7 +243,7 @@
         "review-3"
       ],
       "custom_css": [
-        "section {background: transparent !important; }"
+        "section {background: transparent !important;}"
       ],
       "settings": {
         "subheading": "Kundenstimmen",
