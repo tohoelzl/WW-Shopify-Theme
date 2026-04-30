@@ -242,7 +242,9 @@
         "review-2",
         "review-3"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "section {background: transparent !important; }"
+      ],
       "settings": {
         "subheading": "Kundenstimmen",
         "heading": "Das sagen unsere Kunden",
