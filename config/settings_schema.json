@@ -51,7 +51,7 @@
       },
       {
         "type": "checkbox",
-        "id": "enable_background_parallax",
+        "id": "sky_parallax",
         "label": "Parallax-Effekt",
         "default": false,
         "info": "Hintergrund bleibt beim Scrollen stehen statt mitzuscrollen. Auf iOS Safari nicht unterstützt — Fallback auf Mitscrollen."

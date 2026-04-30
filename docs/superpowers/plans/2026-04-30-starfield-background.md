@@ -225,7 +225,7 @@ git commit -m "feat: add sky-pattern SVG tile snippet for starfield background"
       },
       {
         "type": "checkbox",
-        "id": "enable_background_parallax",
+        "id": "sky_parallax",
         "label": "Parallax-Effekt",
         "default": false,
         "info": "Hintergrund bleibt beim Scrollen stehen statt mitzuscrollen. Auf iOS Safari nicht unterstützt — Fallback auf Mitscrollen."
@@ -336,7 +336,7 @@ In `layout/theme.liquid` die aktuelle `<body>`-Zeile (Zeile 45):
 ersetzen durch:
 
 ```liquid
-<body class="font-body text-primary bg-[var(--color-background)]{% if settings.sky_enabled %} has-sky-bg{% if settings.enable_background_parallax %} has-sky-parallax{% endif %}{% endif %}">
+<body class="font-body text-primary bg-[var(--color-background)]{% if settings.sky_enabled %} has-sky-bg{% if settings.sky_parallax %} has-sky-parallax{% endif %}{% endif %}">
 ```
 
 - [ ] **Step 3: Theme-Editor öffnen und Smoketest**
