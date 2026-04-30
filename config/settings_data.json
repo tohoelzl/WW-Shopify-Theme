@@ -10,6 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/logo_shop.webp",
+    "sky_opacity": 30,
     "color_primary": "#1a1a2e",
     "color_secondary": "#e2e8f0",
     "color_accent": "#16a34a",
