@@ -133,7 +133,42 @@ Alpine.data('predictiveSearch', () => ({
   },
 
   async runSearch() {
-    // Implementation in Task 3
+    if (this._abortController) this._abortController.abort();
+    this._abortController = new AbortController();
+
+    const params = new URLSearchParams({
+      q: this.query,
+      'resources[type]': 'product',
+      'resources[limit]': String(this.RESULT_LIMIT),
+      'resources[options][unavailable_products]': 'last',
+    });
+
+    try {
+      const res = await fetch(`/search/suggest.json?${params.toString()}`, {
+        signal: this._abortController.signal,
+        headers: { 'Accept': 'application/json' },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const products = (data?.resources?.results?.products || []).map((p) => ({
+        id: p.id,
+        title: p.title,
+        url: p.url,
+        image: p.featured_image?.url || p.image || '',
+        priceFormatted: p.price,
+      }));
+      this.results = products;
+      this.total = products.length;
+      this.loading = false;
+      this.error = false;
+    } catch (e) {
+      if (e.name === 'AbortError') return;
+      console.error('Predictive search failed:', e);
+      this.results = [];
+      this.total = 0;
+      this.loading = false;
+      this.error = true;
+    }
   },
 
   clear() {
