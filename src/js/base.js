@@ -99,4 +99,52 @@ Alpine.store('cart', {
   },
 });
 
+Alpine.data('predictiveSearch', () => ({
+  MIN_CHARS: 2,
+  DEBOUNCE_MS: 300,
+  RESULT_LIMIT: 6,
+
+  query: '',
+  results: [],
+  total: 0,
+  loading: false,
+  error: false,
+
+  _debounceTimer: null,
+  _abortController: null,
+
+  onInput(value) {
+    this.query = value;
+    this.scheduleSearch();
+  },
+
+  scheduleSearch() {
+    if (this._debounceTimer) clearTimeout(this._debounceTimer);
+    if (this.query.length < this.MIN_CHARS) {
+      this.results = [];
+      this.total = 0;
+      this.loading = false;
+      this.error = false;
+      return;
+    }
+    this.loading = true;
+    this.error = false;
+    this._debounceTimer = setTimeout(() => this.runSearch(), this.DEBOUNCE_MS);
+  },
+
+  async runSearch() {
+    // Implementation in Task 3
+  },
+
+  clear() {
+    if (this._debounceTimer) clearTimeout(this._debounceTimer);
+    if (this._abortController) this._abortController.abort();
+    this.query = '';
+    this.results = [];
+    this.total = 0;
+    this.loading = false;
+    this.error = false;
+  },
+}));
+
 Alpine.start();
