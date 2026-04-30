@@ -188,10 +188,10 @@
         </div>
 
         {%- comment -%} Quick Specs (Maße, Gewicht, Material) {%- endcomment -%}
-        {%- assign mf_width = product.metafields.custom.width -%}
-        {%- assign mf_depth = product.metafields.custom.depth -%}
-        {%- assign mf_height = product.metafields.custom.height -%}
-        {%- assign mf_weight = product.metafields.custom.weight -%}
+        {%- assign mf_width = product.metafields.custom.width.value -%}
+        {%- assign mf_depth = product.metafields.custom.depth.value -%}
+        {%- assign mf_height = product.metafields.custom.height.value -%}
+        {%- assign mf_weight = product.metafields.custom.weight.value -%}
         {%- assign mf_material = product.metafields.custom.material -%}
 
         {%- assign has_dimensions = false -%}
@@ -202,26 +202,36 @@
         {%- if has_dimensions or mf_weight != blank or mf_material != blank -%}
           <dl class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 py-4 border-t border-gray-100 text-sm mb-6">
             {%- if has_dimensions -%}
+              {%- comment -%} Use the first non-blank dimension's unit as the shared unit {%- endcomment -%}
+              {%- assign dim_unit = '' -%}
+              {%- if mf_width != blank -%}
+                {%- assign dim_unit = mf_width.unit -%}
+              {%- elsif mf_depth != blank -%}
+                {%- assign dim_unit = mf_depth.unit -%}
+              {%- elsif mf_height != blank -%}
+                {%- assign dim_unit = mf_height.unit -%}
+              {%- endif -%}
+
               <dt class="text-gray-500">{{ 'products.dimensions' | t }}</dt>
               <dd class="text-gray-900">
                 {%- assign dim_parts = '' -%}
                 {%- if mf_width != blank -%}
-                  {%- assign dim_parts = dim_parts | append: mf_width -%}
+                  {%- assign dim_parts = dim_parts | append: mf_width.value -%}
                 {%- endif -%}
                 {%- if mf_depth != blank -%}
                   {%- if dim_parts != '' -%}{%- assign dim_parts = dim_parts | append: ' × ' -%}{%- endif -%}
-                  {%- assign dim_parts = dim_parts | append: mf_depth -%}
+                  {%- assign dim_parts = dim_parts | append: mf_depth.value -%}
                 {%- endif -%}
                 {%- if mf_height != blank -%}
                   {%- if dim_parts != '' -%}{%- assign dim_parts = dim_parts | append: ' × ' -%}{%- endif -%}
-                  {%- assign dim_parts = dim_parts | append: mf_height -%}
+                  {%- assign dim_parts = dim_parts | append: mf_height.value -%}
                 {%- endif -%}
-                {{ dim_parts }}
+                {{ dim_parts }}{% if dim_unit != '' %} {{ dim_unit }}{% endif %}
               </dd>
             {%- endif -%}
             {%- if mf_weight != blank -%}
               <dt class="text-gray-500">{{ 'products.weight' | t }}</dt>
-              <dd class="text-gray-900">{{ mf_weight }}</dd>
+              <dd class="text-gray-900">{{ mf_weight.value }} {{ mf_weight.unit }}</dd>
             {%- endif -%}
             {%- if mf_material != blank -%}
               <dt class="text-gray-500">{{ 'products.material' | t }}</dt>
