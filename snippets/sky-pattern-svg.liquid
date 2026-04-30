@@ -1,0 +1,80 @@
+{%- comment -%}
+  Sky-Pattern-Tile: 800×800 SVG mit 12 hand-drawn Möbel-Icons.
+  Wird in layout/theme.liquid via render geladen, dann __COLOR__ und __OPACITY__ ersetzt
+  und als Data-URI ins background-image geschrieben.
+
+  Tile-Boundary: alle Icons haben mindestens 24px Abstand zu jedem Tile-Rand.
+  Icons sind 60-100px groß, gemischte Rotationen ±45°.
+{%- endcomment -%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <g stroke="__COLOR__" stroke-width="0.6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="__OPACITY__">
+    <!-- Stuhl, top-left -->
+    <g transform="translate(80 90) rotate(-22) scale(3.2)">
+      <path d="M6.2 10.1V5.1c0-1.1.9-2 2-2h7.8c1.1 0 2.1.9 2.1 2v5"/>
+      <path d="M5 10.1h14L18.1 16H6l-1-5.9Z"/>
+      <path d="M7.1 16v4M17 16.1v4"/>
+    </g>
+    <!-- Lampe, top-mid -->
+    <g transform="translate(310 80) rotate(15) scale(2.8)">
+      <path d="M8.1 8.05 16 8.1l-2 5.95L10.05 14Z"/>
+      <path d="M12 14.1v5.9M9.05 20H15"/>
+    </g>
+    <!-- Tisch, top-right -->
+    <g transform="translate(560 110) rotate(-38) scale(3.6)">
+      <path d="M3.1 8.2 21 8.05l-.05 2.95L3 11.05Z"/>
+      <path d="M5.05 11.1 5 20M19 11.05 19.1 20"/>
+    </g>
+    <!-- Bett, mid-left -->
+    <g transform="translate(110 270) rotate(28) scale(3.0)">
+      <path d="M3 18.05V8.1M21 18v-9.95"/>
+      <path d="M3.05 13.1 21 13M3 18h18.05"/>
+      <path d="M6.05 13c0-1.1.9-2 2-2h3.9c1.1 0 2.05.9 2.05 2"/>
+    </g>
+    <!-- Sofa, mid-center -->
+    <g transform="translate(360 320) rotate(-10) scale(3.4)">
+      <path d="M3.1 12.1c0-1.1.9-2 2-2s2 .9 2 2v3"/>
+      <path d="M21 12c0-1.1-.9-2-2.1-2-1.1 0-2 .9-2 2.05v3"/>
+      <path d="M5.1 15.05 19 15v3.1L5 18Z"/>
+      <path d="M7.05 18.1V20M17 18v2.1"/>
+    </g>
+    <!-- Regal, mid-right -->
+    <g transform="translate(620 290) rotate(40) scale(2.6)">
+      <path d="M5.05 4.1V20M19 4v16.05"/>
+      <path d="M5 8.05 19.05 8M5.1 14 19 14.05"/>
+    </g>
+    <!-- Tisch, lower-left -->
+    <g transform="translate(80 510) rotate(-30) scale(2.9)">
+      <path d="M3.1 8.2 21 8.05l-.05 2.95L3 11.05Z"/>
+      <path d="M5.05 11.1 5 20M19 11.05 19.1 20"/>
+    </g>
+    <!-- Stuhl, lower-center -->
+    <g transform="translate(330 540) rotate(35) scale(3.1)">
+      <path d="M6.2 10.1V5.1c0-1.1.9-2 2-2h7.8c1.1 0 2.1.9 2.1 2v5"/>
+      <path d="M5 10.1h14L18.1 16H6l-1-5.9Z"/>
+      <path d="M7.1 16v4M17 16.1v4"/>
+    </g>
+    <!-- Lampe, lower-right -->
+    <g transform="translate(600 530) rotate(-18) scale(3.2)">
+      <path d="M8.1 8.05 16 8.1l-2 5.95L10.05 14Z"/>
+      <path d="M12 14.1v5.9M9.05 20H15"/>
+    </g>
+    <!-- Regal, bottom-left -->
+    <g transform="translate(140 690) rotate(20) scale(2.7)">
+      <path d="M5.05 4.1V20M19 4v16.05"/>
+      <path d="M5 8.05 19.05 8M5.1 14 19 14.05"/>
+    </g>
+    <!-- Sofa, bottom-center -->
+    <g transform="translate(380 700) rotate(-25) scale(2.8)">
+      <path d="M3.1 12.1c0-1.1.9-2 2-2s2 .9 2 2v3"/>
+      <path d="M21 12c0-1.1-.9-2-2.1-2-1.1 0-2 .9-2 2.05v3"/>
+      <path d="M5.1 15.05 19 15v3.1L5 18Z"/>
+      <path d="M7.05 18.1V20M17 18v2.1"/>
+    </g>
+    <!-- Bett, bottom-right -->
+    <g transform="translate(610 690) rotate(12) scale(2.6)">
+      <path d="M3 18.05V8.1M21 18v-9.95"/>
+      <path d="M3.05 13.1 21 13M3 18h18.05"/>
+      <path d="M6.05 13c0-1.1.9-2 2-2h3.9c1.1 0 2.05.9 2.05 2"/>
+    </g>
+  </g>
+</svg>
