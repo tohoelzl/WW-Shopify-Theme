@@ -1192,6 +1192,15 @@
 {%- when 'allgemein' -%}
   <div x-data="{ open: false }" class="border-b border-gray-100">
     <button class="flex items-center justify-between w-full py-4 text-left font-medium" @click="open = !open" :aria-expanded="open">
+      <span class="pr-4">Wofür steht SLIDE?</span>
+      <span :class="open && 'rotate-180'" class="flex-shrink-0 transition-transform">{% render 'icon', name: 'chevron-down', size: 18 %}</span>
+    </button>
+    <div x-show="open" x-collapse>
+      <div class="pb-4 prose prose-sm max-w-none text-gray-600">SLIDE verfolgt das Ziel, Qualität, Kreativität und Designkultur „Made in Italy" weltweit zugänglich zu machen. Im Mittelpunkt stehen innovative, leichte Designs sowie der Einsatz von linearem Polyethylen, das emissionsfrei verarbeitet wird. Alle Produkte sind zu 100 % recycelbar, einige Farben bestehen bereits aus recyceltem Material, darunter Jet Black, Elephant Grey, Chocolate Brown und Mahogany Leather. Das Unternehmen setzt auf Kreislaufwirtschaft: Jedes Produkt kann wiederverwendet und zu neuem Kunststoff verarbeitet werden. „Made in Italy" bedeutet dabei auch eine bewusste, ethische Entscheidung – von der Idee bis zur Umsetzung an einem Ort.</div>
+    </div>
+  </div>
+  <div x-data="{ open: false }" class="border-b border-gray-100">
+    <button class="flex items-center justify-between w-full py-4 text-left font-medium" @click="open = !open" :aria-expanded="open">
       <span class="pr-4">Aus welchem Material bestehen eure Möbel?</span>
       <span :class="open && 'rotate-180'" class="flex-shrink-0 transition-transform">{% render 'icon', name: 'chevron-down', size: 18 %}</span>
     </button>
@@ -1252,7 +1261,7 @@
       <span :class="open && 'rotate-180'" class="flex-shrink-0 transition-transform">{% render 'icon', name: 'chevron-down', size: 18 %}</span>
     </button>
     <div x-show="open" x-collapse>
-      <div class="pb-4 prose prose-sm max-w-none text-gray-600">Die Lieferzeit beträgt in der Regel 5–10 Werktage innerhalb Deutschlands. Bei lagernden Artikeln versenden wir innerhalb von 1–3 Werktagen. Sperrige Möbel werden per Spedition geliefert — hier kann die Lieferzeit bis zu 15 Werktage betragen. Sie erhalten eine Sendungsverfolgung per E-Mail.</div>
+      <div class="pb-4 prose prose-sm max-w-none text-gray-600">Die Lieferzeit beträgt in der Regel 10–14 Werktage innerhalb Deutschlands. Bei lagernden Artikeln versenden wir innerhalb von 1–3 Werktagen. Sperrige Möbel werden per Spedition geliefert — hier kann die Lieferzeit bis zu 15 Werktage betragen. Sie erhalten eine Sendungsverfolgung per E-Mail.</div>
     </div>
   </div>
   <div x-data="{ open: false }" class="border-b border-gray-100">
@@ -1261,7 +1270,7 @@
       <span :class="open && 'rotate-180'" class="flex-shrink-0 transition-transform">{% render 'icon', name: 'chevron-down', size: 18 %}</span>
     </button>
     <div x-show="open" x-collapse>
-      <div class="pb-4 prose prose-sm max-w-none text-gray-600">Ab einem Bestellwert von 150 € liefern wir innerhalb Deutschlands kostenlos. Bei Bestellungen unter 150 € fallen Versandkosten von 4,95 € für Paketware und 29,95 € für Speditionsware an.</div>
+      <div class="pb-4 prose prose-sm max-w-none text-gray-600">Nein, der Versand ist leider nicht kostenlos. Die Ware wird direkt aus dem Werk in Italien zu uns geliefert, von uns geprüft, neu verpackt und anschließend an den Kunden weitergeschickt. Daher müssen wir einen Teil der Lieferkosten berechnen. Die genauen Versandkosten sind jeweils beim Produkt angegeben.</div>
     </div>
   </div>
   <div x-data="{ open: false }" class="border-b border-gray-100">
