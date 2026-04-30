@@ -1,7 +1,13 @@
-{%- assign collection = section.settings.collection -%}
+{%- liquid
+  assign collection = section.settings.collection
+  assign container_classes = 'container'
+  if section.settings.full_width
+    assign container_classes = 'container lg:max-w-none lg:px-10 xl:px-14'
+  endif
+-%}
 
 <section class="py-12 lg:py-16">
-  <div class="container lg:max-w-none lg:px-10 xl:px-14">
+  <div class="{{ container_classes }}">
     {%- liquid
       assign align = section.settings.alignment | default: 'left'
     -%}
@@ -81,7 +87,8 @@
         { "value": "right", "label": "Rechts" }
       ],
       "default": "left"
-    }
+    },
+    { "type": "checkbox", "id": "full_width", "label": "Volle Breite (Desktop)", "default": false, "info": "Nutzt die volle Bildschirmbreite ab Desktop. Mobile bleibt unverändert." }
   ],
   "presets": [
     { "name": "Featured Collection" }
