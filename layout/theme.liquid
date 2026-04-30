@@ -29,6 +29,18 @@
     }
   </style>
 
+  {%- if settings.sky_enabled -%}
+    {%- assign sky_color_encoded = settings.sky_color | default: '#0E7CB4' | replace: '#', '%23' -%}
+    {%- assign sky_opacity_value = settings.sky_opacity | default: 40 | divided_by: 100.0 -%}
+    {%- capture sky_svg_raw -%}{% render 'sky-pattern-svg' %}{%- endcapture -%}
+    {%- assign sky_svg_filled = sky_svg_raw | replace: '__COLOR__', sky_color_encoded | replace: '__OPACITY__', sky_opacity_value | strip_newlines | replace: '"', "'" | url_encode -%}
+    <style>
+      body.has-sky-bg {
+        background-image: url("data:image/svg+xml,{{ sky_svg_filled }}");
+      }
+    </style>
+  {%- endif -%}
+
   <script>
     window.themeSettings = {
       freeShippingThreshold: {{ settings.free_shipping_threshold | times: 100 }},
@@ -42,7 +54,7 @@
 
   {{ content_for_header }}
 </head>
-<body class="font-body text-primary bg-[var(--color-background)]">
+<body class="font-body text-primary bg-[var(--color-background)]{% if settings.sky_enabled %} has-sky-bg{% if settings.sky_parallax %} has-sky-parallax{% endif %}{% endif %}">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-primary">
     {{ 'general.skip_to_content' | t }}
   </a>
