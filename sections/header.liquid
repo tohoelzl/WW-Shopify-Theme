@@ -548,6 +548,54 @@
             {% render 'icon', name: 'close', size: 22 %}
           </button>
         </form>
+
+        {%- comment -%} ===== LIVE PREVIEW ===== {%- endcomment -%}
+        <div class="mt-6" x-show="query.length >= 2" x-cloak :aria-busy="loading">
+          {%- comment -%} Loading skeleton {%- endcomment -%}
+          <ul x-show="loading" class="space-y-3" aria-hidden="true">
+            <template x-for="i in 6" :key="i">
+              <li class="flex items-center gap-4 py-2">
+                <div class="w-16 h-16 bg-gray-100 rounded animate-pulse"></div>
+                <div class="flex-1 space-y-2">
+                  <div class="h-3 bg-gray-100 rounded animate-pulse w-3/4"></div>
+                  <div class="h-3 bg-gray-100 rounded animate-pulse w-1/4"></div>
+                </div>
+              </li>
+            </template>
+          </ul>
+
+          {%- comment -%} Results {%- endcomment -%}
+          <ul x-show="!loading && results.length > 0" class="divide-y divide-gray-100">
+            <template x-for="product in results" :key="product.id">
+              <li>
+                <a :href="product.url" class="flex items-center gap-4 py-3 hover:bg-gray-50 -mx-2 px-2 rounded transition-colors">
+                  <img :src="product.image" :alt="product.title" class="w-16 h-16 object-cover rounded bg-gray-50" loading="lazy">
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-gray-900 truncate" x-text="product.title"></p>
+                    <p class="text-sm text-gray-600" x-text="product.priceFormatted"></p>
+                  </div>
+                </a>
+              </li>
+            </template>
+          </ul>
+
+          {%- comment -%} View all link {%- endcomment -%}
+          <a x-show="!loading && total > 0"
+             :href="`{{ routes.search_url }}?q=${encodeURIComponent(query)}`"
+             class="block mt-4 text-center text-sm font-semibold text-primary hover:text-accent transition-colors">
+            Alle Ergebnisse anzeigen
+          </a>
+
+          {%- comment -%} Empty {%- endcomment -%}
+          <p x-show="!loading && results.length === 0 && !error" class="text-sm text-gray-500 py-4">
+            Keine Ergebnisse für „<span x-text="query"></span>". Versuche einen anderen Begriff.
+          </p>
+
+          {%- comment -%} Error {%- endcomment -%}
+          <p x-show="error" class="text-sm text-gray-500 py-4">
+            Suche momentan nicht verfügbar. Drücke Enter, um zur normalen Suche zu gelangen.
+          </p>
+        </div>
       </div>
     </div>
   </div>
