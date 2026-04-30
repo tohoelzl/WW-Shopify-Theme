@@ -516,7 +516,7 @@
       x-transition:leave-start="translate-y-0 opacity-100"
       x-transition:leave-end="-translate-y-full opacity-0"
     >
-      <div class="container py-6">
+      <div class="container py-6" x-data="predictiveSearch()" x-effect="!searchOpen && clear()">
         <form action="{{ routes.search_url }}" method="get" role="search" class="flex items-center gap-3">
           <label for="header-search-input" class="sr-only">{{ 'general.search.search' | t | default: 'Suche' }}</label>
           <span class="text-gray-500">
@@ -527,6 +527,8 @@
             type="search"
             name="q"
             x-ref="searchInput"
+            x-model="query"
+            @input="onInput($event.target.value)"
             placeholder="{{ 'general.search.placeholder' | t | default: 'Wonach suchen Sie?' }}"
             autocomplete="off"
             class="flex-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-base lg:text-lg placeholder-gray-400 py-2"
