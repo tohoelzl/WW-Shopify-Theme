@@ -102,7 +102,7 @@ Alpine.store('cart', {
 Alpine.data('predictiveSearch', () => ({
   MIN_CHARS: 2,
   DEBOUNCE_MS: 300,
-  RESULT_LIMIT: 6,
+  RESULT_LIMIT: 10,
 
   query: '',
   results: [],
