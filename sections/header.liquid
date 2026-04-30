@@ -12,7 +12,8 @@
     mobileActiveMenu: null,
     activeDesktop: null,
     hoveredChild: null,
-    scrolled: false
+    scrolled: false,
+    searchOpen: false
   }"
   x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 }, { passive: true })"
   :class="scrolled && 'shadow-md'"
@@ -278,8 +279,16 @@
           {%- endfor -%}
         </nav>
 
-        {%- comment -%} Right: Account + Cart {%- endcomment -%}
+        {%- comment -%} Right: Search + Account + Cart {%- endcomment -%}
         <div class="flex items-center gap-1">
+          <button
+            type="button"
+            class="p-2 hover:bg-gray-50 rounded-lg transition-colors"
+            @click="searchOpen = true; $nextTick(() => $refs.searchInput && $refs.searchInput.focus())"
+            aria-label="{{ 'general.search.search' | t | default: 'Suche' }}"
+          >
+            {% render 'icon', name: 'search', size: 22 %}
+          </button>
           <a href="{{ routes.account_url }}" class="hidden lg:flex p-2 hover:bg-gray-50 rounded-lg transition-colors" aria-label="Account">
             {% render 'icon', name: 'account', size: 22 %}
           </a>
@@ -474,6 +483,69 @@
             </div>
           {%- endif -%}
         {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ===== SEARCH OVERLAY ===== {%- endcomment -%}
+  <div
+    class="fixed inset-0 z-50"
+    x-show="searchOpen"
+    x-cloak
+    @keydown.escape.window="searchOpen = false"
+  >
+    <div
+      class="absolute inset-0 bg-black/50 backdrop-blur-sm"
+      x-show="searchOpen"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click="searchOpen = false"
+    ></div>
+
+    <div
+      class="absolute top-0 inset-x-0 bg-white shadow-lg"
+      x-show="searchOpen"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="-translate-y-full opacity-0"
+      x-transition:enter-end="translate-y-0 opacity-100"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="translate-y-0 opacity-100"
+      x-transition:leave-end="-translate-y-full opacity-0"
+    >
+      <div class="container py-6">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="flex items-center gap-3">
+          <label for="header-search-input" class="sr-only">{{ 'general.search.search' | t | default: 'Suche' }}</label>
+          <span class="text-gray-500">
+            {% render 'icon', name: 'search', size: 22 %}
+          </span>
+          <input
+            id="header-search-input"
+            type="search"
+            name="q"
+            x-ref="searchInput"
+            placeholder="{{ 'general.search.placeholder' | t | default: 'Wonach suchen Sie?' }}"
+            autocomplete="off"
+            class="flex-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-base lg:text-lg placeholder-gray-400 py-2"
+          >
+          <button
+            type="submit"
+            class="px-5 py-2 bg-primary text-white text-sm font-semibold uppercase tracking-wide rounded-lg hover:bg-accent transition-colors"
+          >
+            {{ 'general.search.search' | t | default: 'Suchen' }}
+          </button>
+          <button
+            type="button"
+            class="p-2 hover:bg-gray-50 rounded-lg transition-colors"
+            @click="searchOpen = false"
+            aria-label="{{ 'accessibility.close' | t | default: 'Schließen' }}"
+          >
+            {% render 'icon', name: 'close', size: 22 %}
+          </button>
+        </form>
       </div>
     </div>
   </div>
