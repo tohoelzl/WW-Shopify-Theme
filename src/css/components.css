@@ -61,3 +61,17 @@
 .splide__pagination__page.is-active {
   background: var(--color-primary);
 }
+
+/* Sky-Pattern Background
+   Die background-image-Regel selbst wird in layout/theme.liquid inline gesetzt
+   (Data-URI mit aktueller Setting-Farbe/Opacity injiziert).
+   Hier nur die unveränderlichen Eigenschaften. */
+body.has-sky-bg {
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: 800px 800px;
+}
+
+body.has-sky-parallax {
+  background-attachment: fixed;
+}
