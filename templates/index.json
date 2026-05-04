@@ -130,6 +130,9 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "custom_css": [
+        "section {padding-top: 1rem !important; padding-bottom: 1rem !important;}"
+      ],
       "settings": {
         "heading": "Bestseller",
         "subtitle": "Die beliebtesten Designs unserer Kunden",
@@ -143,6 +146,9 @@
     },
     "featured-collection-2": {
       "type": "featured-collection",
+      "custom_css": [
+        "section {padding-top: 1rem !important; padding-bottom: 1rem !important;}"
+      ],
       "settings": {
         "heading": "Sitzmöbel",
         "subtitle": "Perfekt für Outdoor & Indoor",
@@ -195,6 +201,9 @@
         "usp-recycle",
         "usp-designer",
         "usp-outdoor"
+      ],
+      "custom_css": [
+        "section {padding-top: 1.5rem !important; padding-bottom: 1rem !important; }"
       ],
       "settings": {
         "image": "shopify://shop_images/amand_tablett3-1-scaled.jpg",
