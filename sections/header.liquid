@@ -16,6 +16,7 @@
     searchOpen: false
   }"
   x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 }, { passive: true })"
+  x-effect="document.body.style.overflow = (mobileOpen || searchOpen) ? 'hidden' : ''"
   :class="scrolled && 'shadow-md'"
 >
   {%- comment -%} Announcement Bar {%- endcomment -%}
@@ -507,7 +508,7 @@
     ></div>
 
     <div
-      class="absolute top-0 inset-x-0 bg-white shadow-lg"
+      class="absolute top-0 inset-x-0 bg-white shadow-lg max-h-screen overflow-y-auto overscroll-contain"
       x-show="searchOpen"
       x-transition:enter="transition ease-out duration-200"
       x-transition:enter-start="-translate-y-full opacity-0"
