@@ -120,6 +120,7 @@
 
                 <div class="text-right">
                   <p class="text-sm font-medium" x-text="(item.final_line_price / 100).toFixed(2).replace('.', ',') + ' €'"></p>
+                  <p class="text-[10px] text-gray-400">inkl. MwSt.</p>
                   <button
                     class="text-xs text-gray-400 hover:text-red-500 transition-colors"
                     @click="$store.cart.removeItem(item.key)"
@@ -139,9 +140,14 @@
 
     {%- comment -%} Footer {%- endcomment -%}
     <div x-show="$store.cart.itemCount > 0" class="border-t border-gray-100 px-4 py-4 space-y-3">
-      <div class="flex items-center justify-between">
-        <span class="font-medium">{{ 'cart.subtotal' | t }}</span>
-        <span class="text-lg font-bold" x-text="$store.cart.total.toFixed(2).replace('.', ',') + ' €'"></span>
+      <div>
+        <div class="flex items-center justify-between">
+          <span class="font-medium">{{ 'cart.subtotal' | t }}</span>
+          <span class="text-lg font-bold" x-text="$store.cart.total.toFixed(2).replace('.', ',') + ' €'"></span>
+        </div>
+        <p class="text-xs text-gray-400 mt-1 text-right">
+          inkl. MwSt., <a href="{{ pages['versand-und-ruckgabe'].url | default: '/policies/shipping-policy' }}" class="underline hover:text-accent">zzgl. Versandkosten</a>
+        </p>
       </div>
 
       <a
