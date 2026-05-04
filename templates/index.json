@@ -218,15 +218,6 @@
             "location": "München"
           }
         },
-        "review-1": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "text": "Die Qualität ist herausragend. Man merkt sofort, dass hier mit Liebe zum Detail gearbeitet wird. Und das Beste: nachhaltig produziert!",
-            "author": "Maria S.",
-            "location": "München"
-          }
-        },
         "review-2": {
           "type": "testimonial",
           "settings": {
@@ -248,7 +239,6 @@
       },
       "block_order": [
         "testimonial_jwV8dB",
-        "review-1",
         "review-2",
         "review-3"
       ],
