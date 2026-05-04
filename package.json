@@ -11,6 +11,7 @@
     "build": "npm run build:css && npm run build:js"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.0",
     "concurrently": "^8.2.0",
     "esbuild": "^0.20.0",

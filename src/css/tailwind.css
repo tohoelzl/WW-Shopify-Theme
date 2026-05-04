@@ -35,4 +35,22 @@
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-medium rounded transition-colors duration-200 hover:bg-primary hover:text-white;
   }
+
+  .rte {
+    @apply prose max-w-none text-primary;
+    @apply prose-headings:font-heading prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-primary;
+    @apply prose-h1:text-3xl prose-h1:lg:text-4xl prose-h1:mt-0 prose-h1:mb-6;
+    @apply prose-h2:text-2xl prose-h2:lg:text-3xl prose-h2:mt-10 prose-h2:mb-4;
+    @apply prose-h3:text-xl prose-h3:lg:text-2xl prose-h3:mt-8 prose-h3:mb-3;
+    @apply prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-2;
+    @apply prose-p:my-4 prose-p:leading-relaxed;
+    @apply prose-a:text-primary prose-a:underline hover:prose-a:no-underline;
+    @apply prose-strong:font-semibold prose-strong:text-primary;
+    @apply prose-ul:my-4 prose-ul:pl-6 prose-ol:my-4 prose-ol:pl-6;
+    @apply prose-li:my-1;
+    @apply prose-blockquote:border-l-2 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic;
+    @apply prose-hr:my-8 prose-hr:border-gray-200;
+    @apply prose-img:rounded;
+    @apply prose-table:my-6 prose-th:text-left prose-th:font-medium;
+  }
 }

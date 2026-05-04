@@ -7,7 +7,7 @@
     {%- endif -%}
 
     {%- if section.settings.text != blank -%}
-      <div class="prose max-w-none {% if section.settings.center %}text-center{% endif %}">
+      <div class="rte {% if section.settings.center %}text-center{% endif %}">
         {{ section.settings.text }}
       </div>
     {%- endif -%}
