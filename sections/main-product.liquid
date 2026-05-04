@@ -264,25 +264,6 @@
               </div>
             </div>
           {%- endif -%}
-
-          {%- comment -%} Shipping & Returns {%- endcomment -%}
-          <div x-data="{ open: false }" class="border-b border-gray-100">
-            <button
-              class="flex items-center justify-between w-full py-4 text-sm font-medium text-left"
-              @click="open = !open"
-              :aria-expanded="open"
-            >
-              {{ 'products.shipping' | t }}
-              <span :class="open && 'rotate-180'" class="transition-transform">
-                {% render 'icon', name: 'chevron-down', size: 16 %}
-              </span>
-            </button>
-            <div x-show="open" x-collapse>
-              <div class="pb-4 prose prose-sm max-w-none">
-                {{ pages['versand-und-ruckgabe'].content | default: '<p>Informationen zu Versand und Rückgabe folgen.</p>' }}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
