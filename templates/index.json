@@ -203,7 +203,7 @@
         "usp-outdoor"
       ],
       "custom_css": [
-        "section {padding-top: 1.5rem !important; padding-bottom: 1rem !important; }"
+        "section {padding-top: 2rem !important; padding-bottom: 1rem !important;}"
       ],
       "settings": {
         "image": "shopify://shop_images/amand_tablett3-1-scaled.jpg",
