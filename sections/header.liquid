@@ -508,7 +508,7 @@
     ></div>
 
     <div
-      class="absolute top-0 inset-x-0 bg-white shadow-lg max-h-screen overflow-y-auto overscroll-contain"
+      class="absolute top-0 left-0 right-0 bottom-0 lg:bottom-auto bg-white shadow-lg flex flex-col overflow-hidden"
       x-show="searchOpen"
       x-transition:enter="transition ease-out duration-200"
       x-transition:enter-start="-translate-y-full opacity-0"
@@ -516,11 +516,14 @@
       x-transition:leave="transition ease-in duration-150"
       x-transition:leave-start="translate-y-0 opacity-100"
       x-transition:leave-end="-translate-y-full opacity-0"
+      x-data="predictiveSearch()"
+      x-effect="!searchOpen && clear()"
     >
-      <div class="container py-6" x-data="predictiveSearch()" x-effect="!searchOpen && clear()">
-        <form action="{{ routes.search_url }}" method="get" role="search" class="flex items-center gap-3">
+      {%- comment -%} Sticky form bar {%- endcomment -%}
+      <div class="container flex-shrink-0 py-4 lg:py-6 border-b border-gray-100 lg:border-b-0">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="flex items-center gap-2 lg:gap-3 min-w-0">
           <label for="header-search-input" class="sr-only">{{ 'general.search.search' | t | default: 'Suche' }}</label>
-          <span class="text-gray-500">
+          <span class="text-gray-500 flex-shrink-0">
             {% render 'icon', name: 'search', size: 22 %}
           </span>
           <input
@@ -532,26 +535,28 @@
             @input="onInput($event.target.value)"
             placeholder="{{ 'general.search.placeholder' | t | default: 'Wonach suchen Sie?' }}"
             autocomplete="off"
-            class="flex-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-base lg:text-lg placeholder-gray-400 py-2"
+            class="flex-1 min-w-0 bg-transparent border-0 focus:ring-0 focus:outline-none text-base lg:text-lg placeholder-gray-400 py-2"
           >
           <button
             type="submit"
-            class="px-5 py-2 bg-primary text-white text-sm font-semibold uppercase tracking-wide rounded-lg hover:bg-accent transition-colors"
+            class="hidden lg:inline-flex flex-shrink-0 px-5 py-2 bg-primary text-white text-sm font-semibold uppercase tracking-wide rounded-lg hover:bg-accent transition-colors"
           >
             {{ 'general.search.search' | t | default: 'Suchen' }}
           </button>
           <button
             type="button"
-            class="p-2 hover:bg-gray-50 rounded-lg transition-colors"
+            class="flex-shrink-0 p-2 hover:bg-gray-50 rounded-lg transition-colors"
             @click="searchOpen = false"
             aria-label="{{ 'accessibility.close' | t | default: 'Schließen' }}"
           >
             {% render 'icon', name: 'close', size: 22 %}
           </button>
         </form>
+      </div>
 
-        {%- comment -%} ===== LIVE PREVIEW ===== {%- endcomment -%}
-        <div class="mt-6" x-show="query.length >= 2" x-cloak :aria-busy="loading">
+      {%- comment -%} Scrollable preview area {%- endcomment -%}
+      <div class="flex-1 min-h-0 overflow-y-auto overscroll-contain">
+        <div class="container py-4 lg:py-6" x-show="query.length >= 2" x-cloak :aria-busy="loading">
           {%- comment -%} Loading skeleton (grid: 2 cols mobile, 5 cols desktop) {%- endcomment -%}
           <div x-show="loading" class="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4" aria-hidden="true">
             <template x-for="i in 10" :key="i">
