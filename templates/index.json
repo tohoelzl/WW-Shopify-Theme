@@ -209,6 +209,15 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_jwV8dB": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Die Qualität ist top. Man merkt sofort, dass hier sauber gearbeitet wird. Und das Beste: nachhaltig produziert!",
+            "author": "Maria S.",
+            "location": "München"
+          }
+        },
         "review-1": {
           "type": "testimonial",
           "settings": {
@@ -222,7 +231,7 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "text": "Endlich Möbel, bei denen man kein schlechtes Gewissen haben muss. Das Design ist zeitlos und die Verarbeitung erstklassig.",
+            "text": "Endlich Möbel, bei denen man kein schlechtes Gewissen haben muss. Das Design und die Verarbeitung sind super schön.",
             "author": "Thomas K.",
             "location": "Berlin"
           }
@@ -231,13 +240,14 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "text": "Made in Italy — das spürt man. Wir haben unser komplettes Wohnzimmer damit eingerichtet und sind begeistert.",
+            "text": "Made in Italy — das spürt man. Wir haben unseren Outdoorbereich damit neu eingerichtet und sind begeistert.",
             "author": "Sarah L.",
             "location": "Hamburg"
           }
         }
       },
       "block_order": [
+        "testimonial_jwV8dB",
         "review-1",
         "review-2",
         "review-3"
