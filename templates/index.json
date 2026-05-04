@@ -110,9 +110,9 @@
           "type": "category",
           "settings": {
             "link": "shopify://pages/deko",
-            "collection": "",
-            "label": "",
-            "subtitle": ""
+            "collection": "regale",
+            "label": "Deko & Accessoires",
+            "subtitle": "Regale, Kissen und mehr"
           }
         }
       },
@@ -124,7 +124,7 @@
       ],
       "settings": {
         "subheading": "Kollektion",
-        "heading": "Unsere Kategorien",
+        "heading": "Unsere Top Kategorien",
         "full_width": true
       }
     },
