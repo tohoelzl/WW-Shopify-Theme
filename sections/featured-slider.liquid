@@ -1,0 +1,418 @@
+{%- liquid
+  assign slot_total = 8
+  assign container_classes = 'container'
+  if section.settings.full_width
+    assign container_classes = 'container lg:max-w-none lg:px-10 xl:px-14'
+  endif
+  assign align = section.settings.alignment | default: 'left'
+-%}
+
+<section
+  class="py-12 lg:py-16"
+  id="featured-slider-{{ section.id }}"
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-loop="{{ section.settings.loop }}"
+>
+  <div class="{{ container_classes }}">
+    <div class="flex items-end justify-between mb-8">
+      {%- if align == 'right' -%}
+        {%- if section.settings.show_view_all and section.settings.view_all_url != blank -%}
+          <a href="{{ section.settings.view_all_url }}" class="text-sm font-medium text-accent hover:underline shrink-0">
+            {{ section.settings.view_all_text | default: 'Alle anzeigen' }} →
+          </a>
+        {%- else -%}
+          <div></div>
+        {%- endif -%}
+        <div class="text-right">
+          {%- if section.settings.heading != blank -%}
+            <h2 class="text-2xl lg:text-3xl font-heading font-bold">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.subtitle != blank -%}
+            <p class="text-gray-500 text-sm mt-1">{{ section.settings.subtitle }}</p>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        <div>
+          {%- if section.settings.heading != blank -%}
+            <h2 class="text-2xl lg:text-3xl font-heading font-bold">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.subtitle != blank -%}
+            <p class="text-gray-500 text-sm mt-1">{{ section.settings.subtitle }}</p>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.show_view_all and section.settings.view_all_url != blank -%}
+          <a href="{{ section.settings.view_all_url }}" class="text-sm font-medium text-accent hover:underline shrink-0">
+            {{ section.settings.view_all_text | default: 'Alle anzeigen' }} →
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+
+    {%- liquid
+      assign manual_handles = ','
+      assign manual_count = 0
+      for block in section.blocks
+        if block.settings.product != blank
+          assign manual_handles = manual_handles | append: block.settings.product.handle | append: ','
+          assign manual_count = manual_count | plus: 1
+        endif
+      endfor
+
+      assign needed = slot_total | minus: manual_count
+      assign has_content = false
+      if manual_count > 0
+        assign has_content = true
+      elsif section.settings.fill_collection != blank and section.settings.fill_collection.products_count > 0
+        assign has_content = true
+      endif
+    -%}
+
+    {%- if has_content -%}
+      <div
+        class="featured-slider__wrapper relative"
+        role="region"
+        aria-roledescription="Karussell"
+        aria-label="{{ section.settings.heading | default: 'Produktauswahl' | escape }}"
+      >
+        <ul class="featured-slider__track" data-featured-slider-track>
+          {%- for block in section.blocks -%}
+            {%- if block.settings.product != blank -%}
+              <li class="featured-slider__item" {{ block.shopify_attributes }}>
+                {% render 'product-card', product: block.settings.product %}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if needed > 0 and section.settings.fill_collection != blank -%}
+            {%- assign fill_rendered = 0 -%}
+            {%- for product in section.settings.fill_collection.products -%}
+              {%- assign handle_token = ',' | append: product.handle | append: ',' -%}
+              {%- unless manual_handles contains handle_token -%}
+                {%- if fill_rendered < needed -%}
+                  <li class="featured-slider__item">
+                    {% render 'product-card', product: product %}
+                  </li>
+                  {%- assign fill_rendered = fill_rendered | plus: 1 -%}
+                {%- endif -%}
+              {%- endunless -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </ul>
+
+        <button
+          type="button"
+          class="featured-slider__arrow featured-slider__arrow--prev"
+          data-featured-slider-prev
+          aria-label="Vorherige Produkte"
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="featured-slider__arrow featured-slider__arrow--next"
+          data-featured-slider-next
+          aria-label="Nächste Produkte"
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="featured-slider__progress" data-featured-slider-progress aria-hidden="true">
+        <div class="featured-slider__progress-bar" data-featured-slider-progress-bar></div>
+      </div>
+    {%- elsif request.design_mode -%}
+      <div class="rounded border border-dashed border-gray-300 p-8 text-center text-sm text-gray-500">
+        Wähle eine Auffüll-Collection oder füge Produkt-Blocks hinzu, um den Slider zu sehen.
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+.featured-slider__track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.featured-slider__track::-webkit-scrollbar {
+  display: none;
+}
+.featured-slider__item {
+  flex: 0 0 calc((100% - 1rem) / 2);
+  scroll-snap-align: start;
+}
+@media (min-width: 768px) {
+  .featured-slider__track {
+    gap: 1rem;
+  }
+  .featured-slider__item {
+    flex: 0 0 calc((100% - 2rem) / 3);
+  }
+}
+@media (min-width: 1024px) {
+  .featured-slider__track {
+    gap: 1.5rem;
+  }
+  .featured-slider__item {
+    flex: 0 0 calc((100% - 4.5rem) / 4);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured-slider__track {
+    scroll-behavior: auto;
+  }
+}
+.featured-slider__arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: white;
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.featured-slider__arrow:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.05);
+}
+.featured-slider__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.featured-slider__arrow--prev { left: -1.25rem; }
+.featured-slider__arrow--next { right: -1.25rem; }
+@media (min-width: 1024px) {
+  .featured-slider__arrow {
+    display: flex;
+  }
+}
+.featured-slider__progress {
+  margin-top: 1.5rem;
+  height: 2px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border-radius: 9999px;
+}
+.featured-slider__progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #111;
+  transition: width 0.1s linear;
+}
+.featured-slider__progress.is-hidden {
+  display: none;
+}
+.featured-slider__arrow.is-hidden {
+  display: none !important;
+}
+{% endstylesheet %}
+
+{% javascript %}
+(function () {
+  function initSlider(section) {
+    const track = section.querySelector('[data-featured-slider-track]');
+    const prevBtn = section.querySelector('[data-featured-slider-prev]');
+    const nextBtn = section.querySelector('[data-featured-slider-next]');
+    const progress = section.querySelector('[data-featured-slider-progress]');
+    const progressBar = section.querySelector('[data-featured-slider-progress-bar]');
+
+    if (!track) return;
+
+    function getStep() {
+      const firstItem = track.querySelector('.featured-slider__item');
+      if (!firstItem) return 0;
+      const itemRect = firstItem.getBoundingClientRect();
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+      return itemRect.width + gap;
+    }
+
+    function isScrollable() {
+      return track.scrollWidth - track.clientWidth > 1;
+    }
+
+    function updateUI() {
+      const scrollable = isScrollable();
+      if (progress) progress.classList.toggle('is-hidden', !scrollable);
+      if (prevBtn) prevBtn.classList.toggle('is-hidden', !scrollable);
+      if (nextBtn) nextBtn.classList.toggle('is-hidden', !scrollable);
+
+      if (!scrollable) {
+        if (progressBar) progressBar.style.width = '0%';
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
+        return;
+      }
+
+      const max = track.scrollWidth - track.clientWidth;
+      const ratio = max > 0 ? track.scrollLeft / max : 0;
+      if (progressBar) progressBar.style.width = (ratio * 100) + '%';
+
+      if (prevBtn) prevBtn.disabled = track.scrollLeft <= 0;
+      if (nextBtn) nextBtn.disabled = track.scrollLeft >= max - 1;
+    }
+
+    let rafId = null;
+    function onScroll() {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function () {
+        updateUI();
+        rafId = null;
+      });
+    }
+
+    function scrollByStep(direction) {
+      const step = getStep();
+      if (!step) return;
+      track.scrollBy({ left: step * direction, behavior: 'smooth' });
+    }
+
+    const autoplay = section.dataset.autoplay === 'true';
+    const loop = section.dataset.loop === 'true';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const AUTOPLAY_INTERVAL_MS = 5000;
+    let autoplayTimer = null;
+
+    function startAutoplay() {
+      if (!autoplay || reduceMotion || !isScrollable()) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(function () {
+        if (!isScrollable()) return;
+        const max = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= max - 1) {
+          if (loop) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            stopAutoplay();
+          }
+        } else {
+          scrollByStep(1);
+        }
+      }, AUTOPLAY_INTERVAL_MS);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { scrollByStep(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { scrollByStep(1); });
+    track.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', updateUI);
+
+    section.addEventListener('mouseenter', stopAutoplay);
+    section.addEventListener('mouseleave', startAutoplay);
+    track.addEventListener('touchstart', stopAutoplay, { passive: true });
+
+    updateUI();
+    startAutoplay();
+
+    return function cleanup() {
+      stopAutoplay();
+      track.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', updateUI);
+    };
+  }
+
+  function initAll() {
+    document.querySelectorAll('[id^="featured-slider-"]').forEach(function (section) {
+      if (section.dataset.featuredSliderInit === '1') return;
+      const cleanup = initSlider(section);
+      section.dataset.featuredSliderInit = '1';
+      section._featuredSliderCleanup = cleanup;
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+
+  document.addEventListener('shopify:section:load', function (event) {
+    const section = event.target.querySelector('[id^="featured-slider-"]') || (event.target.id && event.target.id.indexOf('featured-slider-') === 0 ? event.target : null);
+    if (section && section.dataset.featuredSliderInit !== '1') {
+      const cleanup = initSlider(section);
+      section.dataset.featuredSliderInit = '1';
+      section._featuredSliderCleanup = cleanup;
+    }
+  });
+
+  document.addEventListener('shopify:section:unload', function (event) {
+    const section = event.target.querySelector('[id^="featured-slider-"]') || (event.target.id && event.target.id.indexOf('featured-slider-') === 0 ? event.target : null);
+    if (section && typeof section._featuredSliderCleanup === 'function') {
+      section._featuredSliderCleanup();
+      section._featuredSliderCleanup = null;
+      section.dataset.featuredSliderInit = '';
+    }
+  });
+})();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Featured Slider",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Überschrift" },
+    { "type": "text", "id": "subtitle", "label": "Untertitel" },
+    {
+      "type": "collection",
+      "id": "fill_collection",
+      "label": "Auffüll-Collection",
+      "info": "Verbleibende Slots (bis 8 Total) werden aus dieser Collection in deren Sortierung aufgefüllt. Tipp: Smart Collection mit Sortierung 'Bestseller / Best Selling'."
+    },
+    { "type": "checkbox", "id": "show_view_all", "label": "'Alle anzeigen' Link", "default": true },
+    { "type": "url", "id": "view_all_url", "label": "'Alle anzeigen' Ziel-URL" },
+    { "type": "text", "id": "view_all_text", "label": "'Alle anzeigen' Text", "default": "Alle ansehen" },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Ausrichtung Header",
+      "options": [
+        { "value": "left", "label": "Links" },
+        { "value": "right", "label": "Rechts" }
+      ],
+      "default": "left"
+    },
+    { "type": "checkbox", "id": "full_width", "label": "Volle Breite (Desktop)", "default": false },
+    { "type": "checkbox", "id": "autoplay", "label": "Auto-Play", "default": false },
+    { "type": "checkbox", "id": "loop", "label": "Endlos-Loop", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Produkt",
+      "limit": 8,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Produkt" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Featured Slider" }
+  ]
+}
+{% endschema %}
