@@ -122,7 +122,19 @@
       </div>
 
       <div class="featured-slider__progress" data-featured-slider-progress aria-hidden="true">
-        <div class="featured-slider__progress-bar" data-featured-slider-progress-bar></div>
+        <span class="featured-slider__hint featured-slider__hint--prev" data-featured-slider-hint-prev aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="featured-slider__progress-track">
+          <div class="featured-slider__progress-bar" data-featured-slider-progress-bar></div>
+        </div>
+        <span class="featured-slider__hint featured-slider__hint--next" data-featured-slider-hint-next aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
       </div>
     {%- elsif request.design_mode -%}
       <div class="rounded border border-dashed border-gray-300 p-8 text-center text-sm text-gray-500">
@@ -207,8 +219,14 @@
 }
 .featured-slider__progress {
   margin-top: 1.5rem;
-  height: 2px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.featured-slider__progress-track {
+  flex: 1 1 auto;
+  height: 2px;
   background: rgba(0, 0, 0, 0.08);
   overflow: hidden;
   border-radius: 9999px;
@@ -225,6 +243,44 @@
 .featured-slider__arrow.is-hidden {
   display: none !important;
 }
+.featured-slider__hint {
+  flex: 0 0 auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #111;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.featured-slider__hint.is-active {
+  display: inline-flex;
+  opacity: 1;
+  animation: featured-slider-pulse-next 1.4s ease-in-out infinite;
+}
+.featured-slider__hint--prev.is-active {
+  animation-name: featured-slider-pulse-prev;
+}
+@keyframes featured-slider-pulse-next {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50%      { transform: translateX(4px); opacity: 1; }
+}
+@keyframes featured-slider-pulse-prev {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50%      { transform: translateX(-4px); opacity: 1; }
+}
+@media (min-width: 1024px) {
+  .featured-slider__hint.is-active {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured-slider__hint.is-active {
+    animation: none;
+    opacity: 1;
+  }
+}
 {% endstylesheet %}
 
 {% javascript %}
@@ -235,6 +291,9 @@
     const nextBtn = section.querySelector('[data-featured-slider-next]');
     const progress = section.querySelector('[data-featured-slider-progress]');
     const progressBar = section.querySelector('[data-featured-slider-progress-bar]');
+    const hintPrev = section.querySelector('[data-featured-slider-hint-prev]');
+    const hintNext = section.querySelector('[data-featured-slider-hint-next]');
+    let userHasInteracted = false;
 
     if (!track) return;
 
@@ -261,6 +320,8 @@
         if (progressBar) progressBar.style.width = '0%';
         if (prevBtn) prevBtn.disabled = true;
         if (nextBtn) nextBtn.disabled = true;
+        if (hintPrev) hintPrev.classList.remove('is-active');
+        if (hintNext) hintNext.classList.remove('is-active');
         return;
       }
 
@@ -268,8 +329,13 @@
       const ratio = max > 0 ? track.scrollLeft / max : 0;
       if (progressBar) progressBar.style.width = (ratio * 100) + '%';
 
-      if (prevBtn) prevBtn.disabled = track.scrollLeft <= 0;
-      if (nextBtn) nextBtn.disabled = track.scrollLeft >= max - 1;
+      const atStart = track.scrollLeft <= 0;
+      const atEnd = track.scrollLeft >= max - 1;
+      if (prevBtn) prevBtn.disabled = atStart;
+      if (nextBtn) nextBtn.disabled = atEnd;
+
+      if (hintNext) hintNext.classList.toggle('is-active', !userHasInteracted && !atEnd);
+      if (hintPrev) hintPrev.classList.toggle('is-active', !userHasInteracted && atEnd);
     }
 
     let rafId = null;
@@ -318,9 +384,18 @@
       }
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', function () { scrollByStep(-1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { scrollByStep(1); });
+    function markInteracted() {
+      if (userHasInteracted) return;
+      userHasInteracted = true;
+      if (hintPrev) hintPrev.classList.remove('is-active');
+      if (hintNext) hintNext.classList.remove('is-active');
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { markInteracted(); scrollByStep(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { markInteracted(); scrollByStep(1); });
     track.addEventListener('scroll', onScroll, { passive: true });
+    track.addEventListener('touchstart', markInteracted, { passive: true });
+    track.addEventListener('pointerdown', markInteracted);
     window.addEventListener('resize', updateUI);
 
     section.addEventListener('mouseenter', stopAutoplay);
