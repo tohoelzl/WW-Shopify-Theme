@@ -267,12 +267,68 @@
         "subtitle": "Melde dich an und erhalte exklusive Angebote, neue Designs und Einrichtungstipps.",
         "disclaimer": "Kein Spam. Jederzeit abbestellbar."
       }
+    },
+    "featured_slider_eXgqQa": {
+      "type": "featured-slider",
+      "blocks": {
+        "product_rpfeyD": {
+          "type": "product",
+          "settings": {
+            "product": "queen-of-love"
+          }
+        },
+        "product_JbbVh6": {
+          "type": "product",
+          "settings": {
+            "product": "wow"
+          }
+        },
+        "product_e3ghxY": {
+          "type": "product",
+          "settings": {
+            "product": "amore"
+          }
+        },
+        "product_brdmky": {
+          "type": "product",
+          "settings": {
+            "product": "ambrogio"
+          }
+        },
+        "product_VBrxJg": {
+          "type": "product",
+          "settings": {
+            "product": "amanda"
+          }
+        }
+      },
+      "block_order": [
+        "product_rpfeyD",
+        "product_JbbVh6",
+        "product_e3ghxY",
+        "product_brdmky",
+        "product_VBrxJg"
+      ],
+      "name": "Featured Slider",
+      "settings": {
+        "heading": "Bestseller",
+        "subtitle": "Die beliebtesten Designs unserer Kunden",
+        "fill_collection": "tische",
+        "show_view_all": true,
+        "view_all_url": "",
+        "view_all_text": "Alle ansehen",
+        "alignment": "left",
+        "full_width": true,
+        "autoplay": false,
+        "loop": false
+      }
     }
   },
   "order": [
     "hero",
     "trust-bar",
     "categories",
+    "featured_slider_eXgqQa",
     "featured-collection",
     "featured-collection-2",
     "brand-story",
