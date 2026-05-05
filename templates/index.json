@@ -63,7 +63,7 @@
           "type": "trust_item",
           "settings": {
             "icon": "recycle",
-            "title": "100% Bio Kunststoff",
+            "title": "Biobasiertes PE",
             "subtitle": "Bio-Polyethylen"
           }
         }
@@ -214,7 +214,7 @@
           "type": "usp",
           "settings": {
             "icon": "recycle",
-            "title": "100% Bio Kunststoff",
+            "title": "Biobasiertes PE",
             "subtitle": "Top Schadstoffemissionen"
           }
         },
