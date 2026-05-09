@@ -1,5 +1,16 @@
 [
   {
+    "name": "Performance",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "lcp_hero_image",
+        "label": "Startseiten-Hero-Bild (LCP-Preload)",
+        "info": "Wähle hier das Hero-Bild der Startseite. Es wird vom Browser frühzeitig geladen und verbessert den Largest Contentful Paint deutlich. Muss identisch zum tatsächlich verwendeten Hero-Bild sein."
+      }
+    ]
+  },
+  {
     "name": "Logo",
     "settings": [
       {

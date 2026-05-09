@@ -6,6 +6,21 @@
   <link rel="preload" href="{{ 'application.css' | asset_url }}" as="style">
   {{ 'application.css' | asset_url | stylesheet_tag }}
 
+  {%- comment -%}
+    LCP-Optimierung: Hero-Bild der Startseite vorausladen.
+    Bild kommt aus Theme-Setting "lcp_hero_image" (einmalig im Theme-Editor zugewiesen).
+    Browser entdeckt das LCP-Element früh und kann parallel zur HTML-Verarbeitung laden.
+  {%- endcomment -%}
+  {%- if template.name == 'index' and settings.lcp_hero_image != blank -%}
+    <link
+      rel="preload"
+      as="image"
+      href="{{ settings.lcp_hero_image | image_url: width: 1200 }}"
+      imagesrcset="{{ settings.lcp_hero_image | image_url: width: 640 }} 640w, {{ settings.lcp_hero_image | image_url: width: 1024 }} 1024w, {{ settings.lcp_hero_image | image_url: width: 1600 }} 1600w, {{ settings.lcp_hero_image | image_url: width: 2400 }} 2400w"
+      imagesizes="100vw"
+      fetchpriority="high">
+  {%- endif -%}
+
   {%- unless settings.font_heading.system? -%}
     {%- assign font_heading_url = settings.font_heading | font_url -%}
     {%- unless font_heading_url contains 'Liquid error' -%}
