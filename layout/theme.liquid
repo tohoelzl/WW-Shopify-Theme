@@ -12,11 +12,15 @@
     Browser entdeckt das LCP-Element früh und kann parallel zur HTML-Verarbeitung laden.
   {%- endcomment -%}
   {%- if template.name == 'index' and settings.lcp_hero_image != blank -%}
+    {%- comment -%}
+      srcset MUSS exakt der Liste in snippets/image.liquid entsprechen,
+      sonst wählt der Browser ein anderes Bild und ignoriert den Preload.
+    {%- endcomment -%}
     <link
       rel="preload"
       as="image"
       href="{{ settings.lcp_hero_image | image_url: width: 1200 }}"
-      imagesrcset="{{ settings.lcp_hero_image | image_url: width: 640 }} 640w, {{ settings.lcp_hero_image | image_url: width: 1024 }} 1024w, {{ settings.lcp_hero_image | image_url: width: 1600 }} 1600w, {{ settings.lcp_hero_image | image_url: width: 2400 }} 2400w"
+      imagesrcset="{{ settings.lcp_hero_image | image_url: width: 375 }} 375w, {{ settings.lcp_hero_image | image_url: width: 640 }} 640w, {{ settings.lcp_hero_image | image_url: width: 768 }} 768w, {{ settings.lcp_hero_image | image_url: width: 1024 }} 1024w, {{ settings.lcp_hero_image | image_url: width: 1200 }} 1200w, {{ settings.lcp_hero_image | image_url: width: 1600 }} 1600w"
       imagesizes="100vw"
       fetchpriority="high">
   {%- endif -%}
