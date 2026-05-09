@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "lcp_hero_image": "shopify://shop_images/amore_ocean.jpg",
+    "lcp_hero_image": "shopify://shop_images/amore_ocean_hero.jpg",
     "logo": "shopify://shop_images/logo_shop.webp",
     "sky_opacity": 15,
     "sky_parallax": true,
