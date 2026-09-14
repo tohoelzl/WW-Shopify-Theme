@@ -48,13 +48,7 @@
                 {%- for image in product.images -%}
                   <div class="splide__slide" data-image-id="{{ image.id }}">
                     <div class="aspect-square overflow-hidden rounded bg-gray-50">
-                      {% render 'image',
-                        image: image,
-                        alt: image.alt | default: product.title,
-                        class: 'w-full h-full object-cover cursor-zoom-in',
-                        sizes: '(min-width: 1024px) 50vw, 100vw',
-                        priority: forloop.first
-                      %}
+                      {% render 'image', image: image, alt: image.alt, default: product.title, class: 'w-full h-full object-cover cursor-zoom-in', sizes: '(min-width: 1024px) 50vw, 100vw', priority: forloop.first %}
                     </div>
                   </div>
                 {%- endfor -%}
@@ -68,13 +62,7 @@
                 {%- for image in product.images -%}
                   <div class="splide__slide">
                     <div class="aspect-square overflow-hidden rounded bg-gray-50 cursor-pointer">
-                      {% render 'image',
-                        image: image,
-                        alt: image.alt | default: product.title,
-                        class: 'w-full h-full object-cover',
-                        sizes: '80px',
-                        width: 80
-                      %}
+                      {% render 'image', image: image, alt: image.alt, default: product.title, class: 'w-full h-full object-cover', sizes: '80px', width: 80 %}
                     </div>
                   </div>
                 {%- endfor -%}
@@ -316,3 +304,33 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'image',
+                            image: image,
+                            alt: image.alt | default: product.title,
+                            class: 'w-full h-full object-cover cursor-zoom-in',
+                            sizes: '(min-width: 1024px) 50vw, 100vw',
+                            priority: forloop.first
+                          %}
+  to: "{% render 'image', image: image, alt: image.alt, default: product.title, class:
+    'w-full h-full object-cover cursor-zoom-in', sizes: '(min-width: 1024px) 50vw,
+    100vw', priority: forloop.first %}"
+  position: 2041..2234
+- from: |-
+    {% render 'image',
+                            image: image,
+                            alt: image.alt | default: product.title,
+                            class: 'w-full h-full object-cover',
+                            sizes: '80px',
+                            width: 80
+                          %}
+  to: "{% render 'image', image: image, alt: image.alt, default: product.title, class:
+    'w-full h-full object-cover', sizes: '80px', width: 80 %}"
+  position: 2766..2903
+{% endcomment %}

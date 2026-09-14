@@ -41,12 +41,7 @@
               endunless
             -%}
             {%- if tile_image -%}
-              {% render 'image',
-                image: tile_image,
-                alt: block.settings.title | default: tile_collection.title,
-                class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110',
-                sizes: '(min-width: 1024px) 33vw, 50vw'
-              %}
+              {% render 'image', image: tile_image, alt: block.settings.title, default: tile_collection.title, class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110', sizes: '(min-width: 1024px) 33vw, 50vw' %}
             {%- else -%}
               <div class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200"></div>
             {%- endif -%}
@@ -179,3 +174,21 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'image',
+                    image: tile_image,
+                    alt: block.settings.title | default: tile_collection.title,
+                    class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110',
+                    sizes: '(min-width: 1024px) 33vw, 50vw'
+                  %}
+  to: "{% render 'image', image: tile_image, alt: block.settings.title, default: tile_collection.title,
+    class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110',
+    sizes: '(min-width: 1024px) 33vw, 50vw' %}"
+  position: 1965..2197
+{% endcomment %}
